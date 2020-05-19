@@ -1,5 +1,6 @@
 package model;
 
+import gifAnimation.Gif;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -7,6 +8,7 @@ public class MegaGardevoir extends Pokemons {
 
 	
 	PImage megaGardevoirAtaque,megaGardevoirDebil, megaGardevoirFrente, megaGardevoirPerfil; 
+	Gif megagardevoirGif;
 	
 	public MegaGardevoir(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
 		super(posX, posY, nombre, poder, vida, tipo,app);
@@ -44,10 +46,11 @@ public class MegaGardevoir extends Pokemons {
 		
 	}
 
-	@Override
+	
 	public void pintarGif() {
-		// TODO Auto-generated method stub
 		
+		megagardevoirGif= new Gif(app,"gif/MegaGardevoir.gif");	
+		megagardevoirGif.loop();
 	}
 
 }

@@ -1,11 +1,13 @@
 package model;
 
+import gifAnimation.Gif;
 import processing.core.PApplet;
 import processing.core.PImage;
 
 public class Pikachu extends Pokemons {
 
 	PImage pikachuAtaque,pikachuDebil, pikachuEspalda, pikachuPerfil; 
+	Gif pikachuGif;
 	
 	public Pikachu(int posX, int posY, String nombre, int poder, int vida, String tipo, PApplet app) {
 		super(posX, posY, nombre, poder, vida, tipo, app);
@@ -42,9 +44,10 @@ public class Pikachu extends Pokemons {
 		
 	}
 
-	@Override
+	
 	public void pintarGif() {
-		// TODO Auto-generated method stub
+		pikachuGif= new Gif(app,"gif/Pikachu.gif");
+		pikachuGif.loop();
 		
 	}
 

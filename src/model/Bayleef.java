@@ -1,12 +1,14 @@
 package model;
 
+import gifAnimation.Gif;
 import processing.core.PApplet;
 import processing.core.PImage;
 
 public class Bayleef extends Pokemons {
 	
 	
-	PImage bayleefAtaque,bayleefDebil, bayleefEspalda, bayleefPerfil; 
+	PImage bayleefAtaque,bayleefDebil, bayleefEspalda, bayleefPerfil;
+	Gif bayleefGif;
 	
 	public Bayleef(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
 		super(posX, posY, nombre, poder, vida, tipo,app);
@@ -43,9 +45,11 @@ public class Bayleef extends Pokemons {
 		
 	}
 
-	@Override
+
 	public void pintarGif() {
-		// TODO Auto-generated method stub
+		
+		bayleefGif= new Gif(app,"gif/Bayleef.gif");
+		bayleefGif.loop();
 		
 	}
 

@@ -1,11 +1,13 @@
 package model;
 
+import gifAnimation.Gif;
 import processing.core.PApplet;
 import processing.core.PImage;
 
 public class Girafarig extends Pokemons{
 	
-	PImage girafarigAtaque,girafarigDebil, girafarigEspalda, girafarigPerfil; 
+	PImage girafarigAtaque,girafarigDebil, girafarigEspalda, girafarigPerfil;
+	Gif girafarigGif;
 	
 
 	public Girafarig(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
@@ -43,10 +45,11 @@ public class Girafarig extends Pokemons{
 		
 	}
 
-	@Override
+
 	public void pintarGif() {
-		// TODO Auto-generated method stub
 		
+		girafarigGif= new Gif(app,"gif/Girafarig.gif");
+		girafarigGif.loop();
 	}
 
 }

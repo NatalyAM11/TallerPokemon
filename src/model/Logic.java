@@ -8,10 +8,17 @@ public class Logic {
 	PApplet app;
 	String pokemones[];
 	String pokemones2[];
+	
+	//Todas las variables de los pokemones
 	String pokemon;
+	String tipo;
+	int poderValor;
+	String poder;
+	String debilidad;
+	int vida;
+	
+	//pantallas y mapas
 	int pantalla,mapaX,mapaY;
-	//llamar la función Gif y nombrarla 
-	Gif girafarigGif,bayleefGif,bulbasaurGif,gothoritaGif,luxrayGif,manectricGif,pikachuGif,megagardevoirGif,shayminGif,prueba;
 	
 	//imagenes fondo y botones
 	PImage bayleefPerfil,pikachuPerfil,girafarigPerfil,gothoritaPerfil,shayminPerfil,emolgaPerfil,megaGardevoirPerfil,bulbasaurPerfil,manectricPerfil,luxrayPerfil,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa;
@@ -23,19 +30,11 @@ public class Logic {
 		this.app=app;
 		pantalla=0;
 		pokemones = app.loadStrings("lib/info_pokemones.txt");
+		
+		
 		/* llamar la variable y indicarle que haga un nuevo objeto y este debe
 		recibir como parametro el nombre de la carpeta donde se encuentra el gif y el nombre de la imagen.*/
-		
-		prueba= new Gif(app,"gif/Girafarig.gif");
-		girafarigGif= new Gif(app,"gif/Girafarig.gif");
-		megagardevoirGif= new Gif(app,"gif/MegaGardevoir.gif");
-		manectricGif= new Gif(app,"gif/Manectric.gif");
-		luxrayGif= new Gif(app,"gif/Luxray.gif");
-		shayminGif= new Gif(app,"gif/Shaymin.gif");
-		gothoritaGif= new Gif(app,"gif/Gothorita.gif");
-		pikachuGif= new Gif(app,"gif/Pikachu.gif");
-		bayleefGif= new Gif(app,"gif/Bayleef.gif");
-		bulbasaurGif= new Gif(app,"gif/Bulbasaur.gif");
+	
 		fondoInicio=app.loadImage("img/fondoInicio.png");
 		fondoNada=app.loadImage("img/fondoNada.png");
 		continuarBoton=app.loadImage("img/continuarBoton.png");
@@ -69,12 +68,29 @@ public class Logic {
 		megaGardevoirPerfil=app.loadImage("img/megaGardevoirPerfil.png");
 		shayminPerfil=app.loadImage("img/shayminPerfil.png");
 		luxrayPerfil=app.loadImage("img/luxrayPerfil.png");
-		prueba.loop();
+		//prueba.loop();
 		mapaX = -200;
 		mapaY = -100;
+		
+		
+		
+		
 		for(int i = 0; i < pokemones.length ; i++) {
 			pokemones2 = pokemones[i].split(",");
-			pokemon = pokemones2[2];
+			//nombre
+			pokemon = pokemones2[0];
+			//tipo de pokemon
+			tipo=pokemones2[1];
+			//poder en numero
+			poderValor=Integer.parseInt(pokemones2[2]);
+			//poder
+			poder=pokemones2[3];
+			//debilidad
+			debilidad=pokemones2[4];
+			//vida
+			vida=Integer.parseInt(pokemones2[5]);
+			
+			
 			System.out.print(pokemon);
 		}
 	}

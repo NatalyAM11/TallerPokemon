@@ -1,11 +1,13 @@
 package model;
 
+import gifAnimation.Gif;
 import processing.core.PApplet;
 import processing.core.PImage;
 
 public class Luxray extends Pokemons {
 	
 	PImage luxrayAtaque,luxrayDebil, luxrayFrente, luxrayPerfil;
+	Gif luxrayGif;
 
 	public Luxray(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
 		super(posX, posY, nombre, poder, vida, tipo,app);
@@ -42,10 +44,11 @@ public class Luxray extends Pokemons {
 		
 	}
 
-	@Override
+
 	public void pintarGif() {
-		// TODO Auto-generated method stub
 		
+		luxrayGif= new Gif(app,"gif/Luxray.gif");
+		luxrayGif.loop();
 	}
 
 }

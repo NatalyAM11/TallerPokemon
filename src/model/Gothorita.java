@@ -1,5 +1,6 @@
 package model;
 
+import gifAnimation.Gif;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -7,7 +8,7 @@ public class Gothorita extends Pokemons {
 
 
 	PImage gothoritaAtaque,gothoritaDebil, gothoritaFrente, gothoritaPerfil; 
-	
+	Gif gothoritaGif;
 	
 	public Gothorita(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
 		super(posX, posY, nombre, poder, vida, tipo,app);
@@ -18,6 +19,7 @@ public class Gothorita extends Pokemons {
 		gothoritaFrente=app.loadImage("img/gothorita frente.png");
 		gothoritaPerfil=app.loadImage("img/gothoritaPerfil.png");
 		
+
 	}
 
 
@@ -48,9 +50,11 @@ public class Gothorita extends Pokemons {
 		
 	}
 
-	@Override
+	
 	public void pintarGif() {
-		// TODO Auto-generated method stub
+		
+		gothoritaGif= new Gif(app,"gif/Gothorita.gif");
+		gothoritaGif.loop();
 		
 	}
 

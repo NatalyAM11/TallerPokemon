@@ -1,5 +1,6 @@
 package model;
 
+import gifAnimation.Gif;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -7,6 +8,7 @@ public class Manectric extends Pokemons {
 	
 	
 	PImage manectricAtaque,manectricDebil, manectricFrente, manectricPerfil; 
+	Gif manectricGif;
 
 	public Manectric(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
 		super(posX, posY, nombre, poder, vida, tipo,app);
@@ -45,10 +47,11 @@ public class Manectric extends Pokemons {
 		
 	}
 
-	@Override
+	
 	public void pintarGif() {
-		// TODO Auto-generated method stub
 		
+		manectricGif= new Gif(app,"gif/Manectric.gif");
+		manectricGif.loop();
 	}
 
 }

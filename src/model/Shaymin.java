@@ -1,11 +1,13 @@
 package model;
 
+import gifAnimation.Gif;
 import processing.core.PApplet;
 import processing.core.PImage;
 
 public class Shaymin extends Pokemons{
 	
 	PImage shayminAtaque,shayminDebil, shayminFrente, shayminPerfil; 
+	Gif shayminGif;
 
 	public Shaymin(int posX, int posY, String nombre, int poder, int vida, String tipo, PApplet app) {
 		super(posX, posY, nombre, poder, vida, tipo, app);
@@ -42,10 +44,11 @@ public class Shaymin extends Pokemons{
 		
 	}
 
-	@Override
+	
 	public void pintarGif() {
-		// TODO Auto-generated method stub
 		
+		shayminGif= new Gif(app,"gif/Shaymin.gif");
+		shayminGif.loop();
 	}
 
 }

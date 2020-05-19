@@ -1,5 +1,6 @@
 package model;
 
+import gifAnimation.Gif;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -7,7 +8,7 @@ public class Bulbasaur extends Pokemons{
 	
 	
 	PImage bulbasaurAtaque, bulbasaurDebil, bulbasaurFrente, bulbasaurPerfil;
-	
+	Gif bulbasaurGif;
 
 	public Bulbasaur(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
 		super(posX, posY, nombre, poder, vida, tipo,app);
@@ -49,9 +50,11 @@ public class Bulbasaur extends Pokemons{
 		
 	}
 
-	@Override
+	
 	public void pintarGif() {
-		// TODO Auto-generated method stub
+		
+		bulbasaurGif= new Gif(app,"gif/Bulbasaur.gif");
+		bulbasaurGif.loop();
 		
 	}
 
