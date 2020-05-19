@@ -21,7 +21,7 @@ public abstract class Pokemons {
 		
 	}
 	
-	public abstract void pintar();
+	public abstract void pintar(int numero);
 	public abstract void mover();
 	public abstract void pintarGif();
 	

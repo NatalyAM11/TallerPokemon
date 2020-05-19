@@ -1,17 +1,40 @@
 package model;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class MegaGardevoir extends Pokemons {
 
+	
+	PImage megaGardevoirAtaque,megaGardevoirDebil, megaGardevoirFrente, megaGardevoirPerfil; 
+	
 	public MegaGardevoir(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
 		super(posX, posY, nombre, poder, vida, tipo,app);
-		// TODO Auto-generated constructor stub
+
+		
+		//Cargo las imagenes
+		megaGardevoirAtaque=app.loadImage("img/mega gardevoir ataque.png");
+		megaGardevoirDebil=app.loadImage("img/mega gardevoir debil.png");
+		megaGardevoirFrente=app.loadImage("img/mega gardevoir frente.png");
+		megaGardevoirPerfil=app.loadImage("img/megaGardevoirPerfil.png");
 	}
 
-	@Override
-	public void pintar() {
-		// TODO Auto-generated method stub
+	public void pintar(int imgMegaGardevoir) {
+		
+		
+	 switch(imgMegaGardevoir) {
+	 
+		 case 0: app.image(megaGardevoirAtaque,0,0);
+			 break;
+		 case 1:app.image(megaGardevoirDebil,0,0);
+			 break;
+		 case 2: app.image(megaGardevoirFrente,0,0);
+			 break;
+		 case 3: app.image(megaGardevoirPerfil,0,0);
+		 break;
+		
+	 }
+
 		
 	}
 
