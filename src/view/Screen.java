@@ -28,8 +28,8 @@ public class Screen {
 		switch(numPantalla) {
 		
 		case 0:
-			scr1.pintarUser();
-			//scr2.pintar();
+			//scr1.pintarUser();
+			scr2.pintar();
 			
 			break;
 			
@@ -57,8 +57,8 @@ public class Screen {
 		switch(numPantalla) {
 		
 		case 0:
-			scr1.mouse();
-			//scr2.mouse();
+			//scr1.mouse();
+			scr2.mouse();
 			break;
 			
 			
