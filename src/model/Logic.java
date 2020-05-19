@@ -11,7 +11,7 @@ public class Logic {
 	String pokemon;
 	int pantalla,mapaX,mapaY;
 	//llamar la función Gif y nombrarla 
-	Gif prueba;
+	Gif girafarigGif,bayleefGif,bulbasaurGif,gothoritaGif,luxrayGif,manectricGif,pikachuGif,megagardevoirGif,shayminGif,prueba;
 	
 	//imagenes fondo y botones
 	PImage bayleefPerfil,pikachuPerfil,girafarigPerfil,gothoritaPerfil,shayminPerfil,emolgaPerfil,megaGardevoirPerfil,bulbasaurPerfil,manectricPerfil,luxrayPerfil,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa;
@@ -27,6 +27,15 @@ public class Logic {
 		recibir como parametro el nombre de la carpeta donde se encuentra el gif y el nombre de la imagen.*/
 		
 		prueba= new Gif(app,"gif/Girafarig.gif");
+		girafarigGif= new Gif(app,"gif/Girafarig.gif");
+		megagardevoirGif= new Gif(app,"gif/MegaGardevoir.gif");
+		manectricGif= new Gif(app,"gif/Manectric.gif");
+		luxrayGif= new Gif(app,"gif/Luxray.gif");
+		shayminGif= new Gif(app,"gif/Shaymin.gif");
+		gothoritaGif= new Gif(app,"gif/Gothorita.gif");
+		pikachuGif= new Gif(app,"gif/Pikachu.gif");
+		bayleefGif= new Gif(app,"gif/Bayleef.gif");
+		bulbasaurGif= new Gif(app,"gif/Bulbasaur.gif");
 		fondoInicio=app.loadImage("img/fondoInicio.png");
 		fondoNada=app.loadImage("img/fondoNada.png");
 		continuarBoton=app.loadImage("img/continuarBoton.png");
