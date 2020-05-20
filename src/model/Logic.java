@@ -337,7 +337,7 @@ public class Logic {
 		selec1=app.loadImage("img/seleccionarBotonN.png");
 		selec2=app.loadImage("img/seleccionarBotonN.png");
 		selec3=app.loadImage("img/seleccionarBotonN.png");
-		mapa=app.loadImage("img/mapa.png");
+		mapa=app.loadImage("img/Mapa.png");
 		pokedexIcono=app.loadImage("img/pokedex.png");
 		pokedexVolver=app.loadImage("img/pokedexVolver.png");
 		inventarioVolver=app.loadImage("img/inventarioVolver.png");
