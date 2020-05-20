@@ -1,5 +1,7 @@
 package model;
 
+import java.util.LinkedList;
+
 import gifAnimation.Gif;
 import processing.core.PApplet;
 import processing.core.PImage;
@@ -8,6 +10,25 @@ public class Logic {
 	PApplet app;
 	String pokemones[];
 	String pokemones2[];
+	
+	private int map [][]=  
+	       {{2, 0, 0, 0, 0, 2, 1, 1, 0, 0, 1},
+		    {0, 0, 1, 0, 0, 1, 0, 0, 0, 2, 0},
+		    {0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0},
+		    {0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0},
+		    {0, 2, 1, 0, 0, 1, 2, 4, 0, 0, 0},
+		    
+	       };
+	
+	Personaje bb;
+	
+	int caras =0;
+	
+	PImage pJue,jI,jD,jF,jA,jIF,jDF,jFF,jAF;
+	int posYM,posXM;
+	int x, y;
+	int JM,screenCambio;
+
 	
 	//Todas las variables de los pokemones
 	String pokemon;
@@ -32,48 +53,25 @@ public class Logic {
 		pokemones = app.loadStrings("lib/info_pokemones.txt");
 		
 		
-		/* llamar la variable y indicarle que haga un nuevo objeto y este debe
-		recibir como parametro el nombre de la carpeta donde se encuentra el gif y el nombre de la imagen.*/
-	
-		fondoInicio=app.loadImage("img/fondoInicio.png");
-		fondoNada=app.loadImage("img/fondoNada.png");
-		continuarBoton=app.loadImage("img/continuarBoton.png");
-		continuarBotonN=app.loadImage("img/continuarBotonN.png");
-		registrarseBoton=app.loadImage("img/registrarseBoton.png");
-		registrarseBotonN=app.loadImage("img/registrarseBotonN.png");
-		usuarioBoton=app.loadImage("img/usuario.png");
-		usuarioBotonN=app.loadImage("img/usuarioN.png");
-		pokemonEleccion=app.loadImage("img/PokemonEleccion.png");
-		selec1=app.loadImage("img/seleccionarBotonN.png");
-		selec2=app.loadImage("img/seleccionarBotonN.png");
-		selec3=app.loadImage("img/seleccionarBotonN.png");
-		mapa=app.loadImage("img/Mapa.png");
-		pokedexIcono=app.loadImage("img/pokedex.png");
-		pokedexVolver=app.loadImage("img/pokedexVolver.png");
-		inventarioVolver=app.loadImage("img/inventarioVolver.png");
-		usuariosVolver=app.loadImage("img/usuariosVolver.png");
-		ordenarPor=app.loadImage("img/ordenarPor.png");
-		ordenNombre=app.loadImage("img/ordenNombre.png");
-		ordenFecha=app.loadImage("img/ordenFecha.png");
-		ordenTipo=app.loadImage("img/ordenTipo.png");
-		fondoRosado=app.loadImage("img/Rosado.png");
-		inventarioIcono=app.loadImage("img/inventario.png");
-		bayleefPerfil=app.loadImage("img/bayleefPerfil.png");
-		emolgaPerfil=app.loadImage("img/emolgaPerfil.png");
-		pikachuPerfil=app.loadImage("img/pikachuPerfil.png");
-		bulbasaurPerfil=app.loadImage("img/bulbasaurPerfil.png");
-		girafarigPerfil=app.loadImage("img/girafarigPerfil.png");
-		gothoritaPerfil=app.loadImage("img/gothoritaPerfil.png");
-		manectricPerfil=app.loadImage("img/manectricPerfil.png");
-		megaGardevoirPerfil=app.loadImage("img/megaGardevoirPerfil.png");
-		shayminPerfil=app.loadImage("img/shayminPerfil.png");
-		luxrayPerfil=app.loadImage("img/luxrayPerfil.png");
-		//prueba.loop();
+		cargarImagenes();
 		mapaX = -200;
 		mapaY = -100;
 		
-		
-		
+
+		for (int matY = 0; matY < 5; matY++) {
+	        for (int matX = 0; matX < 11; matX++) {
+	            if (map[matY][matX] == 1) {
+	                posYM = matY;
+	                posXM = matX;
+	                app.fill(255);
+	                
+	            }
+	        }
+	    }
+	  
+
+	  bb = new Personaje(x,y);
+	  JM = 1;
 		
 		for(int i = 0; i < pokemones.length ; i++) {
 			pokemones2 = pokemones[i].split(",");
@@ -89,9 +87,9 @@ public class Logic {
 			debilidad=pokemones2[4];
 			//vida
 			vida=Integer.parseInt(pokemones2[5]);
+
 			
-			
-			System.out.print(pokemon);
+			System.out.print(tipo);
 		}
 	}
 	
@@ -152,6 +150,9 @@ public class Logic {
 					app.image(mapa,mapaX,mapaY);
 					app.image(pokedexIcono,20,310,70,54);
 					app.image(inventarioIcono,20,230);
+					
+					dibujarBebe();
+					
 					break;
 				case 3:
 					app.image(fondoRosado,0,0);
@@ -228,6 +229,116 @@ public class Logic {
 			break;
 			
 		}
+		
+		
+	}
+	
+	
+	public void recorrerMatriz() {
+		
+		posYM = y / 70;
+	    posXM = x / 70;
+		
+		  if (app.keyCode == app.LEFT) {
+		    	if(posXM>0) {
+		        if (posXM -1 < 50 && map[posYM][posXM - 1] == 0 || map[posYM][posXM - 1] == 4 || map[posYM][posXM - 1] == 5 || map[posYM][posXM - 1] == 7 || map[posYM][posXM - 1] == 6) {
+		            x -= 70;
+		            JM = 1;
+		        }
+		    }}
+
+		    if (app.keyCode == app.RIGHT) {
+
+		    	if(posXM<4) {
+		        if (posXM + 1 < 50 && map[posYM][posXM + 1] == 0 || map[posYM][posXM + 1] == 4 || map[posYM][posXM + 1] == 5 || map[posYM][posXM + 1] == 7 || map[posYM][posXM + 1] == 6) {
+		            x += 70;
+		            JM = 2;
+		        }
+		    	}
+		    }
+
+
+		    if (app.keyCode == app.UP) {
+
+		    	if(posYM>0) {
+		        if (posYM - 1 < 11 && map[posYM - 1][posXM] == 0 || map[posYM - 1][posXM] == 4 ||map[posYM - 1][posXM] == 5 || map[posYM - 1][posXM] == 7 || map[posYM - 1][posXM] == 6) {
+		            y -= 70;
+		            JM = 3;
+		        }
+		    }
+		    }
+
+		    if (app.keyCode == app.DOWN) {
+				  
+
+		    	if(posYM<4) {
+		        if (posYM + 1 < 11 && map[posYM + 1][posXM] == 0 || map[posYM + 1][posXM] == 4 || map[posYM + 1][posXM] == 5 || map[posYM + 1][posXM] == 7 || map[posYM + 1][posXM] == 6) {
+		           
+		        	System.out.print("entre1");
+		        	y += 70;
+		            JM = 4;
+		        }
+		    	}
+
+		    }
+	}
+	
+	public void dibujarBebe() {
+	    switch (JM) {
+	        case 1:
+	            app.image(jI,x, y, 50, 70);
+	            break;
+	        case 2:
+	            app.image(jD, x , y, 50, 70);
+	            break;
+	        case 3:
+	            app.image(jA, x,y, 63, 70);
+	            break;
+	        case 4:
+	            app.image(jF, x, y, 63, 70);
+	    }
+
+
+	}
+	
+	public void cargarImagenes() {
+		jI = app.loadImage("img/personaje lado2.png");
+	    jD = app.loadImage("img/personaje lado1.png");
+	    jF = app.loadImage("img/personaje frente.png");
+	    jA = app.loadImage("img/personaje espalda.png");
+		fondoInicio=app.loadImage("img/fondoInicio.png");
+		fondoNada=app.loadImage("img/fondoNada.png");
+		continuarBoton=app.loadImage("img/continuarBoton.png");
+		continuarBotonN=app.loadImage("img/continuarBotonN.png");
+		registrarseBoton=app.loadImage("img/registrarseBoton.png");
+		registrarseBotonN=app.loadImage("img/registrarseBotonN.png");
+		usuarioBoton=app.loadImage("img/usuario.png");
+		usuarioBotonN=app.loadImage("img/usuarioN.png");
+		pokemonEleccion=app.loadImage("img/PokemonEleccion.png");
+		selec1=app.loadImage("img/seleccionarBotonN.png");
+		selec2=app.loadImage("img/seleccionarBotonN.png");
+		selec3=app.loadImage("img/seleccionarBotonN.png");
+		mapa=app.loadImage("img/Mapa.png");
+		pokedexIcono=app.loadImage("img/pokedex.png");
+		pokedexVolver=app.loadImage("img/pokedexVolver.png");
+		inventarioVolver=app.loadImage("img/inventarioVolver.png");
+		usuariosVolver=app.loadImage("img/usuariosVolver.png");
+		ordenarPor=app.loadImage("img/ordenarPor.png");
+		ordenNombre=app.loadImage("img/ordenNombre.png");
+		ordenFecha=app.loadImage("img/ordenFecha.png");
+		ordenTipo=app.loadImage("img/ordenTipo.png");
+		fondoRosado=app.loadImage("img/Rosado.png");
+		inventarioIcono=app.loadImage("img/inventario.png");
+		bayleefPerfil=app.loadImage("img/bayleefPerfil.png");
+		emolgaPerfil=app.loadImage("img/emolgaPerfil.png");
+		pikachuPerfil=app.loadImage("img/pikachuPerfil.png");
+		bulbasaurPerfil=app.loadImage("img/bulbasaurPerfil.png");
+		girafarigPerfil=app.loadImage("img/girafarigPerfil.png");
+		gothoritaPerfil=app.loadImage("img/gothoritaPerfil.png");
+		manectricPerfil=app.loadImage("img/manectricPerfil.png");
+		megaGardevoirPerfil=app.loadImage("img/megaGardevoirPerfil.png");
+		shayminPerfil=app.loadImage("img/shayminPerfil.png");
+		luxrayPerfil=app.loadImage("img/luxrayPerfil.png");
 		
 		
 	}

@@ -84,6 +84,7 @@ switch(numPantalla) {
 		
 		case 0:
 			scr1.teclado();
+			scr2.flechas();
 			break;
 			
 			

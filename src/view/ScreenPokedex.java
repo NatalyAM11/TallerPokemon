@@ -25,5 +25,9 @@ public class ScreenPokedex extends Screen{
 		
 		control.mouse();
 	}
+	
+	public void flechas() {
+		control.flechas();
+	}
 
 }

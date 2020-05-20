@@ -24,4 +24,8 @@ public class Controller {
 	public void mouse() {
 		log.mouse();
 	}
+	
+	public void flechas() {
+		log.recorrerMatriz();
+	}
 }

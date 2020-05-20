@@ -34,5 +34,12 @@ public class Main extends PApplet {
 		
 		srcGlobal.click();
 	}
+	
+	public void keyPressed() {
+		
+		srcGlobal.key();
+	}
+	
+	
 
 }
