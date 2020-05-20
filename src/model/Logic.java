@@ -8,6 +8,9 @@ import processing.core.PImage;
 
 public class Logic {
 	PApplet app;
+	
+	Pokemons poke;
+	
 	String pokemones[];
 	String pokemones2[];
 	
@@ -168,6 +171,8 @@ public class Logic {
 					app.image(ordenNombre,230,64);
 					app.image(ordenFecha,450,64);
 					break;
+					
+				// Poquedex 	
 				case 5:
 					app.image(fondoRosado,0,0);
 					app.image(inventarioVolver,0,0);
