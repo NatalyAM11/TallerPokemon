@@ -10,16 +10,15 @@ public class Logic {
 	PApplet app;
 	
 	Pokemons poke;
-	
 	String pokemones[];
 	String pokemones2[];
 	
 	private int map [][]=  
-	       {{0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0},
-		    {0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0},
-		    {0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0},
-		    {0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-		    {0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0},
+	       {{2, 0, 0, 0, 0, 2, 1, 1, 0, 0, 1},
+		    {0, 0, 1, 0, 0, 1, 0, 0, 0, 2, 0},
+		    {0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0},
+		    {0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0},
+		    {0, 2, 1, 0, 0, 1, 2, 4, 0, 0, 0},
 		    
 	       };
 	
@@ -29,7 +28,6 @@ public class Logic {
 	
 	PImage pJue,jI,jD,jF,jA,jIF,jDF,jFF,jAF;
 	int posYM,posXM;
-	int posYMA,posXMA;
 	int x, y;
 	int JM,screenCambio;
 
@@ -46,7 +44,7 @@ public class Logic {
 	int pantalla,mapaX,mapaY;
 	
 	//imagenes fondo y botones
-	PImage bayleefPerfil,pikachuPerfil,girafarigPerfil,gothoritaPerfil,shayminPerfil,emolgaPerfil,megaGardevoirPerfil,bulbasaurPerfil,manectricPerfil,luxrayPerfil,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa,arbol;
+	PImage bayleefPerfil,pikachuPerfil,girafarigPerfil,gothoritaPerfil,shayminPerfil,emolgaPerfil,megaGardevoirPerfil,bulbasaurPerfil,manectricPerfil,luxrayPerfil,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa;
 	PImage selec1,selec2,selec3;
 	
 	
@@ -67,13 +65,7 @@ public class Logic {
 	            if (map[matY][matX] == 1) {
 	                posYM = matY;
 	                posXM = matX;
-	               
-	                
-	            }
-	            
-	            if (map[matY][matX] == 2) {
-	            	app.image(arbol,posXM,posYM);
-	                
+	                app.fill(255);
 	                
 	            }
 	        }
@@ -158,13 +150,15 @@ public class Logic {
 				break;
 				case 2:
 					app.image(mapa,mapaX,mapaY);
-					app.image(pokedexIcono,20,345,70,54);
-					app.image(inventarioIcono,120,345);
+					app.image(pokedexIcono,20,310,70,54);
+					app.image(inventarioIcono,20,230);
 					
 					dibujarBebe();
 					
+<<<<<<< HEAD
+=======
 					
-					//Arboles 
+					//Los arboles si aparecen paula :( 
 					for (int matY = 0; matY < 5; matY++) {
 				        for (int matX = 0; matX < 11; matX++) {
 				    
@@ -177,6 +171,7 @@ public class Logic {
 				        }
 				        
 					
+>>>>>>> 52d5432a047817c4645e6760962ede73f98fe555
 					break;
 				case 3:
 					app.image(fondoRosado,0,0);
@@ -211,6 +206,7 @@ public class Logic {
 		
 		if( (app.mouseX>253 && app.mouseX<466)&& (app.mouseY>344 && app.mouseY<389)){
 			pantalla=1;
+			System.out.println("putostodos");
 		}
 		
 		break;
@@ -274,7 +270,7 @@ public class Logic {
 
 		    if (app.keyCode == app.RIGHT) {
 
-		    	if(posXM<10) {
+		    	if(posXM<4) {
 		        if (posXM + 1 < 50 && map[posYM][posXM + 1] == 0 || map[posYM][posXM + 1] == 4 || map[posYM][posXM + 1] == 5 || map[posYM][posXM + 1] == 7 || map[posYM][posXM + 1] == 6) {
 		            x += 70;
 		            JM = 2;
@@ -333,7 +329,6 @@ public class Logic {
 	    jA = app.loadImage("img/personaje espalda.png");
 		fondoInicio=app.loadImage("img/fondoInicio.png");
 		fondoNada=app.loadImage("img/fondoNada.png");
-		arbol=app.loadImage("img/arbolPequeno.png");
 		continuarBoton=app.loadImage("img/continuarBoton.png");
 		continuarBotonN=app.loadImage("img/continuarBotonN.png");
 		registrarseBoton=app.loadImage("img/registrarseBoton.png");
@@ -344,7 +339,7 @@ public class Logic {
 		selec1=app.loadImage("img/seleccionarBotonN.png");
 		selec2=app.loadImage("img/seleccionarBotonN.png");
 		selec3=app.loadImage("img/seleccionarBotonN.png");
-		mapa=app.loadImage("img/mapa.png");
+		mapa=app.loadImage("img/Mapa.png");
 		pokedexIcono=app.loadImage("img/pokedex.png");
 		pokedexVolver=app.loadImage("img/pokedexVolver.png");
 		inventarioVolver=app.loadImage("img/inventarioVolver.png");
