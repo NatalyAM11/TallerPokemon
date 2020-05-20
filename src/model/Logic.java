@@ -164,7 +164,7 @@ public class Logic {
 					dibujarBebe();
 					
 					
-					//Arboles 
+					//Los arboles si aparecen paula :( 
 					for (int matY = 0; matY < 5; matY++) {
 				        for (int matX = 0; matX < 11; matX++) {
 				    
