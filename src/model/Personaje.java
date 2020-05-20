@@ -9,6 +9,8 @@ public class Personaje {
 		 this.posY=posY;		
 		
 	}
+	 
+	 //personaje
 
 	public int getPosX() {
 		return posX;
