@@ -20,8 +20,8 @@ public class Bayleef extends Pokemons {
 		bayleefEspalda=app.loadImage("img/bayleef espaldas.png");
 		bayleefPerfil=app.loadImage("img/bayleefPerfil.png");
 		
-	}
-
+	} 
+	
 	
 	public void pintar(int imgBayleef) {
 		

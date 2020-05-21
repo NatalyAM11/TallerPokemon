@@ -9,16 +9,16 @@ import processing.core.PImage;
 public class Logic {
 	PApplet app;
 	
-	Pokemons poke;
-	String pokemones[];
+	LinkedList<Pokemons> listPokemons;
+    String pokemones[];
 	String pokemones2[];
 	
 	private int map [][]=  
-	       {{0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0},
-		    {0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0},
-		    {0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0},
-		    {0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-		    {0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0},
+	       {{0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2},
+		    {0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 2},
+		    {0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 2},
+		    {0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2},
+		    {0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2},
 		    
 	       };
 	
@@ -55,6 +55,7 @@ public class Logic {
 		pantalla=0;
 		pokemones = app.loadStrings("lib/info_pokemones.txt");
 		
+		listPokemons = new LinkedList <Pokemons>();
 		
 		cargarImagenes();
 		mapaX = -200;
@@ -91,6 +92,18 @@ public class Logic {
 			//vida
 			vida=Integer.parseInt(pokemones2[5]);
 
+			if(pokemon.equals("Bayleef")) {
+				
+			listPokemons.add(new Bayleef(40,40,pokemon,poderValor,vida,tipo,app));
+				
+			} else if(pokemon.equals("Shaymin")) {
+				
+			listPokemons.add(new Shaymin(40,60,pokemon,poderValor,vida,tipo,app));
+			} else if(pokemon.equals("Bulbasaur")) {
+				
+			listPokemons.add(new Bulbasaur(40,90,pokemon,poderValor,vida,tipo,app));	
+			}
+			
 			
 			System.out.print(tipo);
 		}
@@ -167,6 +180,15 @@ public class Logic {
 				            }
 				        }
 				        }
+					
+                   for(int i = 0; i<listPokemons.size(); i++) {
+						
+						//listPokemons.get(i).pintarGif(0);
+						listPokemons.get(i).pintar(0);
+
+                	   
+						
+					}
 				        
 					
 					break;
@@ -176,6 +198,8 @@ public class Logic {
 					app.image(ordenarPor,0,64);
 					app.image(ordenNombre,230,64);
 					app.image(ordenTipo,450,64);
+					
+					
 					break;
 				case 4:
 					app.image(fondoRosado,0,0);
