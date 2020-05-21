@@ -25,13 +25,13 @@ public class Girafarig extends Pokemons{
 		
 		 switch(imgGirafarig) {
 		 
-		 case 0: app.image(girafarigAtaque,0,0);
+		 case 0: app.image(girafarigAtaque,posX,posY);
 			 break;
-		 case 1:app.image(girafarigDebil,0,0);
+		 case 1:app.image(girafarigDebil,posX,posY);
 			 break;
-		 case 2: app.image(girafarigEspalda,0,0);
+		 case 2: app.image(girafarigEspalda,posX,posY);
 			 break;
-		 case 3: app.image(girafarigPerfil,0,0);
+		 case 3: app.image(girafarigPerfil,posX,posY);
 		 break;
 		
 	 }
@@ -50,6 +50,14 @@ public class Girafarig extends Pokemons{
 		
 		girafarigGif= new Gif(app,"gif/Girafarig.gif");
 		girafarigGif.loop();
+	}
+
+
+
+	
+	public void pintarPMapa() {
+		
+		
 	}
 
 }

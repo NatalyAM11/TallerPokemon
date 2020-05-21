@@ -163,7 +163,7 @@ public class Logic {
 					}
 				break;
 				case 2:
-					app.image(mapa,mapaX,mapaY);
+					app.image(mapa,0,0);
 					app.image(pokedexIcono,20,345,70,54);
 					app.image(inventarioIcono,120,345);
 					
@@ -184,7 +184,7 @@ public class Logic {
                    for(int i = 0; i<listPokemons.size(); i++) {
 						
 						//listPokemons.get(i).pintarGif(0);
-						listPokemons.get(i).pintar(0);
+						listPokemons.get(i).pintarPMapa();
 
                 	   
 						

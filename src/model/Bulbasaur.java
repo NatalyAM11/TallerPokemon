@@ -7,7 +7,7 @@ import processing.core.PImage;
 public class Bulbasaur extends Pokemons{
 	
 	
-	PImage bulbasaurAtaque, bulbasaurDebil, bulbasaurFrente, bulbasaurPerfil;
+	PImage bulbasaurAtaque, bulbasaurDebil, bulbasaurFrente, bulbasaurPerfil, bulbasaurMapa;
 	Gif bulbasaurGif;
 
 	public Bulbasaur(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
@@ -18,7 +18,8 @@ public class Bulbasaur extends Pokemons{
 		bulbasaurAtaque=app.loadImage("img/bulbasaur ataque.png");
 		bulbasaurDebil=app.loadImage("img/bulbasaur debil.png");
 		bulbasaurFrente=app.loadImage("img/bulbasaur frente.png");
-		bulbasaurPerfil=app.loadImage("img/bulbasaurPerfil.png");	
+		bulbasaurPerfil=app.loadImage("img/bulbasaurPerfil.png");
+		bulbasaurMapa=app.loadImage("img/bulbasaurMapa.png");
 		
 
 	}
@@ -28,13 +29,13 @@ public class Bulbasaur extends Pokemons{
 		
 		 switch(imgBulbasaur) {
 		 
-		 case 0: app.image(bulbasaurAtaque,0,0);
+		 case 0: app.image(bulbasaurAtaque,posX,posY);
 			 break;
-		 case 1:app.image(bulbasaurDebil,0,0);
+		 case 1:app.image(bulbasaurDebil,posX,posY);
 			 break;
-		 case 2: app.image(bulbasaurFrente,0,0);
+		 case 2: app.image(bulbasaurFrente,posX,posY);
 			 break;
-		 case 3: app.image(bulbasaurPerfil,0,0);
+		 case 3: app.image(bulbasaurPerfil,posX,posY);
 		 break;
 		
 	 }
@@ -55,6 +56,12 @@ public class Bulbasaur extends Pokemons{
 		
 		bulbasaurGif= new Gif(app,"gif/Bulbasaur.gif");
 		bulbasaurGif.loop();
+		
+	}
+
+	
+	public void pintarPMapa() {
+		app.image(bulbasaurMapa,posX,posY);
 		
 	}
 

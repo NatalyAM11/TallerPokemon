@@ -26,13 +26,13 @@ public class Emolga extends Pokemons{
 		
 		 switch(imgEmolga) {
 		 
-		 case 0: app.image(emolgaAtaque,0,0);
+		 case 0: app.image(emolgaAtaque,posX,posY);
 			 break;
-		 case 1:app.image(emolgaDebil,0,0);
+		 case 1:app.image(emolgaDebil,posX,posY);
 			 break;
-		 case 2: app.image(emolgaEspalda,0,0);
+		 case 2: app.image(emolgaEspalda,posX,posY);
 			 break;
-		 case 3: app.image(emolgaPerfil,0,0);
+		 case 3: app.image(emolgaPerfil,posX,posY);
 		 break;
 		
 	 }
@@ -46,6 +46,13 @@ public class Emolga extends Pokemons{
 		// TODO Auto-generated method stub
 		
 	}
+
+	
+	public void pintarPMapa() {
+		
+		
+	}
+
 
 	@Override
 	public void pintarGif() {

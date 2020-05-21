@@ -7,7 +7,7 @@ import processing.core.PImage;
 public class Manectric extends Pokemons {
 	
 	
-	PImage manectricAtaque,manectricDebil, manectricFrente, manectricPerfil; 
+	PImage manectricAtaque,manectricDebil, manectricFrente, manectricPerfil, manectricMapa; 
 	Gif manectricGif;
 
 	public Manectric(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
@@ -19,7 +19,7 @@ public class Manectric extends Pokemons {
 		manectricDebil=app.loadImage("img/manectric debil.png");
 		manectricFrente=app.loadImage("img/manectric frente.png");
 		manectricPerfil=app.loadImage("img/manectricPerfil.png");
-		
+		manectricMapa=app.loadImage("img/manectricMapa.png");
 	}
 
 
@@ -27,13 +27,13 @@ public class Manectric extends Pokemons {
 		
 	 switch(imgManectric) {
 	 
-		 case 0: app.image(manectricAtaque,0,0);
+		 case 0: app.image(manectricAtaque,posX,posY);
 			 break;
-		 case 1:app.image(manectricDebil,0,0);
+		 case 1:app.image(manectricDebil,posX,posY);
 			 break;
-		 case 2: app.image(manectricFrente,0,0);
+		 case 2: app.image(manectricFrente,posX,posY);
 			 break;
-		 case 3: app.image(manectricPerfil,0,0);
+		 case 3: app.image(manectricPerfil,posX,posY);
 		 break;
 		
 	 }
@@ -52,6 +52,14 @@ public class Manectric extends Pokemons {
 		
 		manectricGif= new Gif(app,"gif/Manectric.gif");
 		manectricGif.loop();
+	}
+
+
+	
+	public void pintarPMapa() {
+		
+		app.image(manectricMapa,posX,posY);
+		
 	}
 
 }

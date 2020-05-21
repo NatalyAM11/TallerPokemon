@@ -7,7 +7,7 @@ import processing.core.PImage;
 public class MegaGardevoir extends Pokemons {
 
 	
-	PImage megaGardevoirAtaque,megaGardevoirDebil, megaGardevoirFrente, megaGardevoirPerfil; 
+	PImage megaGardevoirAtaque,megaGardevoirDebil, megaGardevoirFrente, megaGardevoirPerfil, megaGardevoirMapa; 
 	Gif megagardevoirGif;
 	
 	public MegaGardevoir(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
@@ -19,6 +19,7 @@ public class MegaGardevoir extends Pokemons {
 		megaGardevoirDebil=app.loadImage("img/mega gardevoir debil.png");
 		megaGardevoirFrente=app.loadImage("img/mega gardevoir frente.png");
 		megaGardevoirPerfil=app.loadImage("img/megaGardevoirPerfil.png");
+		megaGardevoirMapa=app.loadImage("img/megagardevoirMapa.png");
 	}
 
 	public void pintar(int imgMegaGardevoir) {
@@ -26,13 +27,13 @@ public class MegaGardevoir extends Pokemons {
 		
 	 switch(imgMegaGardevoir) {
 	 
-		 case 0: app.image(megaGardevoirAtaque,0,0);
+		 case 0: app.image(megaGardevoirAtaque,posX,posY);
 			 break;
-		 case 1:app.image(megaGardevoirDebil,0,0);
+		 case 1:app.image(megaGardevoirDebil,posX,posY);
 			 break;
-		 case 2: app.image(megaGardevoirFrente,0,0);
+		 case 2: app.image(megaGardevoirFrente,posX,posY);
 			 break;
-		 case 3: app.image(megaGardevoirPerfil,0,0);
+		 case 3: app.image(megaGardevoirPerfil,posX,posY);
 		 break;
 		
 	 }
@@ -51,6 +52,12 @@ public class MegaGardevoir extends Pokemons {
 		
 		megagardevoirGif= new Gif(app,"gif/MegaGardevoir.gif");	
 		megagardevoirGif.loop();
+	}
+
+	
+	public void pintarPMapa() {
+		
+		app.image(megaGardevoirMapa,posX,posY);
 	}
 
 }

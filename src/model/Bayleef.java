@@ -27,13 +27,13 @@ public class Bayleef extends Pokemons {
 		
 	 switch(imgBayleef) {
 	 
-		 case 0: app.image(bayleefAtaque,0,0);
+		 case 0: app.image(bayleefAtaque,posX,posY);
 			 break;
-		 case 1:app.image(bayleefDebil,0,0);
+		 case 1:app.image(bayleefDebil,posX,posY);
 			 break;
-		 case 2: app.image(bayleefEspalda,0,0);
+		 case 2: app.image(bayleefEspalda,posX,posY);
 			 break;
-		 case 3: app.image(bayleefPerfil,0,0);
+		 case 3: app.image(bayleefPerfil,posX,posY);
 		 break;
 		
 	 }
@@ -50,6 +50,12 @@ public class Bayleef extends Pokemons {
 		
 		bayleefGif= new Gif(app,"gif/Bayleef.gif");
 		bayleefGif.loop();
+		
+	}
+
+
+	public void pintarPMapa() {
+		
 		
 	}
 

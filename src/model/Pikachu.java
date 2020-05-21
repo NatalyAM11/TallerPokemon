@@ -6,17 +6,18 @@ import processing.core.PImage;
 
 public class Pikachu extends Pokemons {
 
-	PImage pikachuAtaque,pikachuDebil, pikachuEspalda, pikachuPerfil; 
+	PImage pikachuAtaque,pikachuDebil, pikachuFrente, pikachuPerfil,pikachuMapa; 
 	Gif pikachuGif;
 	
 	public Pikachu(int posX, int posY, String nombre, int poder, int vida, String tipo, PApplet app) {
 		super(posX, posY, nombre, poder, vida, tipo, app);
 		
 		//Cargo las imagenes
-		pikachuAtaque=app.loadImage("img/pikachuPerfil.png");
-		pikachuDebil=app.loadImage("img/pikachuPerfil.png");
-		pikachuEspalda=app.loadImage("img/pikachuPerfil.png");
+		pikachuAtaque=app.loadImage("img/pikachu_ataque.png");
+		pikachuDebil=app.loadImage("img/pikachu_debil.png");
+		pikachuFrente=app.loadImage("img/pikachu_frente.png");
 		pikachuPerfil=app.loadImage("img/pikachuPerfil.png");
+		pikachuMapa=app.loadImage("img/pikachuMapa.png");
 	}
 
 	
@@ -24,13 +25,13 @@ public class Pikachu extends Pokemons {
 		
 		 switch(imgPikachu) {
 		 
-		 case 0: app.image(pikachuAtaque,0,0);
+		 case 0: app.image(pikachuAtaque,posX,posY);
 			 break;
-		 case 1:app.image(pikachuDebil,0,0);
+		 case 1:app.image(pikachuDebil,posX,posY);
 			 break;
-		 case 2: app.image(pikachuEspalda,0,0);
+		 case 2: app.image(pikachuFrente,posX,posY);
 			 break;
-		 case 3: app.image(pikachuPerfil,0,0);
+		 case 3: app.image(pikachuPerfil,posX,posY);
 		 break;
 		
 	 }
@@ -48,6 +49,13 @@ public class Pikachu extends Pokemons {
 	public void pintarGif() {
 		pikachuGif= new Gif(app,"gif/Pikachu.gif");
 		pikachuGif.loop();
+		
+	}
+
+
+	
+	public void pintarPMapa() {
+		app.image(pikachuMapa,posX,posY);
 		
 	}
 

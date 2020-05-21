@@ -5,7 +5,7 @@ import processing.core.PImage;
 
 public class Shaymin extends Pokemons{
 	
-	PImage shayminAtaque,shayminDebil, shayminFrente, shayminPerfil; 
+	PImage shayminAtaque,shayminDebil, shayminFrente, shayminPerfil, shayminMapa; 
 
 	public Shaymin(int posX, int posY, String nombre, int poder, int vida, String tipo, PApplet app) {
 		super(posX, posY, nombre, poder, vida, tipo, app);
@@ -16,6 +16,7 @@ public class Shaymin extends Pokemons{
 		shayminDebil=app.loadImage("img/shaymin debil.png");
 		shayminFrente=app.loadImage("img/shaymin frente.png");
 		shayminPerfil=app.loadImage("img/shayminPerfil.png");
+		shayminMapa=app.loadImage("img/shayminMapa.png");
 	}
 
 	// Se llama este pintar para la batalla
@@ -24,13 +25,13 @@ public class Shaymin extends Pokemons{
 	
 	 switch(imgShaymin) {
 	 
-		 case 0: app.image(shayminAtaque,0,0);
+		 case 0: app.image(shayminAtaque,posX,posY);
 			 break;
-		 case 1:app.image(shayminDebil,0,0);
+		 case 1:app.image(shayminDebil,posX,posY);
 			 break;
-		 case 2: app.image(shayminFrente,0,0);
+		 case 2: app.image(shayminFrente,posX,posY);
 			 break;
-		 case 3: app.image(shayminPerfil,0,0);
+		 case 3: app.image(shayminPerfil,posX,posY);
 		 break;
 		
 	 }
@@ -54,6 +55,13 @@ public class Shaymin extends Pokemons{
 	@Override
 	public void pintarGif() {
 		// TODO Auto-generated method stub
+		
+	}
+
+	
+	public void pintarPMapa() {
+		
+		app.image(shayminMapa,posX,posY);
 		
 	}
 
