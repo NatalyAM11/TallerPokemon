@@ -165,7 +165,7 @@ public class Logic {
 				case 2:
 					app.image(mapa,0,0);
 					app.image(pokedexIcono,20,345,70,54);
-					app.image(inventarioIcono,120,345);
+					app.image(inventarioIcono,120,345,70,54);
 					
 					dibujarBebe();
 		
@@ -249,10 +249,10 @@ public class Logic {
 			}
 			break;
 		case 2:
-			if( (app.mouseX>20 && app.mouseX<20+70)&& (app.mouseY>310 && app.mouseY<310+54)){
+			if( (app.mouseX>20 && app.mouseX<20+70)&& (app.mouseY>345 && app.mouseY<345+54)){
 				pantalla = 3;
 			}
-			if( (app.mouseX>20 && app.mouseX<20+70)&& (app.mouseY>230 && app.mouseY<230+54)){
+			if( (app.mouseX>120 && app.mouseX<120+70)&& (app.mouseY>345 && app.mouseY<345+54)){
 				pantalla = 5;
 			}
 			break;
