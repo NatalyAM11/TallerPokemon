@@ -185,6 +185,7 @@ public class Logic {
 						
 						//listPokemons.get(i).pintarGif(0);
 						listPokemons.get(i).pintarPMapa();
+						listPokemons.get(i).pintarGif();
 
                 	   
 						
@@ -198,6 +199,8 @@ public class Logic {
 					app.image(ordenarPor,0,64);
 					app.image(ordenNombre,230,64);
 					app.image(ordenTipo,450,64);
+					
+
 					
 					
 					break;

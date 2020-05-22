@@ -20,7 +20,7 @@ public class Bulbasaur extends Pokemons{
 		bulbasaurFrente=app.loadImage("img/bulbasaur frente.png");
 		bulbasaurPerfil=app.loadImage("img/bulbasaurPerfil.png");
 		bulbasaurMapa=app.loadImage("img/bulbasaurMapa.png");
-		
+		bulbasaurGif= new Gif(app,"gif/Bulbasaur.gif");
 
 	}
 
@@ -54,8 +54,10 @@ public class Bulbasaur extends Pokemons{
 	
 	public void pintarGif() {
 		
-		bulbasaurGif= new Gif(app,"gif/Bulbasaur.gif");
+		app.image(bulbasaurGif,posX,posY);
 		bulbasaurGif.loop();
+
+		
 		
 	}
 

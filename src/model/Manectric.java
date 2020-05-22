@@ -20,6 +20,8 @@ public class Manectric extends Pokemons {
 		manectricFrente=app.loadImage("img/manectric frente.png");
 		manectricPerfil=app.loadImage("img/manectricPerfil.png");
 		manectricMapa=app.loadImage("img/manectricMapa.png");
+		manectricGif= new Gif(app,"gif/Manectric.gif");
+
 	}
 
 
@@ -50,7 +52,7 @@ public class Manectric extends Pokemons {
 	
 	public void pintarGif() {
 		
-		manectricGif= new Gif(app,"gif/Manectric.gif");
+		app.image(manectricGif,posX,posY);
 		manectricGif.loop();
 	}
 

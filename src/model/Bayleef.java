@@ -19,6 +19,8 @@ public class Bayleef extends Pokemons {
 		bayleefDebil=app.loadImage("img/bayleef debil.png");
 		bayleefEspalda=app.loadImage("img/bayleef espaldas.png");
 		bayleefPerfil=app.loadImage("img/bayleefPerfil.png");
+		bayleefGif= new Gif(app,"gif/Bayleef.gif");
+
 		
 	} 
 	
@@ -47,8 +49,7 @@ public class Bayleef extends Pokemons {
 
 
 	public void pintarGif() {
-		
-		bayleefGif= new Gif(app,"gif/Bayleef.gif");
+		app.image(bayleefGif,0,0);
 		bayleefGif.loop();
 		
 	}

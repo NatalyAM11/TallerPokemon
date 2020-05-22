@@ -1,12 +1,13 @@
 package model;
 
+import gifAnimation.Gif;
 import processing.core.PApplet;
 import processing.core.PImage;
 
 public class Emolga extends Pokemons{
 
 	PImage emolgaAtaque,emolgaDebil, emolgaEspalda, emolgaPerfil; 
-	
+	Gif emolgaGif;
 
 	public Emolga(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
 		super(posX, posY, nombre, poder, vida, tipo,app);
@@ -17,6 +18,8 @@ public class Emolga extends Pokemons{
 		emolgaDebil=app.loadImage("img/emolga debil.png");
 		emolgaEspalda=app.loadImage("img/emolga espaldas.png");
 		emolgaPerfil=app.loadImage("img/emolgaPerfil.png");
+		emolgaGif = new Gif(app,"gif/Emolga.gif");
+		
 		
 		
 	}
@@ -57,6 +60,11 @@ public class Emolga extends Pokemons{
 	@Override
 	public void pintarGif() {
 		// TODO Auto-generated method stub
+		app.image(emolgaGif,posX,posY);
+		emolgaGif.loop();
+
+		
+		
 		
 	}
 

@@ -19,6 +19,8 @@ public class Gothorita extends Pokemons {
 		gothoritaFrente=app.loadImage("img/gothorita frente.png");
 		gothoritaPerfil=app.loadImage("img/gothoritaPerfil.png");
 		gothoritaMapa=app.loadImage("img/gothoritaMapa.png");
+		gothoritaGif= new Gif(app,"gif/Gothorita.gif");
+
 
 	}
 
@@ -53,7 +55,7 @@ public class Gothorita extends Pokemons {
 	
 	public void pintarGif() {
 		
-		gothoritaGif= new Gif(app,"gif/Gothorita.gif");
+		app.image(gothoritaGif,posX,posY);
 		gothoritaGif.loop();
 		
 	}

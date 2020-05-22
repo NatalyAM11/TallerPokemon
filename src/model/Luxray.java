@@ -18,6 +18,8 @@ public class Luxray extends Pokemons {
 		luxrayFrente=app.loadImage("img/luxray frente.png");
 		luxrayPerfil=app.loadImage("img/luxrayPerfil.png");
 		luxrayMapa=app.loadImage("img/luxrayMapa.png");
+		luxrayGif= new Gif(app,"gif/Luxray.gif");
+
 	}
 
 
@@ -48,8 +50,9 @@ public class Luxray extends Pokemons {
 
 	public void pintarGif() {
 		
-		luxrayGif= new Gif(app,"gif/Luxray.gif");
+		app.image(luxrayGif,posX,posY);
 		luxrayGif.loop();
+		
 	}
 
 

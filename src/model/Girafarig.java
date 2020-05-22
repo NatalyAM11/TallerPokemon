@@ -18,6 +18,8 @@ public class Girafarig extends Pokemons{
 		girafarigDebil=app.loadImage("img/Girafarig debil.png");
 		girafarigEspalda=app.loadImage("img/Girafarig espaldas.png");
 		girafarigPerfil=app.loadImage("img/girafarigPerfil.png");
+		girafarigGif= new Gif(app,"gif/Girafarig.gif");
+
 	}
 
 
@@ -48,7 +50,8 @@ public class Girafarig extends Pokemons{
 
 	public void pintarGif() {
 		
-		girafarigGif= new Gif(app,"gif/Girafarig.gif");
+		
+		app.image(girafarigGif,posX,posY);
 		girafarigGif.loop();
 	}
 

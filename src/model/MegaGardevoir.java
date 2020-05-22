@@ -20,6 +20,8 @@ public class MegaGardevoir extends Pokemons {
 		megaGardevoirFrente=app.loadImage("img/mega gardevoir frente.png");
 		megaGardevoirPerfil=app.loadImage("img/megaGardevoirPerfil.png");
 		megaGardevoirMapa=app.loadImage("img/megagardevoirMapa.png");
+		megagardevoirGif= new Gif(app,"gif/MegaGardevoir.gif");	
+
 	}
 
 	public void pintar(int imgMegaGardevoir) {
@@ -50,7 +52,7 @@ public class MegaGardevoir extends Pokemons {
 	
 	public void pintarGif() {
 		
-		megagardevoirGif= new Gif(app,"gif/MegaGardevoir.gif");	
+		app.image(megagardevoirGif,posX,posY);
 		megagardevoirGif.loop();
 	}
 
