@@ -46,7 +46,7 @@ public class Logic {
 	
 	//imagenes fondo y botones
 	PImage arbol,bayleefPerfil,pikachuPerfil,girafarigPerfil,gothoritaPerfil,shayminPerfil,emolgaPerfil,megaGardevoirPerfil,bulbasaurPerfil,manectricPerfil,luxrayPerfil,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa;
-	PImage selec1,selec2,selec3;
+	PImage bayleefBarra,shayminBarra,gothoritaBarra,luxrayBarra,emolgaBarra,pikachuBarra,girafarigBarra,megaGardevoirBarra,manectricBarra,bulbasaurBarra,selec1,selec2,selec3;
 	
 	
 	public Logic(PApplet app) {
@@ -385,6 +385,16 @@ public class Logic {
 		megaGardevoirPerfil=app.loadImage("img/megaGardevoirPerfil.png");
 		shayminPerfil=app.loadImage("img/shayminPerfil.png");
 		luxrayPerfil=app.loadImage("img/luxrayPerfil.png");
+		bayleefBarra=app.loadImage("img/bayleefBarra.png");
+		bulbasaurBarra=app.loadImage("img/bulbasaur.png");
+		emolgaBarra=app.loadImage("img/emolgaBarra.png");
+		girafarigBarra=app.loadImage("img/girafarigBarra.png");
+		gothoritaBarra=app.loadImage("img/gothoritaBarra.png");
+		luxrayBarra=app.loadImage("img/luxrayBarra.png");
+		manectricBarra=app.loadImage("img/manectricBarra.png");
+		megaGardevoirBarra=app.loadImage("img/megaGardevoirBarra.png");
+		pikachuBarra=app.loadImage("img/pikachuBarra.png");
+		shayminBarra=app.loadImage("img/shayminBarra.png");
 		
 		
 	}

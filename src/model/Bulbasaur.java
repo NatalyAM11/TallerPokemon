@@ -35,8 +35,7 @@ public class Bulbasaur extends Pokemons{
 			 break;
 		 case 2: app.image(bulbasaurFrente,posX,posY);
 			 break;
-		 case 3: app.image(bulbasaurPerfil,posX,posY);
-		 break;
+		 
 		
 	 }
 		
@@ -56,7 +55,7 @@ public class Bulbasaur extends Pokemons{
 		
 		app.image(bulbasaurGif,posX,posY);
 		bulbasaurGif.loop();
-
+		app.image(bulbasaurPerfil,posX,posY);
 		
 		
 	}

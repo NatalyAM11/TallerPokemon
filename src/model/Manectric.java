@@ -35,8 +35,7 @@ public class Manectric extends Pokemons {
 			 break;
 		 case 2: app.image(manectricFrente,posX,posY);
 			 break;
-		 case 3: app.image(manectricPerfil,posX,posY);
-		 break;
+		 
 		
 	 }
 	
@@ -54,6 +53,7 @@ public class Manectric extends Pokemons {
 		
 		app.image(manectricGif,posX,posY);
 		manectricGif.loop();
+		app.image(manectricPerfil,posX,posY);
 	}
 
 

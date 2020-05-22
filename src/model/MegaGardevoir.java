@@ -35,8 +35,6 @@ public class MegaGardevoir extends Pokemons {
 			 break;
 		 case 2: app.image(megaGardevoirFrente,posX,posY);
 			 break;
-		 case 3: app.image(megaGardevoirPerfil,posX,posY);
-		 break;
 		
 	 }
 
@@ -54,6 +52,7 @@ public class MegaGardevoir extends Pokemons {
 		
 		app.image(megagardevoirGif,posX,posY);
 		megagardevoirGif.loop();
+		app.image(megaGardevoirPerfil,posX,posY);
 	}
 
 	

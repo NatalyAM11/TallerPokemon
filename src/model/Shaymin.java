@@ -34,8 +34,6 @@ public class Shaymin extends Pokemons{
 			 break;
 		 case 2: app.image(shayminFrente,posX,posY);
 			 break;
-		 case 3: app.image(shayminPerfil,posX,posY);
-		 break;
 		
 	 }
 		
@@ -61,7 +59,7 @@ public class Shaymin extends Pokemons{
 		
 		app.image(shayminGif,posX,posY);
 		shayminGif.loop();
-		
+		app.image(shayminPerfil,posX,posY);
 	}
 
 	

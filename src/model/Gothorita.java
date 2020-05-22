@@ -35,8 +35,7 @@ public class Gothorita extends Pokemons {
 			 break;
 		 case 2: app.image(gothoritaFrente,posX,posY);
 			 break;
-		 case 3: app.image(gothoritaPerfil,posX,posY);
-		 break;
+		
 		
 	 }
 
@@ -57,7 +56,7 @@ public class Gothorita extends Pokemons {
 		
 		app.image(gothoritaGif,posX,posY);
 		gothoritaGif.loop();
-		
+		app.image(gothoritaPerfil,posX,posY);
 	}
 
 

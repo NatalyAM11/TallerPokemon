@@ -34,8 +34,6 @@ public class Pikachu extends Pokemons {
 			 break;
 		 case 2: app.image(pikachuFrente,posX,posY);
 			 break;
-		 case 3: app.image(pikachuPerfil,posX,posY);
-		 break;
 		
 	 }
 	
@@ -53,6 +51,7 @@ public class Pikachu extends Pokemons {
 		
 		app.image(pikachuGif,posX,posY);
 		pikachuGif.loop();
+		app.image(pikachuPerfil,posX,posY);
 		
 	}
 

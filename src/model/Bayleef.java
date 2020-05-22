@@ -35,8 +35,6 @@ public class Bayleef extends Pokemons {
 			 break;
 		 case 2: app.image(bayleefEspalda,posX,posY);
 			 break;
-		 case 3: app.image(bayleefPerfil,posX,posY);
-		 break;
 		
 	 }
 	}
@@ -51,6 +49,7 @@ public class Bayleef extends Pokemons {
 	public void pintarGif() {
 		app.image(bayleefGif,0,0);
 		bayleefGif.loop();
+		app.image(bayleefPerfil,posX,posY);
 		
 	}
 

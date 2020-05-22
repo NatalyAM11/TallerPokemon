@@ -35,8 +35,7 @@ public class Emolga extends Pokemons{
 			 break;
 		 case 2: app.image(emolgaEspalda,posX,posY);
 			 break;
-		 case 3: app.image(emolgaPerfil,posX,posY);
-		 break;
+		 
 		
 	 }
 		
@@ -62,7 +61,7 @@ public class Emolga extends Pokemons{
 		// TODO Auto-generated method stub
 		app.image(emolgaGif,posX,posY);
 		emolgaGif.loop();
-
+		app.image(emolgaPerfil,posX,posY);
 		
 		
 		

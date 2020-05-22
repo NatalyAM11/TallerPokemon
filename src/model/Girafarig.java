@@ -33,8 +33,7 @@ public class Girafarig extends Pokemons{
 			 break;
 		 case 2: app.image(girafarigEspalda,posX,posY);
 			 break;
-		 case 3: app.image(girafarigPerfil,posX,posY);
-		 break;
+		 
 		
 	 }
 	
@@ -53,6 +52,7 @@ public class Girafarig extends Pokemons{
 		
 		app.image(girafarigGif,posX,posY);
 		girafarigGif.loop();
+		app.image(girafarigPerfil,posX,posY);
 	}
 
 

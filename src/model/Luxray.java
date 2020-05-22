@@ -33,8 +33,6 @@ public class Luxray extends Pokemons {
 			 break;
 		 case 2: app.image(luxrayFrente,posX,posY);
 			 break;
-		 case 3: app.image(luxrayPerfil,posX,posY);
-		 break;
 		
 	 }
 	
@@ -52,7 +50,7 @@ public class Luxray extends Pokemons {
 		
 		app.image(luxrayGif,posX,posY);
 		luxrayGif.loop();
-		
+		app.image(luxrayPerfil,posX,posY);
 	}
 
 
