@@ -7,7 +7,7 @@ import processing.core.PImage;
 public class Bayleef extends Pokemons {
 	
 	
-	PImage bayleefAtaque,bayleefDebil, bayleefEspalda, bayleefPerfil;
+	PImage bayleefBarra,bayleefAtaque,bayleefDebil, bayleefEspalda, bayleefPerfil;
 	Gif bayleefGif;
 	
 	public Bayleef(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
@@ -20,6 +20,7 @@ public class Bayleef extends Pokemons {
 		bayleefEspalda=app.loadImage("img/bayleef espaldas.png");
 		bayleefPerfil=app.loadImage("img/bayleefPerfil.png");
 		bayleefGif= new Gif(app,"gif/Bayleef.gif");
+		bayleefBarra=app.loadImage("img/bayleefBarra.png");
 
 		
 	} 
@@ -57,6 +58,13 @@ public class Bayleef extends Pokemons {
 	public void pintarPMapa() {
 		
 		
+	}
+
+
+	@Override
+	public void ordenar() {
+		// TODO Auto-generated method stub
+		app.image(bayleefBarra,posX,posY);
 	}
 
 }

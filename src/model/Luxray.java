@@ -6,7 +6,7 @@ import processing.core.PImage;
 
 public class Luxray extends Pokemons {
 	
-	PImage luxrayAtaque,luxrayDebil, luxrayFrente, luxrayPerfil, luxrayMapa;
+	PImage luxrayBarra,luxrayAtaque,luxrayDebil, luxrayFrente, luxrayPerfil, luxrayMapa;
 	Gif luxrayGif;
 
 	public Luxray(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
@@ -19,6 +19,7 @@ public class Luxray extends Pokemons {
 		luxrayPerfil=app.loadImage("img/luxrayPerfil.png");
 		luxrayMapa=app.loadImage("img/luxrayMapa.png");
 		luxrayGif= new Gif(app,"gif/Luxray.gif");
+		luxrayBarra=app.loadImage("img/luxrayBarra.png");
 
 	}
 
@@ -58,6 +59,13 @@ public class Luxray extends Pokemons {
 	public void pintarPMapa() {
 		app.image(luxrayMapa,posX,posY);
 		
+	}
+
+
+	@Override
+	public void ordenar() {
+		// TODO Auto-generated method stub
+		app.image(luxrayBarra,posX,posY);
 	}
 
 }

@@ -6,7 +6,7 @@ import processing.core.PImage;
 
 public class Emolga extends Pokemons{
 
-	PImage emolgaAtaque,emolgaDebil, emolgaEspalda, emolgaPerfil; 
+	PImage emolgaBarra,emolgaAtaque,emolgaDebil, emolgaEspalda, emolgaPerfil; 
 	Gif emolgaGif;
 
 	public Emolga(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
@@ -19,6 +19,7 @@ public class Emolga extends Pokemons{
 		emolgaEspalda=app.loadImage("img/emolga espaldas.png");
 		emolgaPerfil=app.loadImage("img/emolgaPerfil.png");
 		emolgaGif = new Gif(app,"gif/Emolga.gif");
+		emolgaBarra=app.loadImage("img/emolgaBarra.png");
 		
 		
 		
@@ -65,6 +66,13 @@ public class Emolga extends Pokemons{
 		
 		
 		
+	}
+
+
+	@Override
+	public void ordenar() {
+		// TODO Auto-generated method stub
+		app.image(emolgaBarra,posX,posY);
 	}
 
 }
