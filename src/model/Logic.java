@@ -47,7 +47,7 @@ public class Logic {
 	int pantalla,mapaX,mapaY;
 	
 	//imagenes fondo y botones
-	PImage arbol,bayleefPerfil,pikachuPerfil,girafarigPerfil,gothoritaPerfil,shayminPerfil,emolgaPerfil,megaGardevoirPerfil,bulbasaurPerfil,manectricPerfil,luxrayPerfil,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa;
+	PImage arbol,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa;
 	PImage selec1,selec2,selec3;
 	
 	
@@ -176,9 +176,8 @@ public class Logic {
 					
                    for(int i = 0; i<listPokemons.size(); i++) {
 						
-						//listPokemons.get(i).pintarGif(0);
 						listPokemons.get(i).pintarPMapa();
-						listPokemons.get(i).pintarGif();
+						//listPokemons.get(i).pintarGif();
 
                 	   
 						
@@ -190,8 +189,7 @@ public class Logic {
 					app.image(fondoRosado,0,0);
 					app.image(pokedexVolver,0,0);
 					app.image(ordenarPor,0,64);
-					app.image(ordenNombre,230,64);
-					app.image(ordenTipo,450,64);
+					
 					
 
 					
@@ -201,7 +199,6 @@ public class Logic {
 					app.image(fondoRosado,0,0);
 					app.image(usuariosVolver,0,0);
 					app.image(ordenarPor,0,64);
-					app.image(ordenNombre,230,64);
 					app.image(ordenFecha,450,64);
 					break;
 					
@@ -472,23 +469,11 @@ public void cargarPokemones() {
 		pokedexVolver=app.loadImage("img/pokedexVolver.png");
 		inventarioVolver=app.loadImage("img/inventarioVolver.png");
 		usuariosVolver=app.loadImage("img/usuariosVolver.png");
-		ordenarPor=app.loadImage("img/ordenarPor.png");
-		ordenNombre=app.loadImage("img/ordenNombre.png");
+		ordenarPor=app.loadImage("img/ordenarPor.png");	
 		ordenFecha=app.loadImage("img/ordenFecha.png");
-		ordenTipo=app.loadImage("img/ordenTipo.png");
 		fondoRosado=app.loadImage("img/Rosado.png");
 		inventarioIcono=app.loadImage("img/inventario.png");
-		bayleefPerfil=app.loadImage("img/bayleefPerfil.png");
-		emolgaPerfil=app.loadImage("img/emolgaPerfil.png");
-		pikachuPerfil=app.loadImage("img/pikachuPerfil.png");
-		bulbasaurPerfil=app.loadImage("img/bulbasaurPerfil.png");
-		girafarigPerfil=app.loadImage("img/girafarigPerfil.png");
-		gothoritaPerfil=app.loadImage("img/gothoritaPerfil.png");
-		manectricPerfil=app.loadImage("img/manectricPerfil.png");
-		megaGardevoirPerfil=app.loadImage("img/megaGardevoirPerfil.png");
-		shayminPerfil=app.loadImage("img/shayminPerfil.png");
-		luxrayPerfil=app.loadImage("img/luxrayPerfil.png");
-		
+	
 		
 	}
 
