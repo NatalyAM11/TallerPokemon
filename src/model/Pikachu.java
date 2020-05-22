@@ -15,7 +15,7 @@ public class Pikachu extends Pokemons {
 		//Cargo las imagenes
 		pikachuAtaque=app.loadImage("img/pikachu_ataque.png");
 		pikachuDebil=app.loadImage("img/pikachu_debil.png");
-		pikachuFrente=app.loadImage("img/pikachu_frente.png");
+		pikachuFrente=app.loadImage("img/pikach_frente.png");
 		pikachuPerfil=app.loadImage("img/pikachuPerfil.png");
 		pikachuMapa=app.loadImage("img/pikachuMapa.png");
 		pikachuGif= new Gif(app,"gif/Pikachu.gif");

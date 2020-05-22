@@ -489,7 +489,7 @@ public void cargarPokemones() {
 		shayminPerfil=app.loadImage("img/shayminPerfil.png");
 		luxrayPerfil=app.loadImage("img/luxrayPerfil.png");
 		bayleefBarra=app.loadImage("img/bayleefBarra.png");
-		bulbasaurBarra=app.loadImage("img/bulbasaur.png");
+		bulbasaurBarra=app.loadImage("img/bulbasaurBarra.png");
 		emolgaBarra=app.loadImage("img/emolgaBarra.png");
 		girafarigBarra=app.loadImage("img/girafarigBarra.png");
 		gothoritaBarra=app.loadImage("img/gothoritaBarra.png");
