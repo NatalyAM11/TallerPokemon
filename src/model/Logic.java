@@ -14,11 +14,11 @@ public class Logic {
 	String pokemones2[];
 	
 	private int map [][]=  
-	       {{0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2},
-		    {0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 2},
-		    {0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 2},
-		    {0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2},
-		    {0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2},
+	       {{0, 0, 0, 0, 0, 4, 0, 0, 0, 2, 2},
+		    {0,	0, 0, 0, 0, 1, 2, 0, 0, 0, 2},
+		    {0, 0, 0, 2, 2, 0, 6, 0, 0, 0, 2},
+		    {0, 2, 0, 5, 0, 0, 0, 0, 0, 0, 2},
+		    {3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2},
 		    
 	       };
 	
@@ -41,6 +41,8 @@ public class Logic {
 	String debilidad;
 	int vida;
 	
+	int pokemon1;
+	
 	//pantallas y mapas
 	int pantalla,mapaX,mapaY;
 	
@@ -58,6 +60,7 @@ public class Logic {
 		listPokemons = new LinkedList <Pokemons>();
 		
 		cargarImagenes();
+		cargarPokemones();
 		mapaX = -200;
 		mapaY = -100;
 		
@@ -73,9 +76,12 @@ public class Logic {
 	        }
 	    }
 	  
-
+		//inicializamos el personaje
 	  bb = new Personaje(x,y);
 	  JM = 1;
+	  
+	  //con esto los grupos de pokemones seran aleatorios
+	  pokemon1=(int) app.random(0,3);
 		
 		for(int i = 0; i < pokemones.length ; i++) {
 			pokemones2 = pokemones[i].split(",");
@@ -91,19 +97,6 @@ public class Logic {
 			debilidad=pokemones2[4];
 			//vida
 			vida=Integer.parseInt(pokemones2[5]);
-
-			if(pokemon.equals("Bayleef")) {
-				
-			listPokemons.add(new Bayleef(40,40,pokemon,poderValor,vida,tipo,app));
-				
-			} else if(pokemon.equals("Shaymin")) {
-				
-			listPokemons.add(new Shaymin(40,60,pokemon,poderValor,vida,tipo,app));
-			} else if(pokemon.equals("Bulbasaur")) {
-				
-			listPokemons.add(new Bulbasaur(40,90,pokemon,poderValor,vida,tipo,app));	
-			}
-			
 			
 			System.out.print(tipo);
 		}
@@ -344,6 +337,116 @@ public class Logic {
 	    }
 
 
+	}
+	
+	
+//Cargamos los pokemones que van en el mapa
+	
+public void cargarPokemones() {
+	
+		for (int matY = 0; matY < 5; matY++) {
+	        for (int matX = 0; matX < 11; matX++) {
+	        	
+		         //primer grupo 
+	        	if(pokemon1==0) {
+		          if (map[matY][matX] == 3) {
+		        	//primer pokemon
+		        	  posXMA= matX*70;
+		        	  posYMA = matY*70;
+		        	  listPokemons.add(new Shaymin(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+	            }
+		          
+		          //segundo pokemon
+		          if (map[matY][matX] == 4) {
+		        	  posXMA= matX*70;
+		        	  posYMA = matY*70;
+		        	  listPokemons.add(new Bulbasaur(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+	            }
+		          
+		          //tercer pokemon
+		          if (map[matY][matX] == 5) {
+		        	  posXMA= matX*70;
+		        	  posYMA = matY*70;
+		        	  listPokemons.add(new Luxray(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+	            }
+		          
+		          //cuarto pokemon
+		          if (map[matY][matX] == 6) {
+		        	  posXMA= matX*70;
+		        	  posYMA = matY*70;
+		        	  listPokemons.add(new Pikachu(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+	            }
+	        	
+	        	}
+	        	
+	        	//segundo grupo
+	        	if(pokemon1==1) {
+			          if (map[matY][matX] == 3) {
+			        	  posXMA= matX*70;
+			        	  posYMA = matY*70;
+			        	  listPokemons.add(new Gothorita(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+		            }
+			          
+			          //segundo pokemon
+			          if (map[matY][matX] == 4) {
+			        	  posXMA= matX*70;
+			        	  posYMA = matY*70;
+			        	  listPokemons.add(new Luxray(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+		            }
+			          
+			          //tercer
+			          if (map[matY][matX] == 5) {
+			        	  posXMA= matX*70;
+			        	  posYMA = matY*70;
+			        	  listPokemons.add(new Manectric(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+		            }
+			          //cuarto
+			          if (map[matY][matX] == 6) {
+			        	  posXMA= matX*70;
+			        	  posYMA = matY*70;
+			        	  listPokemons.add(new MegaGardevoir(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+		            }
+		        	
+		        	}
+	        	
+	        	//tercer grupo
+	        	if(pokemon1==2) {
+			          if (map[matY][matX] == 3) {
+			        	  posXMA= matX*70;
+			        	  posYMA = matY*70;
+			        	  listPokemons.add(new MegaGardevoir(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+		            }
+			          
+			          //segundo pokemon
+			          if (map[matY][matX] == 4) {
+			        	  posXMA= matX*70;
+			        	  posYMA = matY*70;
+			        	  listPokemons.add(new Pikachu(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+		            }
+			          
+			          //tercer
+			          if (map[matY][matX] == 5) {
+			        	  posXMA= matX*70;
+			        	  posYMA = matY*70;
+			        	  listPokemons.add(new Gothorita(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+		            }
+			          //cuarto
+			          if (map[matY][matX] == 6) {
+			        	  posXMA= matX*70;
+			        	  posYMA = matY*70;
+			        	  listPokemons.add(new Bulbasaur(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+		            }
+		        	
+		        	}
+	        	
+		          
+		          
+		          
+		          
+		          
+	        }
+		}
+		
 	}
 	
 	public void cargarImagenes() {
