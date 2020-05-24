@@ -15,7 +15,6 @@ public class Pokedex {
 		pokemons = new LinkedList<Pokemons>();
 		
 		
-		pokemons.add(new Bulbasaur(0,0,"hola",0,0,"rapido",app));
 		
 	}
 	

@@ -31,6 +31,7 @@ public class Logic {
 	int posYMA,posXMA;
 	int x, y;
 	int JM,screenCambio;
+	Batalla batalla;
 	
 	
 	//Varaible que me ayuda a controlar la invisibilidad de los pokemones 
@@ -44,6 +45,7 @@ public class Logic {
 	String poder;
 	String debilidad;
 	int vida;
+	int seleccion;
 	
 	Pokedex poke;
 	
@@ -66,6 +68,7 @@ public class Logic {
 		
 		listPokemons = new LinkedList <Pokemons>();
 		poke = new Pokedex(app);
+		batalla = new Batalla (app);
 		pokemon1= (int) app.random(0,3);
 		cargarImagenes();
 		cargarPokemones();
@@ -214,20 +217,22 @@ public class Logic {
 				        
 					
 					break;
+					
+					//Perfiles pokemons con gifs 
 				case 3:
 					app.image(fondoRosado,0,0);
 					app.image(pokedexVolver,0,0);
 					app.image(ordenarPor,0,64);
 					
 					poke.comenzar();
-					poke.pintar(cambio);
-
 					
 					
 
 					
 					
 					break;
+					
+					
 				case 4:
 					app.image(fondoRosado,0,0);
 					app.image(usuariosVolver,0,0);
@@ -235,10 +240,14 @@ public class Logic {
 					app.image(ordenFecha,450,64);
 					break;
 					
-				// Poquedex 	
+				// Inventario 
+					
 				case 5:
 					app.image(fondoRosado,0,0);
 					app.image(inventarioVolver,0,0);
+					
+                    batalla.pintarSeleccionado();
+
 					break;
 		
 	}
@@ -264,17 +273,23 @@ public class Logic {
 			//Escoge la jirafa
 			if( (app.mouseX>120 && app.mouseX<250)&& (app.mouseY>298 && app.mouseY<328)){
 				pantalla = 2;
+				seleccion = 0;
 				
 				
 			}
 			//Escoge la emolga
 			if( (app.mouseX>286 && app.mouseX<417)&& (app.mouseY>298 && app.mouseY<328)){
 				pantalla = 2;
+				seleccion = 1;
 			}
 			//Escoge la bayleef
 			if( (app.mouseX>453 && app.mouseX<583)&& (app.mouseY>298 && app.mouseY<328)){
 				pantalla = 2;
+				seleccion = 2;
 			}
+			
+			batalla.Selecciono(seleccion);
+
 			break;
 		case 2:
 			if( (app.mouseX>20 && app.mouseX<20+70)&& (app.mouseY>345 && app.mouseY<345+54)){
@@ -489,27 +504,23 @@ public void perfiles() {
 	if(pantalla == 3) {
 		
 		if(app.key== 'n') {
-			app.rect(0, 0, 20, 20);
+		
 			cambio =1;
 		}
 		
 		if(app.key== 'b') {
-			app.rect(0, 0, 20, 20);
+		
 			cambio =2;
 		}
 		
 		if(app.key== 'c') {
-			app.rect(0, 0, 20, 20);
 			cambio =3;
 		}
 		
+		poke.pintar(cambio);
+
 		
 	}
-	
-	
-	
-	
-
 	
 	
 }

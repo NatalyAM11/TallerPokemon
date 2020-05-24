@@ -49,6 +49,8 @@ public class Pikachu extends Pokemons {
 	
 	public void pintarGif() {
 		
+		app.fill(255);
+		app.rect(0,0,700,400);
 		app.image(pikachuGif,posX,posY);
 		pikachuGif.loop();
 		app.image(pikachuPerfil,posX,posY);
