@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Collections;
 import java.util.LinkedList;
 
 import gifAnimation.Gif;
@@ -60,6 +61,9 @@ public class Logic {
 	PImage selec1,selec2,selec3;
 	
 	
+	OrdenarPokemones ordenarPokemones;
+	
+	
 	public Logic(PApplet app) {
 		
 		this.app=app;
@@ -69,6 +73,7 @@ public class Logic {
 		listPokemons = new LinkedList <Pokemons>();
 		poke = new Pokedex(app);
 		batalla = new Batalla (app);
+		ordenarPokemones= new OrdenarPokemones(app);
 		pokemon1= (int) app.random(0,3);
 		cargarImagenes();
 		cargarPokemones();
@@ -303,6 +308,9 @@ public class Logic {
 			if( (app.mouseX>0) && (app.mouseY>0 && app.mouseY<64)){
 				pantalla = 2;
 			}
+			
+			
+			
 			break;
 		case 4:
 			
