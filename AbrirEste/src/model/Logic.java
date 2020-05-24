@@ -32,6 +32,9 @@ public class Logic {
 	int x, y;
 	int JM,screenCambio;
 	
+	
+	//Varaible que me ayuda a controlar la invisibilidad de los pokemones 
+	boolean invisibles;
 
 	
 	//Todas las variables de los pokemones
@@ -68,7 +71,7 @@ public class Logic {
 		cargarPokemones();
 		
 		
-		
+		invisibles=true;
 		
 		mapaX = -200;
 		mapaY = -100;
@@ -190,10 +193,22 @@ public class Logic {
 				        }
 				        }
 					
+					
+					
+					
+					//invisibilidad
+					if (map[posYM][posXM]==3 ||map[posYM][posXM]==4 ||map[posYM][posXM]==5 ||map[posYM][posXM]==6) {
+						invisibles=false;
+					}
+					
+					
+					
+					
                    for(int i = 0; i<listPokemons.size(); i++) {
 						
+                	   if(invisibles==false) {
 						listPokemons.get(i).pintarPMapa();
-                	   
+                	   }
 						
 					}
 				        
