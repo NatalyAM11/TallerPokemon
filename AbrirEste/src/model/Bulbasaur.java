@@ -30,7 +30,7 @@ public class Bulbasaur extends Pokemons{
 		
 		 switch(imgBulbasaur) {
 		 
-		 case 0: app.image(bulbasaurAtaque,posX,posY);
+		 case 0: //app.image(bulbasaurAtaque,posX,posY);
 			 break;
 		 case 1:app.image(bulbasaurDebil,posX,posY);
 			 break;
@@ -53,10 +53,10 @@ public class Bulbasaur extends Pokemons{
 
 	
 	public void pintarGif() {
-		
+		app.image(bulbasaurPerfil,posX,posY);
+
 		app.image(bulbasaurGif,posX,posY);
 		bulbasaurGif.loop();
-		app.image(bulbasaurPerfil,posX,posY);
 		
 		
 	}

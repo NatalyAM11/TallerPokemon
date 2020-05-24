@@ -15,6 +15,11 @@ public class ScreenPokedex extends Screen{
 		
 	}
 	
+	public void iniciar() {
+		
+		control.iniciar();
+		
+	}
 	
 	public void pintar() {
 		

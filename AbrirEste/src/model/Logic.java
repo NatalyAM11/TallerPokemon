@@ -42,7 +42,10 @@ public class Logic {
 	String debilidad;
 	int vida;
 	
+	Pokedex poke;
+	
 	int pokemon1;
+	int cambio = 0;
 	
 	//pantallas y mapas
 	int pantalla,mapaX,mapaY;
@@ -59,11 +62,12 @@ public class Logic {
 		pokemones = app.loadStrings("lib/info_pokemones.txt");
 		
 		listPokemons = new LinkedList <Pokemons>();
+		poke = new Pokedex(app);
 		pokemon1= (int) app.random(0,3);
 		cargarImagenes();
+		cargarPokemones();
 		
 		
-			cargarPokemones();
 		
 		
 		mapaX = -200;
@@ -106,6 +110,12 @@ public class Logic {
 			
 			System.out.print(tipo);
 		}
+	}
+	
+	public void iniciar(){
+			
+			
+		
 	}
 	
 	public void pintar() {
@@ -183,8 +193,6 @@ public class Logic {
                    for(int i = 0; i<listPokemons.size(); i++) {
 						
 						listPokemons.get(i).pintarPMapa();
-						//listPokemons.get(i).pintarGif();
-
                 	   
 						
 					}
@@ -196,10 +204,9 @@ public class Logic {
 					app.image(pokedexVolver,0,0);
 					app.image(ordenarPor,0,64);
 					
-					for(int i =0; i< listPokemons.size(); i ++) {
-						
-						listPokemons.get(i).pintarGif();
-					}
+					poke.comenzar();
+					poke.pintar(cambio);
+
 					
 					
 
@@ -242,6 +249,8 @@ public class Logic {
 			//Escoge la jirafa
 			if( (app.mouseX>120 && app.mouseX<250)&& (app.mouseY>298 && app.mouseY<328)){
 				pantalla = 2;
+				
+				
 			}
 			//Escoge la emolga
 			if( (app.mouseX>286 && app.mouseX<417)&& (app.mouseY>298 && app.mouseY<328)){
@@ -460,35 +469,37 @@ public void cargarPokemones() {
 
 public void perfiles() {
 	
-	switch(pantalla) {
 	
 	
-	case 3:
-	
-	
-	for(int i =0; i< listPokemons.size(); i ++) {
+	if(pantalla == 3) {
 		
-		
-		if(app.key == 'b') {
-			
-			listPokemons.add(new Bulbasaur(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));
+		if(app.key== 'n') {
+			app.rect(0, 0, 20, 20);
+			cambio =1;
 		}
 		
+		if(app.key== 'b') {
+			app.rect(0, 0, 20, 20);
+			cambio =2;
 		}
-	
-	break;
-	
-	
+		
+		if(app.key== 'c') {
+			app.rect(0, 0, 20, 20);
+			cambio =3;
+		}
+		
+		
 	}
+	
+	
+	
+	
+
 	
 	
 }
 
 
-
-
-
-	
 	public void cargarImagenes() {
 		jI = app.loadImage("img/personaje lado2.png");
 	    jD = app.loadImage("img/personaje lado1.png");

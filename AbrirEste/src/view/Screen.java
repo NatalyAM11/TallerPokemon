@@ -20,6 +20,7 @@ public class Screen {
 		
 		scr1 = new ScreenLogica(app);
 		scr2 = new ScreenPokedex(app);
+		scr2.iniciar();
 	}
 	public void pintarPantallas() {
 		
