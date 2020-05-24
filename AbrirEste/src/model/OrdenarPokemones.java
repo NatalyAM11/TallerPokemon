@@ -46,24 +46,73 @@ public class OrdenarPokemones  {
 			//vida
 			vida=Integer.parseInt(pokemones2[5]);
 			
-		}
+		
 	
 	
 		
 		
 		//cargamos todos los pokemones
-		listaPokemones.add(new Bayleef(posX,posY,nombre,poderValor,vida,tipo,app));
-		listaPokemones.add(new Shaymin(posX,posY,nombre,poderValor,vida,tipo,app));
-		listaPokemones.add(new Bulbasaur(posX,posY,nombre,poderValor,vida,tipo,app));
-		listaPokemones.add(new Girafarig (posX,posY,nombre,poderValor,vida,tipo,app));
-		listaPokemones.add(new Gothorita (posX,posY,nombre,poderValor,vida,tipo,app));
-		listaPokemones.add(new MegaGardevoir(posX,posY,nombre,poderValor,vida,tipo,app)); 
-		listaPokemones.add(new Emolga(posX,posY,nombre,poderValor,vida,tipo,app)); 
-		listaPokemones.add(new Luxray(posX,posY,nombre,poderValor,vida,tipo,app)); 
-		listaPokemones.add(new Manectric(posX,posY,nombre,poderValor,vida,tipo,app)); 
-		listaPokemones.add(new Pikachu (posX,posY,nombre,poderValor,vida,tipo,app)); 
-	
 		
+		if(nombre.equals("Bayleef")) {
+			
+			listaPokemones.add(new Bayleef(posX,posY,nombre,poderValor,vida,tipo,app));
+
+		}  
+		
+		if(nombre.equals("Shaymin")) {
+			listaPokemones.add(new Shaymin(posX,posY,nombre,poderValor,vida,tipo,app));
+
+			
+		}  
+		
+		if(nombre.equals("Bulbasaur")) {
+			
+			listaPokemones.add(new Bulbasaur(posX,posY,nombre,poderValor,vida,tipo,app));
+
+		}  
+		
+		if(nombre.equals("Girafarig")) {
+			
+			listaPokemones.add(new Girafarig (posX,posY,nombre,poderValor,vida,tipo,app));
+
+		}  
+		
+		if(nombre.equals("Gothorita")) {
+			
+			listaPokemones.add(new Gothorita (posX,posY,nombre,poderValor,vida,tipo,app));
+
+		}  
+		
+		if(nombre.equals("MegaGardevoir")) {
+			listaPokemones.add(new MegaGardevoir(posX,posY,nombre,poderValor,vida,tipo,app)); 
+
+			
+		}  
+		
+		if(nombre.equals("Emolga")) {
+			
+			listaPokemones.add(new Emolga(posX,posY,nombre,poderValor,vida,tipo,app)); 
+
+		} if(nombre.equals("Luxray")) {
+			
+			listaPokemones.add(new Luxray(posX,posY,nombre,poderValor,vida,tipo,app)); 
+
+			
+			
+		}  if(nombre.equals("Manectric")) {
+			
+			listaPokemones.add(new Manectric(posX,posY,nombre,poderValor,vida,tipo,app)); 
+
+		} if(nombre.equals("Pikachu")) {
+			listaPokemones.add(new Pikachu (posX,posY,nombre,poderValor,vida,tipo,app)); 
+
+			
+		}
+
+		}
+	
+		System.out.println(listaPokemones);
+
 		
 	}
 	
@@ -84,10 +133,10 @@ public class OrdenarPokemones  {
 		
 		
 			
-			Collections.sort(listaPokemones,comparator);
+			Collections.sort(listaPokemones);
+			System.out.println(listaPokemones);
 
 		
-		System.out.println(listaPokemones);
 			
 	}
 

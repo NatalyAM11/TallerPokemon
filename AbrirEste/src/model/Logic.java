@@ -3,7 +3,6 @@ package model;
 import java.util.Collections;
 import java.util.LinkedList;
 
-import gifAnimation.Gif;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -323,7 +322,6 @@ public class Logic {
 			
 			//ordenamiento de los natural de los nombres
 			ordenarPokemones.comparar();
-			
 			
 			
 			break;

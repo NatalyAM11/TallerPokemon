@@ -11,7 +11,7 @@ public class Pikachu extends Pokemons {
 	
 	public Pikachu(int posX, int posY, String nombre, int poder, int vida, String tipo, PApplet app) {
 		super(posX, posY, nombre, poder, vida, tipo, app);
-		
+		this.nombre= nombre;
 		//Cargo las imagenes
 		pikachuAtaque=app.loadImage("img/pikachu_ataque.png");
 		pikachuDebil=app.loadImage("img/pikachu_debil.png");
