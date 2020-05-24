@@ -25,7 +25,7 @@ public abstract class Pokemons implements Comparable<Pokemons> {
 	public abstract void mover();
 	public abstract void pintarGif();
 	public abstract void pintarPMapa();
-	public abstract void ordenar();
+	public abstract void ordenar(int posY);
 
 	public int getPoder() {
 		return poder;

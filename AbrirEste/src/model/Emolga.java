@@ -70,7 +70,7 @@ public class Emolga extends Pokemons{
 
 
 	@Override
-	public void ordenar() {
+	public void ordenar(int posY) {
 		// TODO Auto-generated method stub
 		app.image(emolgaBarra,posX,posY);
 	}

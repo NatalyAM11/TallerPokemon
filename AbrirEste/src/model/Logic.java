@@ -168,7 +168,7 @@ public class Logic {
 					
 					
 					app.fill(0);
-					app.text("X:" + app.mouseX + "Y:" + app.mouseY, app.mouseX, app.mouseY);
+					
 					
 					
 					//Botones
@@ -225,11 +225,14 @@ public class Logic {
 					
 					//Perfiles pokemons con gifs 
 				case 3:
+					
 					app.image(fondoRosado,0,0);
 					app.image(pokedexVolver,0,0);
 					app.image(ordenarPor,0,64);
-					
+					app.text("X:" + app.mouseX + "Y:" + app.mouseY, app.mouseX, app.mouseY);
 					poke.comenzar();
+					
+					//Pintamos las barras del pefil de cada pokemon
 					ordenarPokemones.pintar();
 					
 
@@ -308,6 +311,10 @@ public class Logic {
 			if( (app.mouseX>0) && (app.mouseY>0 && app.mouseY<64)){
 				pantalla = 2;
 			}
+			
+			
+			//ordenamiento de los natural de los nombres
+			ordenarPokemones.comparar();
 			
 			
 			

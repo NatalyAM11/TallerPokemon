@@ -66,7 +66,7 @@ public class Girafarig extends Pokemons{
 
 
 	@Override
-	public void ordenar() {
+	public void ordenar(int posY) {
 		// TODO Auto-generated method stub
 		app.image(girafarigBarra,posX,posY);
 	}
