@@ -31,6 +31,7 @@ public class Logic {
 	int posYMA,posXMA;
 	int x, y;
 	int JM,screenCambio;
+	
 
 	
 	//Todas las variables de los pokemones
@@ -60,7 +61,11 @@ public class Logic {
 		listPokemons = new LinkedList <Pokemons>();
 		pokemon1= (int) app.random(0,3);
 		cargarImagenes();
-		cargarPokemones();
+		
+		
+			cargarPokemones();
+		
+		
 		mapaX = -200;
 		mapaY = -100;
 		
@@ -191,6 +196,11 @@ public class Logic {
 					app.image(pokedexVolver,0,0);
 					app.image(ordenarPor,0,64);
 					
+					for(int i =0; i< listPokemons.size(); i ++) {
+						
+						listPokemons.get(i).pintarGif();
+					}
+					
 					
 
 					
@@ -271,7 +281,7 @@ public class Logic {
 	
 	
 	public void recorrerMatriz() {
-		//Camina el muñecos
+		//Camina el muï¿½ecos
 		posYM = y / 70;
 	    posXM = x / 70;
 		
@@ -446,6 +456,38 @@ public void cargarPokemones() {
 		}
 		
 	}
+
+
+public void perfiles() {
+	
+	switch(pantalla) {
+	
+	
+	case 3:
+	
+	
+	for(int i =0; i< listPokemons.size(); i ++) {
+		
+		
+		if(app.key == 'b') {
+			
+			listPokemons.add(new Bulbasaur(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));
+		}
+		
+		}
+	
+	break;
+	
+	
+	}
+	
+	
+}
+
+
+
+
+
 	
 	public void cargarImagenes() {
 		jI = app.loadImage("img/personaje lado2.png");

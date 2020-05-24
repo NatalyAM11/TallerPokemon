@@ -27,5 +27,6 @@ public class Controller {
 	
 	public void flechas() {
 		log.recorrerMatriz();
+		log.perfiles();
 	}
 }
