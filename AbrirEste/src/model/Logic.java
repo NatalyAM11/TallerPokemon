@@ -125,7 +125,6 @@ public class Logic {
 			//vida
 			vida=Integer.parseInt(pokemones2[5]);
 			
-			System.out.print(tipo);
 		}
 	}
 	
@@ -280,7 +279,6 @@ public class Logic {
 		
 		if( (app.mouseX>253 && app.mouseX<466)&& (app.mouseY>344 && app.mouseY<389)){
 			pantalla=1;
-			System.out.println("putostodos");
 		}
 		
 		break;
@@ -384,7 +382,6 @@ public class Logic {
 		    	if(posYM<4) {
 		        if (posYM + 1 < 11 && map[posYM + 1][posXM] == 0 || map[posYM + 1][posXM] == 3|| map[posYM + 1][posXM] == 4 || map[posYM + 1][posXM] == 5 || map[posYM + 1][posXM] == 7 || map[posYM + 1][posXM] == 6) {
 		           
-		        	System.out.print("entre1");
 		        	y += 70;
 		            JM = 4;
 		        }

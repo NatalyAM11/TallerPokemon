@@ -42,6 +42,14 @@ public abstract class Pokemons implements Comparable<Pokemons> {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 	
 	
 	
