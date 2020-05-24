@@ -45,7 +45,7 @@ public class OrdenarPokemones implements Comparator <Pokemons> {
 	
 		
 		
-		
+		//cargamos todos los pokemones
 		listaPokemones.add(new Bayleef(posX,posY,nombre,poderValor,vida,tipo,app));
 		listaPokemones.add(new Bulbasaur(posX,posY,nombre,poderValor,vida,tipo,app)); 
 		listaPokemones.add(new Emolga(posX,posY,nombre,poderValor,vida,tipo,app)); 
