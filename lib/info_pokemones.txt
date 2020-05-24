@@ -1,0 +1,10 @@
+Bayleef,Planta,10,Espesura,Electrico,100
+Shaymin,Planta,15,Cura natural,Electrico,100
+Bulbasaur,Planta,20,Semilla,Psiquico,100
+Girafarig,Psiquico,15,FocoInterno,Bicho,100
+Gothorita,Psiquico,25,Caheo,Bicho,100
+MegaGardevoir,Psiquico,30,PielFerica,Fantasma,100
+Emolga,Electrico,12,ElcEstatica,Hielo,100
+Luxray,Electrico,22,Intimidacion,Tierra,100
+Manectric,Electrico,32,Pararrayos,Tierra,100
+Pikachu,Electrico,11,ElcEstatica,Tierra,100
