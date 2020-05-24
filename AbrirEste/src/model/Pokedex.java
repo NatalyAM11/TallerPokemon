@@ -10,6 +10,8 @@ public class Pokedex {
 	LinkedList <Pokemons> pokemons;	
 	public Pokedex(PApplet app) {
 		
+		this.app=app;
+		
 		pokemons = new LinkedList<Pokemons>();
 		
 		
