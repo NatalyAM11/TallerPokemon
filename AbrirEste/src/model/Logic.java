@@ -280,7 +280,6 @@ public class Logic {
 
 					batalla.comienza();
                     batalla.pintarSeleccionado();
-                	batalla.Capturaste(capturado);
 
 
 					
@@ -617,19 +616,16 @@ public void PokemonCapturado() {
 		
 		capturado = 1;
 		
-		System.out.print("entro");
 		
 		
 	} else if(pokemon1==0 && map[posYM][posXM] == 4) {
 		
 		capturado = 2;
-		System.out.print("entro");
 
 		
 	} else if(pokemon1==0 && map[posYM][posXM] == 5) {
 		
 		capturado = 3;
-		System.out.print("entro");
 
 		
 	} else if(pokemon1==0 && map[posYM][posXM] == 6) {
@@ -642,7 +638,6 @@ public void PokemonCapturado() {
   if(pokemon1==1 && map[posYM][posXM] == 3) {
 		
 		capturado = 5;
-		System.out.print("entro");
 
 		
 	} else if(pokemon1==1 && map[posYM][posXM] == 4) {
@@ -685,7 +680,8 @@ public void PokemonCapturado() {
 		
 	}
 	
-	
+	batalla.Capturaste(capturado);
+
      
 	
 }
