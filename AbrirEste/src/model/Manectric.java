@@ -52,7 +52,9 @@ public class Manectric extends Pokemons {
 	
 	public void pintarGif() {
 		
-		app.image(manectricGif,posX,posY);
+		app.fill(255);
+		app.rect(0,0,700,400);
+		app.image(manectricGif,0,-60);
 		manectricGif.loop();
 		app.image(manectricPerfil,posX,posY);
 	}
@@ -66,16 +68,16 @@ public class Manectric extends Pokemons {
 	}
 
 
-	@Override
+	//Pintamos las barras de los perfiles
 	public void ordenar(int posY) {
-		// TODO Auto-generated method stub
+		
 		app.image(manectricBarra,posX,posY);
 	}
 
 
-	@Override
+	//Ordenamiento natural
 	public int compareTo(Pokemons o) {
-		// TODO Auto-generated method stub
+	
 		return this.nombre.compareTo(o.getNombre());  
 	}
 

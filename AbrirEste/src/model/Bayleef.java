@@ -48,7 +48,10 @@ public class Bayleef extends Pokemons {
 
 
 	public void pintarGif() {
-		app.image(bayleefGif,0,0);
+		
+		app.fill(255);
+		app.rect(0,0,700,400);
+		app.image(bayleefGif,-20,-70);
 		bayleefGif.loop();
 		app.image(bayleefPerfil,posX,posY);
 		
@@ -61,16 +64,16 @@ public class Bayleef extends Pokemons {
 	}
 
 
-	@Override
+	//Pintamos las barras de los perfiles
 	public void ordenar(int posY) {
-		// TODO Auto-generated method stub
+	
 		app.image(bayleefBarra,posX,posY);
 	}
 
 
-	@Override
+	//Ordenamiento natural
 	public int compareTo(Pokemons o) {
-		// TODO Auto-generated method stub
+
 		return this.nombre.compareTo(o.getNombre());  
 	}
 

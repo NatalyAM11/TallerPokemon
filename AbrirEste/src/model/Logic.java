@@ -14,6 +14,8 @@ public class Logic {
     String pokemones[];
 	String pokemones2[];
 	
+	
+	//Matriz del mapa
 	private int map [][]=  
 	       {{0, 0, 0, 0, 0, 4, 0, 0, 0, 2, 2},
 		    {0,	0, 0, 0, 0, 1, 2, 0, 0, 0, 2},
@@ -23,6 +25,7 @@ public class Logic {
 		    
 	       };
 	
+	//Personaje
 	Personaje bb;
 	
 	int caras =0;
@@ -48,6 +51,8 @@ public class Logic {
 	int vida;
 	int seleccion;
 	
+	
+	//Inicialziamos la pokedex
 	Pokedex poke;
 	
 	int pokemon1;
@@ -60,7 +65,7 @@ public class Logic {
 	PImage arbol,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa;
 	PImage selec1,selec2,selec3;
 	
-	
+	//Inicializamos la clase que carga las barras de los perfiles
 	OrdenarPokemones ordenarPokemones;
 	
 	
@@ -85,7 +90,7 @@ public class Logic {
 		mapaY = -100;
 		
 		
-
+		//Recorremos la matriz para que el personaje pueda moverse por el mapa, lo igualamos con las variables globales
 		for (int matY = 0; matY < 5; matY++) {
 	        for (int matX = 0; matX < 11; matX++) {
 	            if (map[matY][matX] == 1) {
@@ -104,6 +109,7 @@ public class Logic {
 	  //con esto los grupos de pokemones seran aleatorios
 	  pokemon1=(int) app.random(0,3);
 		
+	  //Partimos el txt
 		for(int i = 0; i < pokemones.length ; i++) {
 			pokemones2 = pokemones[i].split(",");
 			//nombre
@@ -230,10 +236,14 @@ public class Logic {
 					app.image(pokedexVolver,0,0);
 					app.image(ordenarPor,0,64);
 					app.text("X:" + app.mouseX + "Y:" + app.mouseY, app.mouseX, app.mouseY);
-					poke.comenzar();
 					
 					//Pintamos las barras del pefil de cada pokemon
 					ordenarPokemones.pintar();
+					
+					
+					poke.comenzar();
+					
+					
 					
 
 					
@@ -512,24 +522,43 @@ public void cargarPokemones() {
 	}
 
 
+
+//Con este metodo controlas la visualizacion del perfil de cada pokemon
 public void perfiles() {
 	
 	
 	
 	if(pantalla == 3) {
 		
-		if(app.key== 'n') {
-		
+		if(app.key== 'e' || app.key== 'E') {
 			cambio =1;
 		}
-		
-		if(app.key== 'b') {
-		
+		if(app.key== 's' || app.key== 'S') {
 			cambio =2;
 		}
-		
-		if(app.key== 'c') {
+		if(app.key== 'b' || app.key== 'B') {
 			cambio =3;
+		}
+		if(app.key== 'i' || app.key== 'I') {
+			cambio =4;
+		}
+		if(app.key== 'g' || app.key== 'G') {
+			cambio =5;
+		}
+		if(app.key== 'm' || app.key== 'M') {
+			cambio =6;
+		}
+		if(app.key== 'c' || app.key== 'C') {
+			cambio =7;
+		}
+		if(app.key== 'l' || app.key== 'L') {
+			cambio =8;
+		}
+		if(app.key== 'a' || app.key== 'A') {
+			cambio =9;
+		}
+		if(app.key== 'p' || app.key== 'P') {
+			cambio =10;
 		}
 		
 		poke.pintar(cambio);

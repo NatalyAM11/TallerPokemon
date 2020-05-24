@@ -51,7 +51,7 @@ public class Pikachu extends Pokemons {
 		
 		app.fill(255);
 		app.rect(0,0,700,400);
-		app.image(pikachuGif,posX,posY);
+		app.image(pikachuGif,posX,0);
 		pikachuGif.loop();
 		app.image(pikachuPerfil,posX,posY);
 		
@@ -65,16 +65,15 @@ public class Pikachu extends Pokemons {
 	}
 
 
-	@Override
+	//Pintamos las barras de los perfiles
 	public void ordenar(int posY) {
 		// TODO Auto-generated method stub
 		app.image(pikachuBarra,posX,posY);
 	}
 
 
-	@Override
+	//Ordenamiento natural
 	public int compareTo(Pokemons o) {
-		// TODO Auto-generated method stub
 		return this.nombre.compareTo(o.getNombre());  
 	}
 

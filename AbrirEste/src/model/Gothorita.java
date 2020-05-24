@@ -54,7 +54,9 @@ public class Gothorita extends Pokemons {
 	
 	public void pintarGif() {
 		
-		app.image(gothoritaGif,posX,posY);
+		app.fill(255);
+		app.rect(0,0,700,400);
+		app.image(gothoritaGif,-30,posY);
 		gothoritaGif.loop();
 		app.image(gothoritaPerfil,posX,posY);
 	}
@@ -68,16 +70,16 @@ public class Gothorita extends Pokemons {
 	}
 
 
-	@Override
+	//Pintamos las barras de los perfiles
 	public void ordenar(int posY) {
-		// TODO Auto-generated method stub
+		
 		app.image(gothoritaBarra,posX,posY);
 	}
 
 
-	@Override
+	//Ordenamiento natural
 	public int compareTo(Pokemons o) {
-		// TODO Auto-generated method stub
+	
 		return this.nombre.compareTo(o.getNombre());  
 	}
 

@@ -53,9 +53,11 @@ public class Bulbasaur extends Pokemons{
 
 	
 	public void pintarGif() {
-		app.image(bulbasaurPerfil,posX,posY);
-
+		
+		app.fill(255);
+		app.rect(0,0,700,400);
 		app.image(bulbasaurGif,posX,posY);
+		app.image(bulbasaurPerfil,posX,posY);
 		bulbasaurGif.loop();
 		
 		
@@ -68,16 +70,16 @@ public class Bulbasaur extends Pokemons{
 	}
 
 
-	@Override
+	//Pintamos las barras de los perfiles
 	public void ordenar(int posY) {
-		// TODO Auto-generated method stub
+	
 		app.image(bulbasaurBarra,posX,posY);
 	}
 
 
-	@Override
+	//Ordenamiento natural
 	public int compareTo(Pokemons o) {
-		// TODO Auto-generated method stub
+		
 		return this.nombre.compareTo(o.getNombre());  
 	}
 

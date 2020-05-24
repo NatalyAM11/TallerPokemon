@@ -50,7 +50,8 @@ public class Girafarig extends Pokemons{
 
 	public void pintarGif() {
 		
-		
+		app.fill(255);
+		app.rect(0,0,700,400);
 		app.image(girafarigGif,posX,posY);
 		girafarigGif.loop();
 		app.image(girafarigPerfil,posX,posY);
@@ -65,16 +66,16 @@ public class Girafarig extends Pokemons{
 	}
 
 
-	@Override
+	//Pintamos las barras de los perfiles
 	public void ordenar(int posY) {
-		// TODO Auto-generated method stub
+		
 		app.image(girafarigBarra,posX,posY);
 	}
 
 
-	@Override
+	//Ordenamiento natural
 	public int compareTo(Pokemons o) {
-		// TODO Auto-generated method stub
+		
 		return this.nombre.compareTo(o.getNombre());  
 	}
 

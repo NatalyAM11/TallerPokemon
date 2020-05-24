@@ -57,10 +57,11 @@ public class Emolga extends Pokemons{
 	}
 
 
-	@Override
 	public void pintarGif() {
-		// TODO Auto-generated method stub
-		app.image(emolgaGif,posX,posY);
+		
+		app.fill(255);
+		app.rect(0,0,700,400);
+		app.image(emolgaGif,40,-140);
 		emolgaGif.loop();
 		app.image(emolgaPerfil,posX,posY);
 		
@@ -69,16 +70,16 @@ public class Emolga extends Pokemons{
 	}
 
 
-	@Override
+	//Pintamos las barras de los perfiles
 	public void ordenar(int posY) {
-		// TODO Auto-generated method stub
+		
 		app.image(emolgaBarra,posX,posY);
 	}
 
 
-	@Override
+	//Ordenamiento natural
 	public int compareTo(Pokemons o) {
-		// TODO Auto-generated method stub
+		
 		return this.nombre.compareTo(o.getNombre());  
 	}
 

@@ -21,6 +21,7 @@ public class Shaymin extends Pokemons{
 		shayminMapa=app.loadImage("img/shayminMapa.png");
 		shayminGif = new Gif(app,"gif/Shaymin.gif");
 		shayminBarra=app.loadImage("img/shayminBarra.png");
+		
 	}
 
 	// Se llama este pintar para la batalla
@@ -54,11 +55,12 @@ public class Shaymin extends Pokemons{
 		
 	}
 
-	@Override
+	
 	public void pintarGif() {
-		// TODO Auto-generated method stub
 		
-		app.image(shayminGif,posX,posY);
+		app.fill(255);
+		app.rect(0,0,700,400);
+		app.image(shayminGif,posX,20);
 		shayminGif.loop();
 		app.image(shayminPerfil,posX,posY);
 	}
@@ -70,15 +72,15 @@ public class Shaymin extends Pokemons{
 		
 	}
 
-	@Override
+	//Pintamos las barras de los perfiles
 	public void ordenar(int posY) {
-		// TODO Auto-generated method stub
+	
 		app.image(shayminBarra,posX,posY);
 	}
 
-	@Override
+	//Ordenamiento natural
 	public int compareTo(Pokemons o) {
-		// TODO Auto-generated method stub
+		
 		return this.nombre.compareTo(o.getNombre());  
 	}
 

@@ -7,6 +7,7 @@ import processing.core.PApplet;
 
 public class OrdenarPokemones  {
 	
+	// Creamos esta clase para pintar las barras de los perfiles de los pokemones en la pokedex
 	
 	LinkedList <Pokemons> listaPokemones;
 	int posX,posY,poderValor,vida;
@@ -21,6 +22,8 @@ public class OrdenarPokemones  {
 		this.app=app;
 		
 		this.posY=100;
+		
+		//Se parte el txt
 		pokemones = app.loadStrings("lib/info_pokemones.txt");
 		
 		listaPokemones = new LinkedList <Pokemons> ();
@@ -74,13 +77,13 @@ public class OrdenarPokemones  {
 	}
 
 
-	
+	//Ordeamiento natural
 	public void comparar() {
 		
 		Collections.sort(listaPokemones);
 		System.out.println(listaPokemones);
 			
-			}
+	}
 
 
 
