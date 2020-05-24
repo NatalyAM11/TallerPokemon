@@ -132,7 +132,7 @@ public class OrdenarPokemones  {
 	public void comparar(int b) {
 		
 		switch(b) {
-		
+		//Ordenamiento natural por nombres pokemon
 		case 1:
 			
 			Collections.sort(listaPokemones);
@@ -141,7 +141,7 @@ public class OrdenarPokemones  {
 			break;
 			
 		case 2:
-			
+			//Ordenamiento parcial por tipos de pokemon 
 			Collections.sort(listaPokemones,comparator);
 
 			

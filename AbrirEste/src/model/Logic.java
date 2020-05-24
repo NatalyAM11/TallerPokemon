@@ -56,6 +56,8 @@ public class Logic {
 	
 	int pokemon1;
 	int cambio = 0;
+	int ordena;
+	boolean botones=true;
 	
 	//pantallas y mapas
 	int pantalla,mapaX,mapaY;
@@ -241,10 +243,11 @@ public class Logic {
 					
 					poke.comenzar();
 					
-					
-					
-
-					
+					//Botones ordenamiento
+					if(botones==true) {
+					app.image(selec3,81,353);
+					app.image(selec2,460,353);
+					}
 					
 					break;
 					
@@ -316,14 +319,23 @@ public class Logic {
 			break;
 		case 3:
 			
-			int ordena =2;
+			
 			if( (app.mouseX>0) && (app.mouseY>0 && app.mouseY<64)){
 				pantalla = 2;
 			}
 			
+			//ordenamiento natural-nombres
+			if( (app.mouseX>81 && app.mouseX<208)&& (app.mouseY>353 && app.mouseY<384)){
+				ordena=1;
+			}
+			//ordenamiento parcial-tipo
+			if( (app.mouseX>460 && app.mouseX<589)&& (app.mouseY>353 && app.mouseY<384)){
+				ordena=2;
+			}
 			
 			
-			
+			app.image(selec3,81,353);
+			app.image(selec2,460,353);
 			//ordenamiento de los natural de los nombres
 			ordenarPokemones.comparar(ordena);
 			
@@ -525,7 +537,7 @@ public void cargarPokemones() {
 //Con este metodo controlas la visualizacion del perfil de cada pokemon
 public void perfiles() {
 	
-	
+	botones=false;
 	
 	if(pantalla == 3) {
 		
