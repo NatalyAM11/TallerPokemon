@@ -58,7 +58,7 @@ public class Logic {
 		pokemones = app.loadStrings("lib/info_pokemones.txt");
 		
 		listPokemons = new LinkedList <Pokemons>();
-		
+		pokemon1= (int) app.random(0,3);
 		cargarImagenes();
 		cargarPokemones();
 		mapaX = -200;
@@ -276,7 +276,7 @@ public class Logic {
 		
 		  if (app.keyCode == app.LEFT) {
 		    	if(posXM>0) {
-		        if (posXM -1 < 50 && map[posYM][posXM - 1] == 0 || map[posYM][posXM - 1] == 4 || map[posYM][posXM - 1] == 5 || map[posYM][posXM - 1] == 7 || map[posYM][posXM - 1] == 6) {
+		        if (posXM -1 < 50 && map[posYM][posXM - 1] == 0 || map[posYM][posXM - 1] == 3 || map[posYM][posXM - 1] == 4 || map[posYM][posXM - 1] == 5 || map[posYM][posXM - 1] == 7 || map[posYM][posXM - 1] == 6) {
 		            x -= 70;
 		            JM = 1;
 		        }
@@ -285,7 +285,7 @@ public class Logic {
 		    if (app.keyCode == app.RIGHT) {
 
 		    	if(posXM<10) {
-		        if (posXM + 1 < 50 && map[posYM][posXM + 1] == 0 || map[posYM][posXM + 1] == 4 || map[posYM][posXM + 1] == 5 || map[posYM][posXM + 1] == 7 || map[posYM][posXM + 1] == 6) {
+		        if (posXM + 1 < 50 && map[posYM][posXM + 1] == 0 || map[posYM][posXM + 1] == 3 || map[posYM][posXM + 1] == 4 || map[posYM][posXM + 1] == 5 || map[posYM][posXM + 1] == 7 || map[posYM][posXM + 1] == 6) {
 		            x += 70;
 		            JM = 2;
 		        }
@@ -296,7 +296,7 @@ public class Logic {
 		    if (app.keyCode == app.UP) {
 
 		    	if(posYM>0) {
-		        if (posYM - 1 < 11 && map[posYM - 1][posXM] == 0 || map[posYM - 1][posXM] == 4 ||map[posYM - 1][posXM] == 5 || map[posYM - 1][posXM] == 7 || map[posYM - 1][posXM] == 6) {
+		        if (posYM - 1 < 11 && map[posYM - 1][posXM] == 0 || map[posYM - 1][posXM] == 3|| map[posYM - 1][posXM] == 4 ||map[posYM - 1][posXM] == 5 || map[posYM - 1][posXM] == 7 || map[posYM - 1][posXM] == 6) {
 		            y -= 70;
 		            JM = 3;
 		        }
@@ -307,7 +307,7 @@ public class Logic {
 				  
 
 		    	if(posYM<4) {
-		        if (posYM + 1 < 11 && map[posYM + 1][posXM] == 0 || map[posYM + 1][posXM] == 4 || map[posYM + 1][posXM] == 5 || map[posYM + 1][posXM] == 7 || map[posYM + 1][posXM] == 6) {
+		        if (posYM + 1 < 11 && map[posYM + 1][posXM] == 0 || map[posYM + 1][posXM] == 3|| map[posYM + 1][posXM] == 4 || map[posYM + 1][posXM] == 5 || map[posYM + 1][posXM] == 7 || map[posYM + 1][posXM] == 6) {
 		           
 		        	System.out.print("entre1");
 		        	y += 70;

@@ -21,7 +21,7 @@ public class MegaGardevoir extends Pokemons {
 		megaGardevoirPerfil=app.loadImage("img/megaGardevoirPerfil.png");
 		megaGardevoirMapa=app.loadImage("img/megagardevoirMapa.png");
 		megagardevoirGif= new Gif(app,"gif/MegaGardevoir.gif");	
-		megaGardevoirBarra=app.loadImage("img/megagardevoirBarra.png");
+		megaGardevoirBarra=app.loadImage("img/megaGardevoirBarra.png");
 
 	}
 
