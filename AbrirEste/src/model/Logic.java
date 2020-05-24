@@ -64,6 +64,7 @@ public class Logic {
 		mapaX = -200;
 		mapaY = -100;
 		
+		
 
 		for (int matY = 0; matY < 5; matY++) {
 	        for (int matX = 0; matX < 11; matX++) {
@@ -270,7 +271,7 @@ public class Logic {
 	
 	
 	public void recorrerMatriz() {
-		
+		//Camina el muñecos
 		posYM = y / 70;
 	    posXM = x / 70;
 		
