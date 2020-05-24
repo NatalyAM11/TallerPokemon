@@ -315,13 +315,17 @@ public class Logic {
 			}
 			break;
 		case 3:
+			
+			int ordena =2;
 			if( (app.mouseX>0) && (app.mouseY>0 && app.mouseY<64)){
 				pantalla = 2;
 			}
 			
 			
+			
+			
 			//ordenamiento de los natural de los nombres
-			ordenarPokemones.comparar();
+			ordenarPokemones.comparar(ordena);
 			
 			
 			break;

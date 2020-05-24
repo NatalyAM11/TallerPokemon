@@ -129,11 +129,25 @@ public class OrdenarPokemones  {
 
 
 	//Ordeamiento natural
-	public void comparar() {
+	public void comparar(int b) {
 		
+		switch(b) {
 		
+		case 1:
 			
 			Collections.sort(listaPokemones);
+
+			
+			break;
+			
+		case 2:
+			
+			Collections.sort(listaPokemones,comparator);
+
+			
+			break;
+		}
+			
 			System.out.println(listaPokemones);
 
 		
