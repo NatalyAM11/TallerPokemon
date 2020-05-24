@@ -68,4 +68,10 @@ public class MegaGardevoir extends Pokemons {
 		app.image(megaGardevoirBarra,posX,posY);
 	}
 
+	@Override
+	public int compareTo(Pokemons o) {
+		// TODO Auto-generated method stub
+		return this.nombre.compareTo(o.getNombre());  
+	}
+
 }

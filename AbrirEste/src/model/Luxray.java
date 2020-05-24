@@ -68,4 +68,11 @@ public class Luxray extends Pokemons {
 		app.image(luxrayBarra,posX,posY);
 	}
 
+
+	@Override
+	public int compareTo(Pokemons o) {
+		// TODO Auto-generated method stub
+		return this.nombre.compareTo(o.getNombre());  
+	}
+
 }

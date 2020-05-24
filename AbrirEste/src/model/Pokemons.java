@@ -2,7 +2,7 @@ package model;
 
 import processing.core.PApplet;
 
-public abstract class Pokemons {
+public abstract class Pokemons implements Comparable<Pokemons> {
 	
 	public PApplet app;
 	public int posX, posY, vida, poder;
@@ -26,6 +26,22 @@ public abstract class Pokemons {
 	public abstract void pintarGif();
 	public abstract void pintarPMapa();
 	public abstract void ordenar();
+
+	public int getPoder() {
+		return poder;
+	}
+
+	public void setPoder(int poder) {
+		this.poder = poder;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 	
 	
 	

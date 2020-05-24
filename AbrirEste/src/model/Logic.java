@@ -230,7 +230,7 @@ public class Logic {
 					app.image(ordenarPor,0,64);
 					
 					poke.comenzar();
-					
+					ordenarPokemones.pintar();
 					
 
 					

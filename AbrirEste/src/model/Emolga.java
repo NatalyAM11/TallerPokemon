@@ -75,4 +75,11 @@ public class Emolga extends Pokemons{
 		app.image(emolgaBarra,posX,posY);
 	}
 
+
+	@Override
+	public int compareTo(Pokemons o) {
+		// TODO Auto-generated method stub
+		return this.nombre.compareTo(o.getNombre());  
+	}
+
 }

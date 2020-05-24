@@ -71,4 +71,11 @@ public class Girafarig extends Pokemons{
 		app.image(girafarigBarra,posX,posY);
 	}
 
+
+	@Override
+	public int compareTo(Pokemons o) {
+		// TODO Auto-generated method stub
+		return this.nombre.compareTo(o.getNombre());  
+	}
+
 }

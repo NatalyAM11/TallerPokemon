@@ -74,4 +74,11 @@ public class Bulbasaur extends Pokemons{
 		app.image(bulbasaurBarra,posX,posY);
 	}
 
+
+	@Override
+	public int compareTo(Pokemons o) {
+		// TODO Auto-generated method stub
+		return this.nombre.compareTo(o.getNombre());  
+	}
+
 }

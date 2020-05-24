@@ -1,11 +1,11 @@
 package model;
 
-import java.util.Comparator;
+import java.util.Collections;
 import java.util.LinkedList;
 
 import processing.core.PApplet;
 
-public class OrdenarPokemones implements Comparator <Pokemons> {
+public class OrdenarPokemones  {
 	
 	
 	LinkedList <Pokemons> listaPokemones;
@@ -22,7 +22,7 @@ public class OrdenarPokemones implements Comparator <Pokemons> {
 		this.posY=0;
 		pokemones = app.loadStrings("lib/info_pokemones.txt");
 		
-		
+		listaPokemones = new LinkedList <Pokemons> ();
 		
 		for(int i = 0; i < pokemones.length ; i++) {
 			pokemones2 = pokemones[i].split(",");
@@ -55,7 +55,7 @@ public class OrdenarPokemones implements Comparator <Pokemons> {
 		listaPokemones.add(new Manectric(posX,posY,nombre,poderValor,vida,tipo,app)); 
 		listaPokemones.add(new MegaGardevoir(posX,posY,nombre,poderValor,vida,tipo,app)); 
 		listaPokemones.add(new Pikachu (posX,posY,nombre,poderValor,vida,tipo,app)); 
-		listaPokemones.add(new Shaymin(posX,posY,nombre,poderValor,vida,tipo,app)); 
+		listaPokemones.add(new Shaymin(posX,posY,nombre,poderValor,vida,tipo,app));
 		
 		
 	}
@@ -65,16 +65,16 @@ public class OrdenarPokemones implements Comparator <Pokemons> {
 	public void pintar() {
 		
 		for(int i=0; i<listaPokemones.size(); i++) {
-			listaPokemones.get(i).ordenar();;
+			listaPokemones.get(i).ordenar();
 		}
 		
 	}
 
 
 	
-	public int compare (Pokemons o1, Pokemons o2) {
+	public void comparar() {
 		
-		return o1.tipo.compareTo(o2.tipo);
+		Collections.sort(listaPokemones);
 	}
 
 

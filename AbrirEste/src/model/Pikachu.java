@@ -71,4 +71,11 @@ public class Pikachu extends Pokemons {
 		app.image(pikachuBarra,posX,posY);
 	}
 
+
+	@Override
+	public int compareTo(Pokemons o) {
+		// TODO Auto-generated method stub
+		return this.nombre.compareTo(o.getNombre());  
+	}
+
 }
