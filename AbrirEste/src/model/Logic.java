@@ -48,7 +48,7 @@ public class Logic {
 	String poder;
 	String debilidad;
 	int vida;
-	int seleccion;
+	int seleccion,capturado;
 	
 	
 	//Inicialziamos la pokedex
@@ -136,7 +136,7 @@ public class Logic {
 	}
 	
 	public void pintar() {
-		
+
 		switch(pantalla) {
 
 			case 0:
@@ -165,7 +165,6 @@ public class Logic {
 				
 				
 				app.fill(0);
-				app.text("X:" + app.mouseX + "Y:" + app.mouseY, app.mouseX, app.mouseY);
 				break;
 		
 				case 1:
@@ -215,9 +214,7 @@ public class Logic {
 						invisibles=false;
 					}
 					
-					
-					
-					
+				
                    for(int i = 0; i<listPokemons.size(); i++) {
 						
                 	   if(invisibles==false) {
@@ -225,7 +222,15 @@ public class Logic {
                 	   }
 						
 					}
-				        
+                   
+                   if(invisibles==false) {
+						
+						batalla.anuncio();
+
+					}
+                   
+                   PokemonCapturado();
+
 					
 					break;
 					
@@ -268,8 +273,23 @@ public class Logic {
                     batalla.pintarSeleccionado();
 
 					break;
+				
+			//BATALLA
+				case 6:
+
+
+					batalla.comienza();
+                    batalla.pintarSeleccionado();
+                	batalla.Capturaste(capturado);
+
+
+					
+					break;
 		
 	}
+		app.fill(255);
+		app.text("X:" + app.mouseX + "Y:" + app.mouseY, app.mouseX, app.mouseY);
+
 	}
 	
 	
@@ -315,6 +335,13 @@ public class Logic {
 			}
 			if( (app.mouseX>120 && app.mouseX<120+70)&& (app.mouseY>345 && app.mouseY<345+54)){
 				pantalla = 5;
+			}
+			
+			if(invisibles==false) {
+				if( (app.mouseX>291 && app.mouseX<291+70)&& (app.mouseY>300 && app.mouseY<300+54)){
+					
+					pantalla = 6;
+				}
 			}
 			break;
 		case 3:
@@ -576,7 +603,90 @@ public void perfiles() {
 
 		
 	}
+		
 	
+}
+
+
+public void PokemonCapturado() {
+	
+	
+        	
+	
+	if(pokemon1==0 && map[posYM][posXM] == 3) {
+		
+		capturado = 1;
+		
+		System.out.print("entro");
+		
+		
+	} else if(pokemon1==0 && map[posYM][posXM] == 4) {
+		
+		capturado = 2;
+		System.out.print("entro");
+
+		
+	} else if(pokemon1==0 && map[posYM][posXM] == 5) {
+		
+		capturado = 3;
+		System.out.print("entro");
+
+		
+	} else if(pokemon1==0 && map[posYM][posXM] == 6) {
+		
+		capturado = 4;
+
+		
+	}
+	
+  if(pokemon1==1 && map[posYM][posXM] == 3) {
+		
+		capturado = 5;
+		System.out.print("entro");
+
+		
+	} else if(pokemon1==1 && map[posYM][posXM] == 4) {
+		
+		capturado = 6;
+
+		
+	} else if(pokemon1==1 && map[posYM][posXM] == 5) {
+		
+		capturado = 7;
+
+		
+	} else if(pokemon1==1 && map[posYM][posXM] == 6) {
+		
+		capturado = 8;
+
+		
+	}
+  
+  if(pokemon1==2 && map[posYM][posXM] == 3) {
+		
+		capturado = 9;
+		
+		System.out.print("entro");
+
+	} else if(pokemon1==2 && map[posYM][posXM] == 4) {
+		
+		capturado = 10;
+
+		
+	} else if(pokemon1==2 && map[posYM][posXM] == 5) {
+		
+		capturado = 11;
+
+		
+	} else if(pokemon1==2 && map[posYM][posXM] == 6) {
+		
+		capturado = 12;
+
+		
+	}
+	
+	
+     
 	
 }
 
