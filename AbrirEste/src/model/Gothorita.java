@@ -52,10 +52,40 @@ public void mover(int r) {
 		switch(r) {
 		
 		case 1:
+			//Se mueva a la izquierda
+			this.posX -= this.dirX*3;
+			
+			if (this.posX < posXmenos) {
+	            this.dirX=0;
+	        }
 			
 			break;
 			
 		case 2:
+			
+			this.posX += this.dirX*3;
+			this.posY += this.dirY*3;
+			
+			//asi tiembla
+			if (this.posX > posXmas) {
+	            this.dirX=-1;
+	            this.dirY=1;
+	        }
+			
+			if (this.posX < posXmenos) {
+	            this.dirX=1;
+	            this.dirY=-1;
+	        }
+			
+			if (this.posY > posYmas) {
+	            this.dirY=-1;
+	            this.dirX=1;
+	        }
+			
+			if (this.posY < posYmenos) {
+	            this.dirY=1;
+	            this.dirX=-1;
+	        }
 			
 			break;
 		

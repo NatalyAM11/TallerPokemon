@@ -7,7 +7,7 @@ public abstract class Pokemons implements Comparable<Pokemons> {
 	public PApplet app;
 	public int posX, posY, vida, poder;
 	public String debilidad, nombre, tipo;
-	
+	public int dirX, dirY,posXmas,posXmenos,posYmas,posYmenos;
 	
 	public Pokemons(int posX, int posY, String nombre, int poder,int vida, String tipo, PApplet app) {
 		
@@ -18,6 +18,12 @@ public abstract class Pokemons implements Comparable<Pokemons> {
 		this.vida = vida;
 		this.tipo = tipo;
 		this.app = app;
+		this.dirX=1;
+		this.dirY=1;
+		this.posXmas=posX+30;
+		this.posXmenos=posX-30;
+		this.posYmenos=posY-30;
+		this.posYmas=posY+30;
 		
 	}
 	
