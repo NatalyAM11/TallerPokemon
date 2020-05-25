@@ -638,7 +638,7 @@ public void PokemonCapturado() {
 	}  if(cap1==2 && map[posYM][posXM] == 3) {
 		
 		capturado = 5;
-
+//QUE HACEMOS 
 		
 	}  if(cap1==3 && map[posYM][posXM] == 3) {
 		
