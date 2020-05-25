@@ -34,6 +34,7 @@ public class Logic {
 	int posYMA,posXMA;
 	int x, y;
 	int JM,screenCambio;
+	int coco;
 	Batalla batalla;
 	
 	
@@ -54,7 +55,6 @@ public class Logic {
 	//Inicialziamos la pokedex
 	Pokedex poke;
 	
-	int pokemon1;
 	int cambio = 0;
 	int ordena;
 	boolean botones=true;
@@ -80,9 +80,11 @@ public class Logic {
 		poke = new Pokedex(app);
 		batalla = new Batalla (app);
 		ordenarPokemones= new OrdenarPokemones(app);
-		pokemon1= (int) app.random(0,3);
 		cargarImagenes();
-		cargarPokemones();
+        cargarPokemones();
+        
+
+
 		
 		
 		invisibles=true;
@@ -106,10 +108,10 @@ public class Logic {
 		//inicializamos el personaje
 	  bb = new Personaje(x,y);
 	  JM = 1;
+	  capturado=0;
 	  
 	  //con esto los grupos de pokemones seran aleatorios
-	  pokemon1=(int) app.random(0,3);
-		
+	  //System.out.print(pokemon1);
 	  //Partimos el txt
 		for(int i = 0; i < pokemones.length ; i++) {
 			pokemones2 = pokemones[i].split(",");
@@ -131,13 +133,20 @@ public class Logic {
 	
 	public void iniciar(){
 			
-			
+		
+
 		
 	}
 	
 	public void pintar() {
+		
+		//pokemon1= (int) app.random(1,4);
 
+
+		
 		switch(pantalla) {
+		
+
 
 			case 0:
 				//Imagenes
@@ -162,7 +171,7 @@ public class Logic {
 					app.image(usuarioBotonN,253,344);
 				} 
 				
-				
+
 				
 				app.fill(0);
 				break;
@@ -229,8 +238,6 @@ public class Logic {
 
 					}
                    
-                   PokemonCapturado();
-
 					
 					break;
 					
@@ -271,16 +278,17 @@ public class Logic {
 					app.image(inventarioVolver,0,0);
 					
                     batalla.pintarSeleccionado();
+                    
 
 					break;
 				
 			//BATALLA
 				case 6:
 
-
+					batalla.Capturaste(capturado);
 					batalla.comienza();
                     batalla.pintarSeleccionado();
-
+                    PokemonCapturado();
 
 					
 					break;
@@ -326,6 +334,10 @@ public class Logic {
 			}
 			
 			batalla.Selecciono(seleccion);
+			
+			
+			//System.out.print();
+
 
 			break;
 		case 2:
@@ -453,110 +465,105 @@ public class Logic {
 	
 public void cargarPokemones() {
 	
+	int pokemon1 = (int) app.random(1,4);
+
 		for (int matY = 0; matY < 5; matY++) {
 	        for (int matX = 0; matX < 11; matX++) {
 	        	
-		         //primer grupo 
-	        	if(pokemon1==0) {
-		          if (map[matY][matX] == 3) {
-		        	//primer pokemon
-		        	  posXMA= matX*70;
-		        	  posYMA = matY*70;
-		        	  listPokemons.add(new Shaymin(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
-	            }
-		          
-		          //segundo pokemon
-		          if (map[matY][matX] == 4) {
-		        	  posXMA= matX*70;
-		        	  posYMA = matY*70;
-		        	  listPokemons.add(new Bulbasaur(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
-	            }
-		          
-		          //tercer pokemon
-		          if (map[matY][matX] == 5) {
-		        	  posXMA= matX*70;
-		        	  posYMA = matY*70;
-		        	  listPokemons.add(new Luxray(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
-	            }
-		          
-		          //cuarto pokemon
-		          if (map[matY][matX] == 6) {
-		        	  posXMA= matX*70;
-		        	  posYMA = matY*70;
-		        	  listPokemons.add(new Pikachu(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
-	            }
+	        	posXMA= matX*70;
+	        	posYMA = matY*70;
 	        	
-	        	}
 	        	
-	        	//segundo grupo
-	        	if(pokemon1==1) {
-			          if (map[matY][matX] == 3) {
-			        	  posXMA= matX*70;
-			        	  posYMA = matY*70;
-			        	  listPokemons.add(new Gothorita(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
-		            }
-			          
-			          //segundo pokemon
-			          if (map[matY][matX] == 4) {
-			        	  posXMA= matX*70;
-			        	  posYMA = matY*70;
+	        	switch((int)pokemon1) {
+	        	
+	        	case 1:
+	        		
+	        		if (map[matY][matX] == 3) {
+	        		
+	        		listPokemons.add(new Shaymin(posXMA,posYMA,"mori",poderValor,vida,"cambia",app));    
+		        	  System.out.print("entre");
+		        	  
+	        		}
+	        		
+	        		if (map[matY][matX] == 4) {
+	        			
+				        listPokemons.add(new Bulbasaur(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+
+		        		}
+	        		
+	        		if ( map[matY][matX] == 5) {
+			        	  
 			        	  listPokemons.add(new Luxray(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
 		            }
-			          
-			          //tercer
-			          if (map[matY][matX] == 5) {
-			        	  posXMA= matX*70;
-			        	  posYMA = matY*70;
-			        	  listPokemons.add(new Manectric(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
-		            }
-			          //cuarto
-			          if (map[matY][matX] == 6) {
-			        	  posXMA= matX*70;
-			        	  posYMA = matY*70;
-			        	  listPokemons.add(new MegaGardevoir(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
-		            }
-		        	
-		        	}
-	        	
-	        	//tercer grupo
-	        	if(pokemon1==2) {
-			          if (map[matY][matX] == 3) {
-			        	  posXMA= matX*70;
-			        	  posYMA = matY*70;
-			        	  listPokemons.add(new MegaGardevoir(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
-		            }
-			          
-			          //segundo pokemon
-			          if (map[matY][matX] == 4) {
-			        	  posXMA= matX*70;
-			        	  posYMA = matY*70;
+	        		
+	        		if ( map[matY][matX] == 6) {
+			        	 
 			        	  listPokemons.add(new Pikachu(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
 		            }
-			          
-			          //tercer
-			          if (map[matY][matX] == 5) {
-			        	  posXMA= matX*70;
-			        	  posYMA = matY*70;
-			        	  listPokemons.add(new Gothorita(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+	        		
+	        		break;
+	        		
+	        	case 2:
+	        		
+	        		if (map[matY][matX] == 3) {
+			         listPokemons.add(new Gothorita(posXMA,posYMA,"mori",poderValor,vida,"cambia",app));    
+
+	        		}
+	        		
+	        		if (map[matY][matX] == 4) {
+	        			
+                   	 listPokemons.add(new Luxray(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));
+	        		}
+	        		
+			         if (map[matY][matX] == 5) {
+				        	
+			        	  listPokemons.add(new Manectric(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
 		            }
-			          //cuarto
-			          if (map[matY][matX] == 6) {
-			        	  posXMA= matX*70;
-			        	  posYMA = matY*70;
-			        	  listPokemons.add(new Bulbasaur(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
-		            }
+			         
+			         if (map[matY][matX] == 6) {
+			        	 
+			        	  listPokemons.add(new MegaGardevoir(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+		            
 		        	
 		        	}
+	        		
+	        		break;
+	        		
+	        	case 3:
+	        		if (map[matY][matX] == 3) {
+			         listPokemons.add(new MegaGardevoir(posXMA,posYMA,"mori",poderValor,vida,"cambia",app));    
+	        		}
+	        		
+	        		 if (map[matY][matX] == 4) {
+		        			
+	                    	listPokemons.add(new Pikachu(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));
+		        	}
+	        		 
+	        		 if ( map[matY][matX] == 5) {
+			        	 
+			        	  listPokemons.add(new Gothorita(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+		            }
 	        	
-		          
-		          
-		          
-		          
-		          
-	        }
-		}
+			          if ( map[matY][matX] == 6) {
+			        	  
+			        	  listPokemons.add(new Bulbasaur(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
+		            }
+	        		
+	        		break;
+	       		
+	        	}
+	             }
+		   }
 		
-	}
+		          
+		         
+		coco = pokemon1;
+
+		System.out.print(pokemon1);
+		System.out.print(coco);
+		
+		}
+
 
 
 
@@ -612,84 +619,69 @@ public void PokemonCapturado() {
 	
         	
 	
-/*	if(pokemon1==0 && map[posYM][posXM] == 3) {
+	if(coco==1 && map[posYM][posXM] == 3) {
 		
 		capturado = 1;
 		
 		
 		
-	}  */if(pokemon1==1 && map[posYM][posXM] == 3) {
+	}  if(coco==2 && map[posYM][posXM] == 3) {
 		
 		capturado = 5;
 
 		
-	} else if(pokemon1==2 && map[posYM][posXM] == 3) {
+	} if(coco==3 && map[posYM][posXM] == 3) {
 		
 		capturado = 9;
 		
-		System.out.print("entro");
 
-	} 
-	
-	
-	
-	if(pokemon1==0 && map[posYM][posXM] == 4) {
+	} if(coco==1 && map[posYM][posXM] == 4) {
 		
 		capturado = 2;
 
 		
-	}  
-	
-	
-	if(pokemon1==0 && map[posYM][posXM] == 5) {
-		
-		capturado = 3;
-
-		
-	} 
-	
-	if(pokemon1==0 && map[posYM][posXM] == 6) {
-		
-		capturado = 4;
-
-		
-	}
-	
-  if(pokemon1==1 && map[posYM][posXM] == 4) {
+	}if(coco==2 && map[posYM][posXM] == 4) {
 		
 		capturado = 6;
 
 		
-	}  if(pokemon1==1 && map[posYM][posXM] == 5) {
-		
-		capturado = 7;
-
-		
-	}  if(pokemon1==1 && map[posYM][posXM] == 6) {
-		
-		capturado = 8;
-
-		
-	} else if(pokemon1==2 && map[posYM][posXM] == 4) {
+	} if(coco==3 && map[posYM][posXM] == 4) {
 		
 		capturado = 10;
 
 		
-	} else if(pokemon1==2 && map[posYM][posXM] == 5) {
+	}   if(coco==2 && map[posYM][posXM] == 5) {
+		
+		capturado = 7;
+
+		
+	} if(coco==1 && map[posYM][posXM] == 5) {
+		
+		capturado = 3;
+
+		
+	} if(coco==3 && map[posYM][posXM] == 5) {
 		
 		capturado = 11;
 
 		
-	} else if(pokemon1==2 && map[posYM][posXM] == 6) {
+	} if(coco==1 && map[posYM][posXM] == 6) {
+		
+		capturado = 4;
+	
+	}  if(coco==2 && map[posYM][posXM] == 6) {
+		
+		capturado = 8;
+
+		
+	}  if(coco==3 && map[posYM][posXM] == 6) {
 		
 		capturado = 12;
 
 		
 	}
-	
-	batalla.Capturaste(capturado);
+	 
 
-     
 	
 }
 
