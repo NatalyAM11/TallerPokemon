@@ -27,6 +27,15 @@ public class Pokedex {
 		}
 	}
 	
+	public void eliminar() {
+		
+		for(int i =0; i<pokemons.size(); i++) {
+			
+			pokemons.remove(i);
+			
+		}
+	}
+	
 	public void pintar(int w) {
 		
 	switch(w) {

@@ -68,7 +68,7 @@ public void pintarVidas () {
 		
 		for(int i=0; i < poke.size(); i++ ) {
 			
-			poke.get(i).pintar(0);
+			poke.get(i).pintar(1);
 			poke.get(i).mover(0);
 			poke.get(i).vida();
 
@@ -201,7 +201,7 @@ public void pintarVidas () {
 	public void anuncio() {
 		
 	
-		app.image(pantallaAtrapado,0,0);
+		app.image(pantallaAtrapado,197,115,300,150);
 		
 		app.image(botonContinuar,253,285);
 		

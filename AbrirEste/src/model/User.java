@@ -6,9 +6,9 @@ public class User {
 	private boolean login;
 
 
-public User ( String nikename, String email, String password ) {
+public User ( String nickename, String email, String password ) {
 	
-	this.nickname = nikename;
+	this.nickname = nickename;
 	this.email = email;
 	this.password = password;
 }

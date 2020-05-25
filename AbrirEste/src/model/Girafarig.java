@@ -6,7 +6,7 @@ import processing.core.PImage;
 
 public class Girafarig extends Pokemons{
 	
-	PImage girafarigBarra,girafarigAtaque,girafarigDebil, girafarigEspalda, girafarigPerfil;
+	PImage girafarigBarra,girafarigAtaque,girafarigDebil, girafarigEspalda, girafarigPerfil, girafarigFrente;
 	Gif girafarigGif;
 	
 
@@ -20,6 +20,7 @@ public class Girafarig extends Pokemons{
 		girafarigPerfil=app.loadImage("img/girafarigPerfil.png");
 		girafarigGif= new Gif(app,"gif/Girafarig.gif");
 		girafarigBarra=app.loadImage("img/girafarigBarra.png");
+		girafarigFrente=app.loadImage("img/girafarigFrente.png");
 
 	}
 
@@ -34,6 +35,8 @@ public class Girafarig extends Pokemons{
 			 break;
 		 case 2: app.image(girafarigEspalda,posX,posY);
 			 break;
+		 case 3: app.image(girafarigFrente,posX,posY);
+		 break;
 		 
 		
 	 }

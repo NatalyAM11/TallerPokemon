@@ -10,9 +10,14 @@ public class Logic {
 	PApplet app;
 	
 	LinkedList<Pokemons> listPokemons;
+	LinkedList<User> listUsuarios;
+	
+	//txt pokemones
     String pokemones[];
 	String pokemones2[];
-	
+	//txt usuarios
+	String usuarios[];
+	String usuarios2[];
 	
 	//Matriz del mapa
 	private int map [][]=  
@@ -33,6 +38,7 @@ public class Logic {
 	int posYM,posXM;
 	int posYMA,posXMA;
 	int x, y;
+	int pPokedex;
 	int JM,screenCambio;
 	int coco;
 	Batalla batalla;
@@ -50,12 +56,15 @@ public class Logic {
 	String debilidad;
 	int vida;
 	int seleccion,capturado;
-	boolean mover; 
+	boolean mover;
 	
+	//Todas las variables de los usuarios
+	String nickname,email,fecha;
 	
 	//Inicialziamos la pokedex
 	Pokedex poke;
 	
+	//Variables para controlar unas cositas
 	int cambio = 0;
 	int ordena;
 	boolean botones=true;
@@ -65,7 +74,7 @@ public class Logic {
 	int pantalla,mapaX,mapaY;
 	
 	//imagenes fondo y botones
-	PImage arbol,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa;
+	PImage arbol,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBoton2, continuarBoton2N, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa,pantallaTecla,bOrdenarN,bOrdenarT,bOrdenarNN,bOrdenarTN;
 	PImage selec1,selec2,selec3;
 	
 	//Inicializamos la clase que carga las barras de los perfiles
@@ -78,7 +87,7 @@ public class Logic {
 		pantalla=0;
 		mover=true;
 		pokemones = app.loadStrings("lib/info_pokemones.txt");
-		
+		usuarios = app.loadStrings("lib/infoUsuarios.txt");
 		listPokemons = new LinkedList <Pokemons>();
 		poke = new Pokedex(app);
 		batalla = new Batalla (app);
@@ -112,10 +121,8 @@ public class Logic {
 	  bb = new Personaje(x,y);
 	  JM = 1;
 	  capturado=0;
-	  
-	  //con esto los grupos de pokemones seran aleatorios
-	  //System.out.print(pokemon1);
-	  //Partimos el txt
+	 
+	  //Partimos el txt de los pokemones
 		for(int i = 0; i < pokemones.length ; i++) {
 			pokemones2 = pokemones[i].split(",");
 			//nombre
@@ -132,7 +139,20 @@ public class Logic {
 			vida=Integer.parseInt(pokemones2[5]);
 			
 		}
+		
+		//Partimos el txt de los usuarios
+		for(int i = 0; i < usuarios.length ; i++) {
+			usuarios2 = usuarios[i].split(",");
+			//nombre
+			nickname = usuarios2[0];
+			//tipo de pokemon
+			email=usuarios2[1];
+			//poder en numero
+			fecha=usuarios2[2];
+		}
+		
 	}
+
 	
 	public void iniciar(){
 			
@@ -240,13 +260,14 @@ public class Logic {
                    if(invisibles==false) {
 						
 						batalla.anuncio();
+						 
+		                   if( (app.mouseX>253 && app.mouseX<466)&& (app.mouseY>285 && app.mouseY<331)){
+		                	   app.image(continuarBoton,253,285);
+		   					} 
 					}
                    
                    
-                   
-                   if( (app.mouseX>253 && app.mouseX<466)&& (app.mouseY>285 && app.mouseY<331)){
-                	   app.image(continuarBoton,253,285);
-   					} 
+                  
                    
 					
 					break;
@@ -254,23 +275,48 @@ public class Logic {
 					//Perfiles pokemons con gifs 
 				case 3:
 					
-					app.image(fondoRosado,0,0);
-					app.image(pokedexVolver,0,0);
-					app.image(ordenarPor,0,64);
-					app.text("X:" + app.mouseX + "Y:" + app.mouseY, app.mouseX, app.mouseY);
 					
-					//Pintamos las barras del pefil de cada pokemon
-					ordenarPokemones.pintar();
-					
-					
-					poke.comenzar();
-					
-					//Botones ordenamiento
-					if(botones==true) {
-					app.image(selec3,81,353);
-					app.image(selec2,460,353);
+					switch(pPokedex) {
+					case 0:
+						app.image(pantallaTecla,0,0);
+						app.image(continuarBoton2,253,328);
+						
+						
+						if( (app.mouseX>253 && app.mouseX<466)&& (app.mouseY>328 && app.mouseY<374)){
+						app.image(continuarBoton2N,253,328);
+						}
+						
+						break;
+						
+					case 1: 
+						app.image(fondoRosado,0,0);
+						app.image(pokedexVolver,0,0);
+						app.image(ordenarPor,0,64);
+						app.text("X:" + app.mouseX + "Y:" + app.mouseY, app.mouseX, app.mouseY);
+						
+						//Pintamos las barras del pefil de cada pokemon
+						ordenarPokemones.pintar();
+						
+						
+						poke.comenzar();
+						
+						//Botones ordenamiento
+						if(botones==true) {
+						app.image(bOrdenarN,81,353);
+						app.image(bOrdenarT,460,353);
+						
+						if( (app.mouseX>81 && app.mouseX<295)&& (app.mouseY>353 && app.mouseY<397)){
+							app.image(bOrdenarNN,81,353);
+						}
+							
+						if( (app.mouseX>460 && app.mouseX<673)&& (app.mouseY>353 && app.mouseY<397)){
+							app.image(bOrdenarTN,460,353);
+							}
+						
+						}
+						break;
 					}
-					
+				
 					break;
 					
 					
@@ -302,6 +348,9 @@ public class Logic {
                     PokemonCapturado();
 
 					
+					break;
+					
+				case 7:
 					break;
 		
 	}
@@ -368,28 +417,43 @@ public class Logic {
 			
 			break;
 		case 3:
+			switch(pPokedex) {
 			
-			
-			if( (app.mouseX>0) && (app.mouseY>0 && app.mouseY<64)){
-				pantalla = 2;
+			case 0: 
+				if( (app.mouseX>253 && app.mouseX<466)&& (app.mouseY>328 && app.mouseY<374)){
+					pPokedex=1;	
+				}
+				if( (app.mouseX>0 && app.mouseY<56) && (app.mouseY>0 && app.mouseY<64)){
+					pantalla = 2;
+					botones=true;
+				}
+				
+				break;
+			case 1:
+				if( (app.mouseX>0 && app.mouseY<56) && (app.mouseY>0 && app.mouseY<64)){
+					pantalla = 2;
+					poke.eliminar();
+					botones=true;
+				}
+				
+				//ordenamiento natural-nombres
+				if( (app.mouseX>81 && app.mouseX<295)&& (app.mouseY>353 && app.mouseY<397)){
+					ordena=1;
+				}
+				//ordenamiento parcial-tipo
+				if( (app.mouseX>460 && app.mouseX<673)&& (app.mouseY>353 && app.mouseY<397)){
+					ordena=2;
+				}
+				
+				
+		
+				//ordenamiento de los natural de los nombres
+				ordenarPokemones.comparar(ordena);
+				
+				break;
 			}
 			
-			//ordenamiento natural-nombres
-			if( (app.mouseX>81 && app.mouseX<208)&& (app.mouseY>353 && app.mouseY<384)){
-				ordena=1;
-			}
-			//ordenamiento parcial-tipo
-			if( (app.mouseX>460 && app.mouseX<589)&& (app.mouseY>353 && app.mouseY<384)){
-				ordena=2;
-			}
-			
-			
-			app.image(selec3,81,353);
-			app.image(selec2,460,353);
-			//ordenamiento de los natural de los nombres
-			ordenarPokemones.comparar(ordena);
-			
-			
+		
 			break;
 		case 4:
 			
@@ -600,47 +664,58 @@ public void cargarPokemones() {
 //Con este metodo controlas la visualizacion del perfil de cada pokemon
 public void perfiles() {
 	
-	botones=false;
-	
+	switch(pPokedex) {
+	case 1:
+
 	if(pantalla == 3) {
 		
 		if(app.key== 'e' || app.key== 'E') {
 			cambio =1;
+			botones=false;
 		}
 		if(app.key== 's' || app.key== 'S') {
 			cambio =2;
+			botones=false;
 		}
 		if(app.key== 'b' || app.key== 'B') {
 			cambio =3;
+			botones=false;
 		}
 		if(app.key== 'i' || app.key== 'I') {
 			cambio =4;
+			botones=false;
 		}
 		if(app.key== 'g' || app.key== 'G') {
 			cambio =5;
+			botones=false;
 		}
 		if(app.key== 'm' || app.key== 'M') {
 			cambio =6;
+			botones=false;
 		}
 		if(app.key== 'c' || app.key== 'C') {
 			cambio =7;
+			botones=false;
 		}
 		if(app.key== 'l' || app.key== 'L') {
 			cambio =8;
+			botones=false;
 		}
 		if(app.key== 'a' || app.key== 'A') {
 			cambio =9;
+			botones=false;
 		}
 		if(app.key== 'p' || app.key== 'P') {
 			cambio =10;
+			botones=false;
 		}
 		
-		poke.pintar(cambio);
-
-		
-	}
-		
+		}
 	
+	poke.pintar(cambio);
+	break;
+	}
+
 }
 
 
@@ -725,6 +800,8 @@ public void PokemonCapturado() {
 		arbol=app.loadImage("img/arbolPequeno.png");
 		fondoNada=app.loadImage("img/fondoNada.png");
 		continuarBoton=app.loadImage("img/continuarBoton.png");
+		continuarBoton2=app.loadImage("img/continuarBotonN.png");
+		continuarBoton2N=app.loadImage("img/continuarBoton.png");
 		continuarBotonN=app.loadImage("img/continuarBotonN.png");
 		registrarseBoton=app.loadImage("img/registrarseBoton.png");
 		registrarseBotonN=app.loadImage("img/registrarseBotonN.png");
@@ -743,8 +820,11 @@ public void PokemonCapturado() {
 		ordenFecha=app.loadImage("img/ordenFecha.png");
 		fondoRosado=app.loadImage("img/Rosado.png");
 		inventarioIcono=app.loadImage("img/inventario.png");
-	
-		
+		pantallaTecla=app.loadImage("img/pantallaTecla.png");
+		bOrdenarN=app.loadImage("img/ordenarPorNombreN.png");
+		bOrdenarT=app.loadImage("img/ordenarPorTipoN.png");
+		bOrdenarNN=app.loadImage("img/ordenarPorNombre.png");
+		bOrdenarTN=app.loadImage("img/ordenarPorTipo.png");
 	}
 
 }
