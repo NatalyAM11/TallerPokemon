@@ -76,7 +76,7 @@ public class Logic {
 	int pantalla,mapaX,mapaY;
 	
 	//imagenes fondo y botones
-	PImage fondo, arbol,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBoton2, continuarBoton2N, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa,pantallaTecla,bOrdenarN,bOrdenarT,bOrdenarNN,bOrdenarTN;
+	PImage fondo, arbol,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBoton2, continuarBoton2N, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa,pantallaTecla,bOrdenarN,bOrdenarT,bOrdenarNN,bOrdenarTN,usuarioIcono,usuarioIconoN,barraUsuario;
 	PImage selec1,selec2,selec3;
 	
 	//Inicializamos la clase que carga las barras de los perfiles
@@ -226,6 +226,7 @@ public class Logic {
 					app.image(pokedexIcono,20,345,70,54);
 					app.image(inventarioIcono,120,345,70,54);
 					
+					
 					dibujarBebe();
 		
 					//Los arboles si aparecen paula :( holi 
@@ -241,6 +242,12 @@ public class Logic {
 				        }
 					
 					
+					//Boton usuario
+					app.image(usuarioIcono,630,10);
+					
+					  if( (app.mouseX>630 && app.mouseX<673)&& (app.mouseY>10 && app.mouseY<53)){
+						  app.image(usuarioIconoN,630,10); 
+					  }
 					
 					
 					//invisibilidad
@@ -381,12 +388,15 @@ public class Logic {
 					
 					break;
 					
+					
+					//pantalla usuario
 				   case 7:
-					   
+					   app.image(fondoRosado,0,0);
+					   app.image(barraUsuario,0,0);
 					   
 					break;
 		
-	}
+	 }
 		app.fill(0);
 		app.text("X:" + app.mouseX + "Y:" + app.mouseY, app.mouseX, app.mouseY);
 
@@ -448,6 +458,12 @@ public class Logic {
 				} 	
 			}
 			
+			//pasa a la pantalla de usuarios
+			 if( (app.mouseX>630 && app.mouseX<673)&& (app.mouseY>10 && app.mouseY<53)){
+				  pantalla=7; 
+			  }
+			 
+	
 			break;
 		case 3:
 			switch(pPokedex) {
@@ -456,14 +472,14 @@ public class Logic {
 				if( (app.mouseX>253 && app.mouseX<466)&& (app.mouseY>328 && app.mouseY<374)){
 					pPokedex=1;	
 				}
-				if( (app.mouseX>0 && app.mouseY<56) && (app.mouseY>0 && app.mouseY<64)){
+				if( (app.mouseX>0 && app.mouseX<81) && (app.mouseY>0 && app.mouseY<64)){
 					pantalla = 2;
 					botones=true;
 				}
 				
 				break;
 			case 1:
-				if( (app.mouseX>0 && app.mouseY<56) && (app.mouseY>0 && app.mouseY<64)){
+				if( (app.mouseX>0 && app.mouseX<81) && (app.mouseY>0 && app.mouseY<64)){
 					pantalla = 2;
 					poke.eliminar();
 					botones=true;
@@ -498,7 +514,7 @@ public class Logic {
 			break;
 			
 		case 6:
-if(boton1 ==0) {
+				if(boton1 ==0) {
 				
 				batalla.Capturaste(capturado);
 				System.out.print("AgregoOtro");
@@ -557,9 +573,13 @@ if(boton1 ==0) {
 			
 		
 			}
-			
-			
 			break;
+			//Pantalla usuario 
+			case 7: 
+				if( (app.mouseX>0 && app.mouseX<56) && (app.mouseY>0 && app.mouseY<64)){
+				pantalla = 2;
+			}
+				break;
 			
 		}
 		
@@ -748,7 +768,7 @@ public void perfiles() {
 	
 	switch(pPokedex) {
 	case 1:
-
+		mover=true;
 	if(pantalla == 3) {
 		
 		if(app.key== 'e' || app.key== 'E') {
@@ -908,6 +928,9 @@ public void PokemonCapturado() {
 		bOrdenarNN=app.loadImage("img/ordenarPorNombre.png");
 		bOrdenarTN=app.loadImage("img/ordenarPorTipo.png");
 		fondo = app.loadImage("img/fondoBatalla.png");
+		usuarioIcono = app.loadImage("img/botonUsuario.png");
+		usuarioIconoN = app.loadImage("img/botonUsuarioN.png");
+		barraUsuario= app.loadImage("img/barraUsuario.png");
 
 	}
 

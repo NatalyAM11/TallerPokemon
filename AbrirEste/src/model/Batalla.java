@@ -14,7 +14,7 @@ public class Batalla {
 	LinkedList<Bayleef> bayleef;
 
 
-	PImage hpJugador, hpOponente, pantallaAtrapado, botonContinuar, botonContinuar2,botonBatalla;
+	PImage hpJugador, hpOponente, pantallaAtrapado, botonContinuar, botonContinuar2,botonBatalla,pantallaEncontrado,pantallaEscapo;
 	int cambioImagen;
 	
 	public Batalla (PApplet app) {
@@ -26,7 +26,9 @@ public class Batalla {
 		giraf = new LinkedList<Girafarig>() ;
 		hpJugador = app.loadImage("img/HPjugador.png");
 		hpOponente = app.loadImage("img/HPoponente.png");
+		pantallaEncontrado= app.loadImage("img/encontradoPantalla.png");
 		pantallaAtrapado= app.loadImage("img/pokemonAtrapado.png");
+		pantallaEscapo= app.loadImage("img/escapoPantalla.png");
 		botonContinuar= app.loadImage("img/continuarBotonN.png");
 		botonBatalla= app.loadImage("img/botonesBatalla.png");
 		
@@ -234,7 +236,7 @@ public void pintarVidas () {
 	public void anuncio() {
 		
 	
-		app.image(pantallaAtrapado,197,115,300,150);
+		app.image(pantallaEncontrado,197,115,300,150);
 		
 		app.image(botonContinuar,253,285);
 		
@@ -249,15 +251,13 @@ public void atrapar() {
 			
 			System.out.print("Lo atrapaste");
 			cambioImagen=1;
-			app.fill(0,255,0);
-			app.rect(0,0,700,400);
+			app.image(pantallaAtrapado,0,0);
 		}
         if(aleotoridad== 1 || aleotoridad== 2 || aleotoridad== 0) {
 			
 			System.out.print("Mala Suerte");
 			cambioImagen=2;
-			app.fill(255,0,0);
-			app.rect(0,0,700,400);
+			app.image(pantallaEscapo,0,0);
 		}
 		
 		
