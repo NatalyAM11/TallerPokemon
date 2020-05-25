@@ -46,11 +46,26 @@ public class Bulbasaur extends Pokemons{
 	}
 
 	@Override
-	public void mover() {
-		// TODO Auto-generated method stub
+public void mover(int r) {
 		
+		
+		switch(r) {
+		
+		case 1:
+			
+			posX +=3;
+			
+			
+			break;
+			
+		case 2:
+			
+			break;
+		
+		
+		
+		}
 	}
-
 	
 	public void pintarGif() {
 		
@@ -81,6 +96,21 @@ public class Bulbasaur extends Pokemons{
 	public int compareTo(Pokemons o) {
 		
 		return this.nombre.compareTo(o.getNombre());  
+	}
+
+
+	@Override
+	public void vida() {
+		// TODO Auto-generated method stub
+		app.fill(255,0,0);
+		app.rect(549,23,vida,10);
+	}
+
+
+	@Override
+	public void atacar() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -22,10 +22,12 @@ public abstract class Pokemons implements Comparable<Pokemons> {
 	}
 	
 	public abstract void pintar(int numero);
-	public abstract void mover();
+	public abstract void mover(int r);
 	public abstract void pintarGif();
 	public abstract void pintarPMapa();
 	public abstract void ordenar(int posY);
+	public abstract void vida();
+	public abstract void atacar();
 
 	public int getPoder() {
 		return poder;

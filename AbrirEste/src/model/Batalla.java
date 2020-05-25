@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class Batalla implements Runnable {
+public class Batalla {
 	
 	public PApplet app;
 	LinkedList <Pokemons> poke;
@@ -30,13 +30,13 @@ public class Batalla implements Runnable {
 		switch(w) {
 		
 		case 0:
-			poke.add(new Girafarig (0,0,"holi",0,0,"salvaje", app));
+			poke.add(new Girafarig (0,0,"holi",0,100,"salvaje", app));
 			
 			break;
 			
 		case 1:
 			
-			poke.add(new Emolga (0,0,"holi",0,0,"salvaje", app));
+			poke.add(new Emolga (0,0,"holi",0,100,"salvaje", app));
 
 			
 			
@@ -44,7 +44,7 @@ public class Batalla implements Runnable {
 			
 		case 2:
 			
-			poke.add(new Bayleef (0,0,"holi",0,0,"salvaje", app));
+			poke.add(new Bayleef (0,0,"holi",0,100,"salvaje", app));
 
 			
 			break;
@@ -54,11 +54,22 @@ public class Batalla implements Runnable {
 		
 	}
 	
+public void pintarVidas () {
+		
+		app.image(hpJugador, 0, 0,170,56);
+		app.image(hpOponente, 530, 0,170,56);
+		
+		
+	}
+	
 	public void pintarSeleccionado() {
 		
 		for(int i=0; i < poke.size(); i++ ) {
 			
-			poke.get(i).pintar(1);
+			poke.get(i).pintar(0);
+			poke.get(i).mover(0);
+			poke.get(i).vida();
+
 			
 		}
 		
@@ -68,13 +79,7 @@ public class Batalla implements Runnable {
 	}
 	
 	
-	public void pintarVidas () {
-		
-		app.image(hpJugador, 0, 0,170,56);
-		app.image(hpOponente, 530, 0,170,56);
-		
-		
-	}
+	
 	
 	
 	public void Capturaste(int a) {
@@ -83,13 +88,13 @@ public class Batalla implements Runnable {
        switch(a) {
 		
 		case 1:
-			poke.add(new Shaymin (300,-100,"holi",0,0,"salvaje", app));
+			poke.add(new Shaymin (300,-100,"holi",0,100,"salvaje", app));
 			
 			break;
 			
 		case 2:
 			
-			poke.add(new Bulbasaur (0,0,"holi",0,0,"salvaje", app));
+			poke.add(new Bulbasaur (0,0,"holi",0,100,"salvaje", app));
 
 			
 			
@@ -97,27 +102,27 @@ public class Batalla implements Runnable {
 			
 		case 3:
 			
-			poke.add(new Luxray (0,0,"holi",0,0,"salvaje", app));
+			poke.add(new Luxray (0,0,"holi",0,100,"salvaje", app));
 
 			
 			break;
 			
           case 4:
 			
-			poke.add(new Pikachu (0,0,"holi",0,0,"salvaje", app));
+			poke.add(new Pikachu (0,0,"holi",0,100,"salvaje", app));
 
 			
 			break;
 			
 			
           case 5:
-  			poke.add(new Gothorita (300,-100,"holi",0,0,"salvaje", app));
+  			poke.add(new Gothorita (300,-100,"holi",0,100,"salvaje", app));
   			
   			break;
   			
   		case 6:
   			
-  			poke.add(new Luxray (0,0,"holi",0,0,"salvaje", app));
+  			poke.add(new Luxray (0,0,"holi",0,100,"salvaje", app));
 
   			
   			
@@ -125,26 +130,26 @@ public class Batalla implements Runnable {
   			
   		case 7:
   			
-  			poke.add(new Manectric (0,0,"holi",0,0,"salvaje", app));
+  			poke.add(new Manectric (0,0,"holi",0,100,"salvaje", app));
 
   			
   			break;
   			
             case 8:
   			
-  			poke.add(new MegaGardevoir (0,0,"holi",0,0,"salvaje", app));
+  			poke.add(new MegaGardevoir (0,0,"holi",0,100,"salvaje", app));
 
   			
   			break;
   			
             case 9:
-      			poke.add(new MegaGardevoir (434,150,"holi",0,0,"salvaje", app));
+      			poke.add(new MegaGardevoir (434,150,"holi",0,100,"salvaje", app));
       			
       			break;
       			
       		case 10:
       			
-      			poke.add(new Pikachu (0,0,"holi",0,0,"salvaje", app));
+      			poke.add(new Pikachu (0,0,"holi",0,100,"salvaje", app));
 
       			
       			
@@ -152,14 +157,14 @@ public class Batalla implements Runnable {
       			
       		case 11:
       			
-      			poke.add(new Gothorita (0,0,"holi",0,0,"salvaje", app));
+      			poke.add(new Gothorita (0,0,"holi",0,100,"salvaje", app));
 
       			
       			break;
       			
                 case 12:
       			
-      			poke.add(new Bulbasaur (0,0,"holi",0,0,"salvaje", app));
+      			poke.add(new Bulbasaur (0,0,"holi",0,100,"salvaje", app));
 
       			
       			break;
@@ -172,28 +177,29 @@ public class Batalla implements Runnable {
 		
 	}
 	
-	public void comienza() {
+	public void comienza(int a) {
 		
 		app.image(fondo, 0, 0);
+		
+		if(a == 1) {
 			
+			app.image(botonBatalla,0,309);
+		}
+		
+		if(a == 0) {
+		
+		app.image(botonContinuar,294,300);
+		}	
 	}
 	
-	public void run() {
-
-	/*	try {
-			
-			anuncio();
-			
-		}catch(IndexOutOfBoundsException  e) {
-			
-		}*/
-	}
+	
 	
 	
 	//Se avisa que se 
 	public void anuncio() {
 	
 		app.image(pantallaAtrapado,0,0);
+		
 		app.image(botonContinuar,253,285);
 	}
 

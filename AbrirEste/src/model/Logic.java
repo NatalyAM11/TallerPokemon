@@ -59,7 +59,8 @@ public class Logic {
 	int cambio = 0;
 	int ordena;
 	boolean botones=true;
-	
+	int boton1;
+
 	//pantallas y mapas
 	int pantalla,mapaX,mapaY;
 	
@@ -294,17 +295,17 @@ public class Logic {
 			//BATALLA
 				case 6:
 
-					batalla.Capturaste(capturado);
-					batalla.comienza();
-                    batalla.pintarSeleccionado();
+					batalla.comienza(boton1);
                     batalla.pintarVidas();
+
+                    batalla.pintarSeleccionado();
                     PokemonCapturado();
 
 					
 					break;
 		
 	}
-		app.fill(255);
+		app.fill(0);
 		app.text("X:" + app.mouseX + "Y:" + app.mouseY, app.mouseX, app.mouseY);
 
 	}
@@ -397,6 +398,21 @@ public class Logic {
 			if( (app.mouseX>0) && (app.mouseY>0 && app.mouseY<64)){
 				pantalla = 2;
 			}
+			break;
+			
+		case 6:
+			
+			
+			if(boton1 ==0) {
+				
+				batalla.Capturaste(capturado);
+				
+				boton1 = 1;
+
+			}
+		
+			
+			
 			break;
 			
 		}
