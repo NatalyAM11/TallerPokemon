@@ -3,16 +3,19 @@ package model;
 import java.util.LinkedList;
 
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Batalla {
 	
 	public PApplet app;
 	LinkedList <Pokemons> poke;
+	PImage fondo;
 	
 	public Batalla (PApplet app) {
 		
 		this.app=app;
 		poke = new LinkedList<Pokemons> ();
+		fondo = app.loadImage("img/fondoBatalla.png");
 		
 	}
 	
@@ -157,8 +160,7 @@ public class Batalla {
 	
 	public void comienza() {
 		
-		app.fill(255);
-		app.rect(0,0,700,400);
+		app.image(fondo, 0, 0);
 		
 		
 		
