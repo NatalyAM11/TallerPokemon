@@ -5,19 +5,21 @@ import java.util.LinkedList;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class Batalla {
+public class Batalla implements Runnable {
 	
 	public PApplet app;
 	LinkedList <Pokemons> poke;
-	PImage fondo;
+	PImage fondo, hpJugador, hpOponente;
 	
 	public Batalla (PApplet app) {
 		
 		this.app=app;
 		poke = new LinkedList<Pokemons> ();
 		fondo = app.loadImage("img/fondoBatalla.png");
-		
+		hpJugador = app.loadImage("img/HPjugador.png");
+		hpOponente = app.loadImage("img/HPoponente.png");
 	}
+	
 	
 	
 	public void Selecciono(int w) {
@@ -63,13 +65,22 @@ public class Batalla {
 	}
 	
 	
+	public void pintarVidas () {
+		
+		app.image(hpJugador, 0, 0,170,56);
+		app.image(hpOponente, 530, 0,170,56);
+		
+		
+	}
+	
+	
 	public void Capturaste(int a) {
 		
 		
        switch(a) {
 		
 		case 1:
-			poke.add(new Shaymin (0,0,"holi",0,0,"salvaje", app));
+			poke.add(new Shaymin (300,-100,"holi",0,0,"salvaje", app));
 			
 			break;
 			
@@ -97,7 +108,7 @@ public class Batalla {
 			
 			
           case 5:
-  			poke.add(new Gothorita (0,0,"holi",0,0,"salvaje", app));
+  			poke.add(new Gothorita (300,-100,"holi",0,0,"salvaje", app));
   			
   			break;
   			
@@ -124,7 +135,7 @@ public class Batalla {
   			break;
   			
             case 9:
-      			poke.add(new MegaGardevoir (0,0,"holi",0,0,"salvaje", app));
+      			poke.add(new MegaGardevoir (434,150,"holi",0,0,"salvaje", app));
       			
       			break;
       			
@@ -161,16 +172,30 @@ public class Batalla {
 	public void comienza() {
 		
 		app.image(fondo, 0, 0);
-		
-		
-		
+			
 	}
+	
+	public void run() {
+
+	/*	try {
+			
+			anuncio();
+			
+		}catch(IndexOutOfBoundsException  e) {
+			
+		}*/
+	}
+	
 	
 	public void anuncio() {
 		
 		app.fill(0);
 		app.rect(100,50,500,300);
 	}
+
+
+	
+	
 
 }
 

@@ -50,6 +50,7 @@ public class Logic {
 	String debilidad;
 	int vida;
 	int seleccion,capturado;
+	boolean mover; 
 	
 	
 	//Inicialziamos la pokedex
@@ -74,6 +75,7 @@ public class Logic {
 		
 		this.app=app;
 		pantalla=0;
+		mover=true;
 		pokemones = app.loadStrings("lib/info_pokemones.txt");
 		
 		listPokemons = new LinkedList <Pokemons>();
@@ -221,6 +223,7 @@ public class Logic {
 					//invisibilidad
 					if (map[posYM][posXM]==3 ||map[posYM][posXM]==4 ||map[posYM][posXM]==5 ||map[posYM][posXM]==6) {
 						invisibles=false;
+						mover=false;
 					}
 					
 				
@@ -288,6 +291,7 @@ public class Logic {
 					batalla.Capturaste(capturado);
 					batalla.comienza();
                     batalla.pintarSeleccionado();
+                    batalla.pintarVidas();
                     PokemonCapturado();
 
 					
@@ -399,6 +403,8 @@ public class Logic {
 		posYM = y / 70;
 	    posXM = x / 70;
 		
+	    
+	    if(mover==true) {
 		  if (app.keyCode == app.LEFT) {
 		    	if(posXM>0) {
 		        if (posXM -1 < 50 && map[posYM][posXM - 1] == 0 || map[posYM][posXM - 1] == 3 || map[posYM][posXM - 1] == 4 || map[posYM][posXM - 1] == 5 || map[posYM][posXM - 1] == 7 || map[posYM][posXM - 1] == 6) {
@@ -440,6 +446,7 @@ public class Logic {
 		    	}
 
 		    }
+	    }
 	}
 	
 	public void dibujarBebe() {
@@ -616,7 +623,7 @@ public void perfiles() {
 
 public void PokemonCapturado() {
 	
-	
+	mover=false;
         	
 	
 	if(coco==1 && map[posYM][posXM] == 3) {
