@@ -235,11 +235,17 @@ public class Logic {
 						
 					}
                    
+                   //aviso encontro un pokemon
                    if(invisibles==false) {
 						
 						batalla.anuncio();
-
 					}
+                   
+                   
+                   
+                   if( (app.mouseX>253 && app.mouseX<466)&& (app.mouseY>285 && app.mouseY<331)){
+                	   app.image(continuarBoton,253,285);
+   					} 
                    
 					
 					break;
@@ -352,12 +358,13 @@ public class Logic {
 				pantalla = 5;
 			}
 			
+			//pasa a la pantalla de batalla
 			if(invisibles==false) {
-				if( (app.mouseX>291 && app.mouseX<291+70)&& (app.mouseY>300 && app.mouseY<300+54)){
-					
+				if( (app.mouseX>253 && app.mouseX<466)&& (app.mouseY>285 && app.mouseY<331)){
 					pantalla = 6;
-				}
+				} 	
 			}
+			
 			break;
 		case 3:
 			

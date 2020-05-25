@@ -9,7 +9,7 @@ public class Batalla implements Runnable {
 	
 	public PApplet app;
 	LinkedList <Pokemons> poke;
-	PImage fondo, hpJugador, hpOponente;
+	PImage fondo, hpJugador, hpOponente, pantallaAtrapado, botonContinuar, botonContinuar2,botonBatalla;
 	
 	public Batalla (PApplet app) {
 		
@@ -18,6 +18,9 @@ public class Batalla implements Runnable {
 		fondo = app.loadImage("img/fondoBatalla.png");
 		hpJugador = app.loadImage("img/HPjugador.png");
 		hpOponente = app.loadImage("img/HPoponente.png");
+		pantallaAtrapado= app.loadImage("img/pokemonAtrapado.png");
+		botonContinuar= app.loadImage("img/continuarBotonN.png");
+		botonBatalla= app.loadImage("img/botonesBatalla.png");
 	}
 	
 	
@@ -187,10 +190,11 @@ public class Batalla implements Runnable {
 	}
 	
 	
+	//Se avisa que se 
 	public void anuncio() {
-		
-		app.fill(0);
-		app.rect(100,50,500,300);
+	
+		app.image(pantallaAtrapado,0,0);
+		app.image(botonContinuar,253,285);
 	}
 
 
