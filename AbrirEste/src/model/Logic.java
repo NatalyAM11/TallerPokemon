@@ -48,7 +48,7 @@ public class Logic {
 	String poder;
 	String debilidad;
 	int vida;
-	int seleccion,capturado,cap1;
+	int seleccion,capturado;
 	
 	
 	//Inicialziamos la pokedex
@@ -463,14 +463,12 @@ public void cargarPokemones() {
 		        	  posXMA= matX*70;
 		        	  posYMA = matY*70;
 		        	  listPokemons.add(new Shaymin(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
-		        	  cap1=1;
 	            }
 		          
 		          //segundo pokemon
 		          if (map[matY][matX] == 4) {
 		        	  posXMA= matX*70;
 		        	  posYMA = matY*70;
-		        	  cap1=2;
 		        	  listPokemons.add(new Bulbasaur(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
 	            }
 		          
@@ -478,7 +476,6 @@ public void cargarPokemones() {
 		          if (map[matY][matX] == 5) {
 		        	  posXMA= matX*70;
 		        	  posYMA = matY*70;
-		        	  cap1=3;
 		        	  listPokemons.add(new Luxray(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
 	            }
 		          
@@ -486,7 +483,6 @@ public void cargarPokemones() {
 		          if (map[matY][matX] == 6) {
 		        	  posXMA= matX*70;
 		        	  posYMA = matY*70;
-		        	  cap1=4;
 		        	  listPokemons.add(new Pikachu(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
 	            }
 	        	
@@ -497,7 +493,6 @@ public void cargarPokemones() {
 			          if (map[matY][matX] == 3) {
 			        	  posXMA= matX*70;
 			        	  posYMA = matY*70;
-			        	  cap1=5;
 			        	  listPokemons.add(new Gothorita(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
 		            }
 			          
@@ -505,8 +500,6 @@ public void cargarPokemones() {
 			          if (map[matY][matX] == 4) {
 			        	  posXMA= matX*70;
 			        	  posYMA = matY*70;
-			        	  cap1=6;
-
 			        	  listPokemons.add(new Luxray(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
 		            }
 			          
@@ -514,16 +507,12 @@ public void cargarPokemones() {
 			          if (map[matY][matX] == 5) {
 			        	  posXMA= matX*70;
 			        	  posYMA = matY*70;
-			        	  cap1=7;
-
 			        	  listPokemons.add(new Manectric(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
 		            }
 			          //cuarto
 			          if (map[matY][matX] == 6) {
 			        	  posXMA= matX*70;
 			        	  posYMA = matY*70;
-			        	  cap1=8;
-
 			        	  listPokemons.add(new MegaGardevoir(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
 		            }
 		        	
@@ -534,8 +523,6 @@ public void cargarPokemones() {
 			          if (map[matY][matX] == 3) {
 			        	  posXMA= matX*70;
 			        	  posYMA = matY*70;
-			        	  cap1=9;
-
 			        	  listPokemons.add(new MegaGardevoir(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
 		            }
 			          
@@ -550,16 +537,12 @@ public void cargarPokemones() {
 			          if (map[matY][matX] == 5) {
 			        	  posXMA= matX*70;
 			        	  posYMA = matY*70;
-			        	  cap1=10;
-
 			        	  listPokemons.add(new Gothorita(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
 		            }
 			          //cuarto
 			          if (map[matY][matX] == 6) {
 			        	  posXMA= matX*70;
 			        	  posYMA = matY*70;
-			        	  cap1=11;
-
 			        	  listPokemons.add(new Bulbasaur(posXMA,posYMA,pokemon,poderValor,vida,tipo,app));    
 		            }
 		        	
@@ -629,18 +612,18 @@ public void PokemonCapturado() {
 	
         	
 	
-	if(cap1==1 && map[posYM][posXM] == 3) {
+/*	if(pokemon1==0 && map[posYM][posXM] == 3) {
 		
 		capturado = 1;
 		
 		
 		
-	}  if(cap1==2 && map[posYM][posXM] == 3) {
+	}  */if(pokemon1==1 && map[posYM][posXM] == 3) {
 		
 		capturado = 5;
-//QUE HACEMOS 
+
 		
-	}  if(cap1==3 && map[posYM][posXM] == 3) {
+	} else if(pokemon1==2 && map[posYM][posXM] == 3) {
 		
 		capturado = 9;
 		
@@ -650,7 +633,7 @@ public void PokemonCapturado() {
 	
 	
 	
-	if(cap1==4 && map[posYM][posXM] == 4) {
+	if(pokemon1==0 && map[posYM][posXM] == 4) {
 		
 		capturado = 2;
 
@@ -658,52 +641,46 @@ public void PokemonCapturado() {
 	}  
 	
 	
-	if(cap1==5 && map[posYM][posXM] == 5) {
+	if(pokemon1==0 && map[posYM][posXM] == 5) {
 		
 		capturado = 3;
 
 		
 	} 
 	
-	if(cap1==6 && map[posYM][posXM] == 6) {
+	if(pokemon1==0 && map[posYM][posXM] == 6) {
 		
 		capturado = 4;
 
 		
 	}
 	
-  if(cap1==7 && map[posYM][posXM] == 4) {
+  if(pokemon1==1 && map[posYM][posXM] == 4) {
 		
 		capturado = 6;
 
 		
-	}  if(cap1==8 && map[posYM][posXM] == 5) {
+	}  if(pokemon1==1 && map[posYM][posXM] == 5) {
 		
 		capturado = 7;
 
 		
-	}  if(cap1==9 && map[posYM][posXM] == 6) {
+	}  if(pokemon1==1 && map[posYM][posXM] == 6) {
 		
 		capturado = 8;
 
 		
-	}
-	
-	if(cap1==10 && map[posYM][posXM] == 4) {
+	} else if(pokemon1==2 && map[posYM][posXM] == 4) {
 		
 		capturado = 10;
 
 		
-	} 
-	
-	if(cap1==11 && map[posYM][posXM] == 5) {
+	} else if(pokemon1==2 && map[posYM][posXM] == 5) {
 		
 		capturado = 11;
 
 		
-	} 
-	
-	if(cap1==12 && map[posYM][posXM] == 6) {
+	} else if(pokemon1==2 && map[posYM][posXM] == 6) {
 		
 		capturado = 12;
 
