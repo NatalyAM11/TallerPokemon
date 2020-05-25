@@ -21,6 +21,8 @@ public class Batalla {
 		pantallaAtrapado= app.loadImage("img/pokemonAtrapado.png");
 		botonContinuar= app.loadImage("img/continuarBotonN.png");
 		botonBatalla= app.loadImage("img/botonesBatalla.png");
+		
+
 	}
 	
 	
@@ -197,10 +199,12 @@ public void pintarVidas () {
 	
 	//Se avisa que se 
 	public void anuncio() {
+		
 	
 		app.image(pantallaAtrapado,0,0);
 		
 		app.image(botonContinuar,253,285);
+		
 	}
 
 
