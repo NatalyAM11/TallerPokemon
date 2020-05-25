@@ -41,6 +41,7 @@ public class Logic {
 	int pPokedex;
 	int JM,screenCambio;
 	int coco;
+	int modo =0;
 	Batalla batalla;
 	
 	
@@ -68,13 +69,14 @@ public class Logic {
 	int cambio = 0;
 	int ordena;
 	boolean botones=true;
+	boolean botonInvisible = false;
 	int boton1;
 
 	//pantallas y mapas
 	int pantalla,mapaX,mapaY;
 	
 	//imagenes fondo y botones
-	PImage arbol,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBoton2, continuarBoton2N, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa,pantallaTecla,bOrdenarN,bOrdenarT,bOrdenarNN,bOrdenarTN;
+	PImage fondo, arbol,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBoton2, continuarBoton2N, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa,pantallaTecla,bOrdenarN,bOrdenarT,bOrdenarNN,bOrdenarTN;
 	PImage selec1,selec2,selec3;
 	
 	//Inicializamos la clase que carga las barras de los perfiles
@@ -341,16 +343,47 @@ public class Logic {
 			//BATALLA
 				case 6:
 
-					batalla.comienza(boton1);
-                    batalla.pintarVidas();
-
+					app.image(fondo, 0, 0);
+					batalla.pintarVidas();
                     batalla.pintarSeleccionado();
                     PokemonCapturado();
+                    
+                    if (botonInvisible == false) {
+                    	
+                        batalla.comienza(boton1);
+
+                    }
+                    
+					 switch(modo) {
+					 
+					 case 0:
+						 
+					
+                    
+                    
+                   break;
+                    
+                    case 1:
+                    	app.fill(0,255,0);
+                    	app.rect(300,200,40,40);
+                    	
+                    	break;
+                    	
+                    case 2:
+                    	
+                    	break;
+                    	
+                    case 3:
+                    	
+                    	break;
+                    }
 
 					
 					break;
 					
-				case 7:
+				   case 7:
+					   
+					   
 					break;
 		
 	}
@@ -465,16 +498,65 @@ public class Logic {
 			break;
 			
 		case 6:
-			
-			
-			if(boton1 ==0) {
+if(boton1 ==0) {
 				
 				batalla.Capturaste(capturado);
-				
+				System.out.print("AgregoOtro");
 				boton1 = 1;
 
 			}
+			
+			switch(modo) {
+			
+			case 0:
+				
+				
+				//Atacar
+				if( (app.mouseX>320 && app.mouseX<406)&& (app.mouseY>337 && app.mouseY<359)){
+					System.out.print("Atacar");
+					modo =2;
+				}
+				
+				//Huir
+	            if( (app.mouseX>418 && app.mouseX<475)&& (app.mouseY>334 && app.mouseY<357)){
+					System.out.print("Huir");
+					
+					pantalla =2;
+
+					
+				}
+	            //Atrapar
+	            if( (app.mouseX>320 && app.mouseX<426)&& (app.mouseY>369 && app.mouseY<394)){
+					System.out.print("Atrapar");
+					botonInvisible = true;
+					modo =1;
+					
+					
+
+				}
+				
+				break;
+				
+			case 1:
+				
+				
+					
+					batalla.atrapar();
+				
+				
+				break;
+				
+			
+			case 2:
+				
+				batalla.atacar();
+				
+				
+				break;
+				
+			
 		
+			}
 			
 			
 			break;
@@ -825,6 +907,8 @@ public void PokemonCapturado() {
 		bOrdenarT=app.loadImage("img/ordenarPorTipoN.png");
 		bOrdenarNN=app.loadImage("img/ordenarPorNombre.png");
 		bOrdenarTN=app.loadImage("img/ordenarPorTipo.png");
+		fondo = app.loadImage("img/fondoBatalla.png");
+
 	}
 
 }

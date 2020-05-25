@@ -9,13 +9,21 @@ public class Batalla {
 	
 	public PApplet app;
 	LinkedList <Pokemons> poke;
-	PImage fondo, hpJugador, hpOponente, pantallaAtrapado, botonContinuar, botonContinuar2,botonBatalla;
+	LinkedList<Girafarig> giraf;
+	LinkedList<Emolga> emolga;
+	LinkedList<Bayleef> bayleef;
+
+
+	PImage hpJugador, hpOponente, pantallaAtrapado, botonContinuar, botonContinuar2,botonBatalla;
+	int cambioImagen;
 	
 	public Batalla (PApplet app) {
 		
 		this.app=app;
 		poke = new LinkedList<Pokemons> ();
-		fondo = app.loadImage("img/fondoBatalla.png");
+		bayleef= new LinkedList<Bayleef>();
+		emolga = new LinkedList<Emolga>();
+		giraf = new LinkedList<Girafarig>() ;
 		hpJugador = app.loadImage("img/HPjugador.png");
 		hpOponente = app.loadImage("img/HPoponente.png");
 		pantallaAtrapado= app.loadImage("img/pokemonAtrapado.png");
@@ -32,13 +40,13 @@ public class Batalla {
 		switch(w) {
 		
 		case 0:
-			poke.add(new Girafarig (0,0,"holi",0,100,"salvaje", app));
+			giraf.add(new Girafarig (0,0,"holi",0,100,"salvaje", app));
 			
 			break;
 			
 		case 1:
 			
-			poke.add(new Emolga (0,0,"holi",0,100,"salvaje", app));
+			emolga.add(new Emolga (0,0,"holi",0,100,"salvaje", app));
 
 			
 			
@@ -46,7 +54,7 @@ public class Batalla {
 			
 		case 2:
 			
-			poke.add(new Bayleef (0,0,"holi",0,100,"salvaje", app));
+			bayleef.add(new Bayleef (0,0,"holi",0,100,"salvaje", app));
 
 			
 			break;
@@ -66,11 +74,36 @@ public void pintarVidas () {
 	
 	public void pintarSeleccionado() {
 		
-		for(int i=0; i < poke.size(); i++ ) {
+		for(int i=0; i < emolga.size(); i++ ) {
+			emolga.get(i).pintar(cambioImagen);
+			emolga.get(i).vida();
+
+
 			
-			poke.get(i).pintar(1);
-			poke.get(i).mover(0);
-			poke.get(i).vida();
+		}
+        for(int i=0; i < giraf.size(); i++ ) {
+        	
+        	giraf.get(i).pintar(cambioImagen);
+        	giraf.get(i).vida();
+
+
+			
+		}
+       for(int i=0; i < bayleef.size(); i++ ) {
+    	   
+    	   bayleef.get(i).pintar(cambioImagen);
+    	   bayleef.get(i).vida();
+
+
+			
+		}
+		
+	
+		
+       for(int i=0; i < poke.size(); i++ ) {
+			
+			poke.get(i).pintar(cambioImagen);
+			poke.get(i).mover(cambioImagen);
 
 			
 		}
@@ -181,7 +214,7 @@ public void pintarVidas () {
 	
 	public void comienza(int a) {
 		
-		app.image(fondo, 0, 0);
+		
 		
 		if(a == 1) {
 			
@@ -208,7 +241,62 @@ public void pintarVidas () {
 	}
 
 
+public void atrapar() {
+		
+		int aleotoridad = (int)app.random(0,4);
+		
+		if(aleotoridad== 3) {
+			
+			System.out.print("Lo atrapaste");
+			cambioImagen=1;
+			app.fill(0,255,0);
+			app.rect(0,0,700,400);
+		}
+        if(aleotoridad== 1 || aleotoridad== 2 || aleotoridad== 0) {
+			
+			System.out.print("Mala Suerte");
+			cambioImagen=2;
+			app.fill(255,0,0);
+			app.rect(0,0,700,400);
+		}
+		
+		
+	}
 	
+	public void atacar() {
+		
+		int turnos=0;
+		
+		for(int i=0; i<poke.size(); i++) {
+			for(int j=0; j<poke.size(); j++) {
+		
+		
+		switch(turnos) {
+		
+		//Pokemon Seleccionado
+		case 0:
+			cambioImagen=2;
+			poke.get(i).setVida(-20);
+			
+			//turnos =1;
+			break;
+		//Pokemon Encontrado
+
+		case 1:
+			
+			//turnos =3;
+			break;
+		//Lo atraspaste o no. 
+
+		case 3:
+			
+			break;
+		}
+		
+		}
+		
+		}	
+	}
 	
 
 }
