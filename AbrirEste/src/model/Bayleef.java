@@ -30,13 +30,22 @@ public class Bayleef extends Pokemons {
 		
 	 switch(imgBayleef) {
 	 
-		 case 0: app.image(bayleefAtaque,posX,posY);
+		 case 0: app.image(bayleefEspalda,posX,posY);
 			 break;
-		 case 1:app.image(bayleefDebil,posX,posY);
+		 case 1:app.image(bayleefAtaque,posX,posY);
+			 
 			 break;
-		 case 2: app.image(bayleefEspalda,posX,posY);
+		 case 2: app.image(bayleefDebil,posX,posY);
 			 break;
-		 case 3:app.image(bayleefFrente,posX,posY);
+			//Pokebola NO COLOCAR IMAGEN DEJAR VACIO
+		 case 3: 
+		     break; 
+		   //Hoja NO COLOCAR IMAGEN DEJAR VACIO
+		 case 4:
+			 break;
+			 //Inventario
+		 case 5: app.image(bayleefFrente,posX,posY);
+			 break;
 		
 	 }
 	}
@@ -45,7 +54,8 @@ public class Bayleef extends Pokemons {
 		
 		
 		switch(r) {
-		
+		case 0:
+			break;
 		case 1:
 			
 			//se mueve a la derecha
@@ -84,7 +94,10 @@ public class Bayleef extends Pokemons {
 	        }
 			
 			break;
-		
+		case 3:
+			break;
+		case 4:
+			break;
 		
 		
 		}

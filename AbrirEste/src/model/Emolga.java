@@ -30,13 +30,19 @@ public class Emolga extends Pokemons{
 		
 		 switch(imgEmolga) {
 		 
-		 case 0: app.image(emolgaAtaque,posX,posY);
+		 case 0: app.image(emolgaEspalda,posX,posY);
 			 break;
-		 case 1:app.image(emolgaDebil,posX,posY);
+		 case 1:app.image(emolgaAtaque,posX,posY);
 			 break;
-		 case 2: app.image(emolgaEspalda,posX,posY);
+		 case 2: app.image(emolgaDebil,posX,posY);
 			 break;
-		 case 3: app.image(emolgaFrente,posX,posY);
+			//Pokebola NO COLOCAR IMAGEN DEJAR VACIO
+		 case 3: 
+		     break; 
+		   //Hoja NO COLOCAR IMAGEN DEJAR VACIO
+		 case 4:
+			 break;
+		 case 5: app.image(emolgaFrente,posX,posY);
 		 break;
 		 
 		 
@@ -52,7 +58,8 @@ public void mover(int r) {
 		
 		
 		switch(r) {
-		
+		case 0:
+			break;
 		case 1:
 			
 			//se mueve a la derecha
@@ -90,6 +97,10 @@ public void mover(int r) {
 	            this.dirX=-1;
 	        }
 			
+			break;
+		case 3:
+			break;
+		case 4:
 			break;
 		
 		

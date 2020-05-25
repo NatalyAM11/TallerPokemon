@@ -27,12 +27,15 @@ public class Pikachu extends Pokemons {
 	public void pintar(int imgPikachu) {
 		
 		 switch(imgPikachu) {
-		 
-		 case 0: app.image(pikachuAtaque,posX,posY);
+		 case 0: app.image(pikachuFrente,posX,posY);
 			 break;
-		 case 1:app.image(pikachuDebil,posX,posY);
+		 case 1: app.image(pikachuAtaque,posX,posY);
 			 break;
-		 case 2: app.image(pikachuFrente,posX,posY);
+		 case 2:app.image(pikachuDebil,posX,posY);
+			 break;
+		 case 3: 
+			 break;
+		 case 4: 
 			 break;
 		
 	 }
@@ -45,7 +48,8 @@ public void mover(int r) {
 		
 		
 		switch(r) {
-		
+		case 0: 
+			 break;
 		case 1:
 			
 			//Se mueva a la izquierda
@@ -84,6 +88,10 @@ public void mover(int r) {
 	        }
 			
 			break;
+		case 3: 
+			 break;
+		case 4: 
+			 break;
 		
 		
 		

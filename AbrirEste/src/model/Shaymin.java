@@ -30,12 +30,19 @@ public class Shaymin extends Pokemons{
 	
 	 switch(imgShaymin) {
 	 
-		 case 0: app.image(shayminAtaque,posX,posY);
+	     case 0: app.image(shayminFrente,posX,posY);
+		 break;
+		 case 1: app.image(shayminAtaque,posX,posY);
 			 break;
-		 case 1:app.image(shayminDebil,posX,posY);
+		 case 2:app.image(shayminDebil,posX,posY);
 			 break;
-		 case 2: app.image(shayminFrente,posX,posY);
+		 case 3: 
 			 break;
+		 case 4: 
+			 break;
+		 case 5: 
+			 break;
+		
 		
 	 }
 		
@@ -55,7 +62,8 @@ public class Shaymin extends Pokemons{
 		
 		
 		switch(r) {
-		
+		case 0: 
+			 break;
 		case 1:
 			
 			//Se mueva a la izquierda
@@ -94,6 +102,10 @@ public class Shaymin extends Pokemons{
 	        }
 			
 			break;
+		case 3: 
+			 break;
+		case 4: 
+			 break;
 		
 		
 		

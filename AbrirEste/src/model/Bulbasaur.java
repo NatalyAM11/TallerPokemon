@@ -30,13 +30,21 @@ public class Bulbasaur extends Pokemons{
 		
 		 switch(imgBulbasaur) {
 		 
-		 case 0: //app.image(bulbasaurAtaque,posX,posY);
-			 break;
-		 case 1:app.image(bulbasaurDebil,posX,posY);
-			 break;
-		 case 2: app.image(bulbasaurFrente,posX,posY);
-			 break;
 		 
+     case 0: app.image(bulbasaurFrente,posX,posY);
+		 break;
+	 case 1:app.image(bulbasaurAtaque,posX,posY);
+		 
+		 break;
+	 case 2: app.image(bulbasaurDebil,posX,posY);
+		 break;
+		//Pokebola 
+	 case 3: 
+	     break; 
+	   //Hoja 
+	 case 4:
+		 break;
+	 
 		
 	 }
 		
@@ -50,7 +58,8 @@ public void mover(int r) {
 		
 		
 		switch(r) {
-		
+		case 0:
+			break;
 		case 1:
 			
 			//Se mueva a la izquierda
@@ -89,6 +98,10 @@ public void mover(int r) {
 	            this.dirX=-1;
 	        }
 			
+			break;
+		case 3:
+			break;
+		case 4:
 			break;
 		
 		

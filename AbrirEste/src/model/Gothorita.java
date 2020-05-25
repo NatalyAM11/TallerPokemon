@@ -28,12 +28,17 @@ public class Gothorita extends Pokemons {
 	public void pintar(int imgGothorita) {
 		
 		 switch(imgGothorita) {
-		 
-		 case 0: app.image(gothoritaAtaque,posX,posY);
+		 case 0 : app.image(gothoritaFrente,posX,posY);
+		     break;
+		 case 1: app.image(gothoritaAtaque,posX,posY);
 			 break;
-		 case 1:app.image(gothoritaDebil,posX,posY);
+		 case 2:app.image(gothoritaDebil,posX,posY);
 			 break;
-		 case 2: app.image(gothoritaFrente,posX,posY);
+		//Pokebola 
+		 case 3: 
+			 break;
+		//Hoja
+		 case 4:
 			 break;
 		
 		
@@ -50,7 +55,8 @@ public void mover(int r) {
 		
 		
 		switch(r) {
-		
+		case 0:
+			break;
 		case 1:
 			//Se mueva a la izquierda
 			this.posX -= this.dirX*3;
@@ -87,6 +93,10 @@ public void mover(int r) {
 	            this.dirX=-1;
 	        }
 			
+			break;
+		case 3:
+			break;
+		case 4:
 			break;
 		
 		

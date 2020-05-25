@@ -29,12 +29,15 @@ public class MegaGardevoir extends Pokemons {
 		
 		
 	 switch(imgMegaGardevoir) {
-	 
-		 case 0: app.image(megaGardevoirAtaque,posX,posY);
+	     case 0: app.image(megaGardevoirFrente,posX,posY);
+		 break;
+		 case 1: app.image(megaGardevoirAtaque,posX,posY);
 			 break;
-		 case 1:app.image(megaGardevoirDebil,posX,posY,200,200);
+		 case 2:app.image(megaGardevoirDebil,posX,posY,200,200);
 			 break;
-		 case 2: app.image(megaGardevoirFrente,posX,posY);
+		 case 3: 
+			 break;
+		 case 4: 
 			 break;
 		
 	 }
@@ -47,7 +50,8 @@ public void mover(int r) {
 		
 		
 		switch(r) {
-		
+		case 0: 
+			 break;
 		case 1:
 			//Se mueva a la izquierda
 			this.posX -= this.dirX*3;
@@ -85,6 +89,10 @@ public void mover(int r) {
 	        }
 			
 			break;
+		case 3: 
+			 break;
+		case 4: 
+			 break;
 		
 		
 		

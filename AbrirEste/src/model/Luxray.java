@@ -27,12 +27,15 @@ public class Luxray extends Pokemons {
 	public void pintar(int imgLuxray) {
 		
 		 switch(imgLuxray) {
-		 
-		 case 0: app.image(luxrayAtaque,posX,posY);
+		 case 0: app.image(luxrayFrente,posX,posY);
+		     break;
+		 case 1: app.image(luxrayAtaque,posX,posY);
 			 break;
-		 case 1:app.image(luxrayDebil,posX,posY);
+		 case 2:app.image(luxrayDebil,posX,posY);
 			 break;
-		 case 2: app.image(luxrayFrente,posX,posY);
+		 case 3: 
+			 break;
+		 case 4: 
 			 break;
 		
 	 }
@@ -45,7 +48,8 @@ public void mover(int r) {
 		
 		
 		switch(r) {
-		
+		case 0: 
+			 break;
 		case 1:
 			
 			//Se mueva a la izquierda
@@ -84,6 +88,10 @@ public void mover(int r) {
 	        }
 			
 			break;
+		case 3: 
+			 break;
+		case 4: 
+			 break;
 		
 		
 		

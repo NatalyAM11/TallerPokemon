@@ -30,11 +30,15 @@ public class Manectric extends Pokemons {
 		
 	 switch(imgManectric) {
 	 
-		 case 0: app.image(manectricAtaque,posX,posY);
+	      case 0: app.image(manectricFrente,posX,posY);
+		 break;
+		 case 1: app.image(manectricAtaque,posX,posY);
 			 break;
-		 case 1:app.image(manectricDebil,posX,posY);
+		 case 2:app.image(manectricDebil,posX,posY);
 			 break;
-		 case 2: app.image(manectricFrente,posX,posY);
+		 case 3: 
+			 break;
+		 case 4: 
 			 break;
 		 
 		
@@ -87,6 +91,10 @@ public void mover(int r) {
 	        }
 			
 			break;
+		case 3: 
+			 break;
+		case 4: 
+			 break;
 		
 		
 		

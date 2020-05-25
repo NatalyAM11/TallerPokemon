@@ -29,13 +29,20 @@ public class Girafarig extends Pokemons{
 		
 		 switch(imgGirafarig) {
 		 
-		 case 0: app.image(girafarigAtaque,posX,posY);
+		 case 0: app.image(girafarigEspalda,posX,posY);
 			 break;
-		 case 1:app.image(girafarigDebil,posX,posY);
+		 case 1:app.image(girafarigAtaque,posX,posY);
 			 break;
-		 case 2: app.image(girafarigEspalda,posX,posY);
+		 case 2: app.image(girafarigDebil,posX,posY);
 			 break;
-		 case 3: app.image(girafarigFrente,posX,posY);
+			//Pokebola NO COLOCAR IMAGEN DEJAR VACIO
+		 case 3: 
+			 break;
+			//Hoja NO COLOCAR IMAGEN DEJAR VACIO
+		 case 4:
+			 break;
+		 case 5:
+			 app.image(girafarigFrente,posX,posY);
 		 break;
 		 
 		
@@ -49,7 +56,8 @@ public void mover(int r) {
 		
 		
 		switch(r) {
-		
+		case 0:
+			break;
 		case 1:
 			//se mueve a la derecha
 			this.posX += this.dirX*3;
@@ -86,6 +94,10 @@ public void mover(int r) {
 	            this.dirX=-1;
 	        }
 			
+			break;
+		case 3:
+			break;
+		case 4:
 			break;
 		
 		
