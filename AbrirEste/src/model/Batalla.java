@@ -12,6 +12,7 @@ public class Batalla {
 	LinkedList<Girafarig> giraf;
 	LinkedList<Emolga> emolga;
 	LinkedList<Bayleef> bayleef;
+	//comentario
 
 
 	PImage hpJugador, hpOponente, pantallaAtrapado, botonContinuar, botonContinuar2,botonBatalla,pantallaEncontrado,pantallaEscapo;
