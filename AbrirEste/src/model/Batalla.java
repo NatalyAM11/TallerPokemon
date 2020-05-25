@@ -15,7 +15,7 @@ public class Batalla {
 
 
 	PImage hpJugador, hpOponente, pantallaAtrapado, botonContinuar, botonContinuar2,botonBatalla,pantallaEncontrado,pantallaEscapo;
-	int cambioImagen;
+	int cambioImagen = 0;
 	
 	public Batalla (PApplet app) {
 		
@@ -126,13 +126,11 @@ public void pintarVidas () {
 		
 		case 1:
 			poke.add(new Shaymin (300,-100,"holi",0,100,"salvaje", app));
-			
 			break;
 			
 		case 2:
 			
 			poke.add(new Bulbasaur (0,0,"holi",0,100,"salvaje", app));
-
 			
 			
 			break;
@@ -141,6 +139,7 @@ public void pintarVidas () {
 			
 			poke.add(new Luxray (0,0,"holi",0,100,"salvaje", app));
 
+
 			
 			break;
 			
@@ -148,18 +147,21 @@ public void pintarVidas () {
 			
 			poke.add(new Pikachu (0,0,"holi",0,100,"salvaje", app));
 
+
 			
 			break;
 			
 			
           case 5:
   			poke.add(new Gothorita (300,-100,"holi",0,100,"salvaje", app));
+
   			
   			break;
   			
   		case 6:
   			
   			poke.add(new Luxray (0,0,"holi",0,100,"salvaje", app));
+
 
   			
   			
@@ -169,6 +171,7 @@ public void pintarVidas () {
   			
   			poke.add(new Manectric (0,0,"holi",0,100,"salvaje", app));
 
+
   			
   			break;
   			
@@ -176,17 +179,20 @@ public void pintarVidas () {
   			
   			poke.add(new MegaGardevoir (0,0,"holi",0,100,"salvaje", app));
 
+
   			
   			break;
   			
             case 9:
       			poke.add(new MegaGardevoir (434,150,"holi",0,100,"salvaje", app));
+
       			
       			break;
       			
       		case 10:
       			
       			poke.add(new Pikachu (0,0,"holi",0,100,"salvaje", app));
+
 
       			
       			
@@ -196,12 +202,14 @@ public void pintarVidas () {
       			
       			poke.add(new Gothorita (0,0,"holi",0,100,"salvaje", app));
 
+
       			
       			break;
       			
                 case 12:
       			
       			poke.add(new Bulbasaur (0,0,"holi",0,100,"salvaje", app));
+
 
       			
       			break;
@@ -275,7 +283,7 @@ public void atrapar() {
 		
 		//Pokemon Seleccionado
 		case 0:
-			cambioImagen=2;
+			//cambioImagen=2;
 			poke.get(i).setVida(-20);
 			
 			//turnos =1;
