@@ -6,7 +6,7 @@ import processing.core.PImage;
 
 public class Shaymin extends Pokemons{
 	
-	PImage shayminBarra,shayminAtaque,shayminDebil, shayminFrente, shayminPerfil, shayminMapa; 
+	PImage pokebola,hojas,shayminBarra,shayminAtaque,shayminDebil, shayminFrente, shayminPerfil, shayminMapa; 
 	Gif shayminGif;
 
 	public Shaymin(int posX, int posY, String nombre, int poder, int vida, String tipo, PApplet app) {
@@ -21,6 +21,8 @@ public class Shaymin extends Pokemons{
 		shayminMapa=app.loadImage("img/shayminMapa.png");
 		shayminGif = new Gif(app,"gif/Shaymin.gif");
 		shayminBarra=app.loadImage("img/shayminBarra.png");
+		pokebola=app.loadImage("img/pokebola.png");
+		hojas=app.loadImage("img/hojas.png");
 		
 	}
 
@@ -37,8 +39,10 @@ public class Shaymin extends Pokemons{
 		 case 2:app.image(shayminDebil,posX,posY);
 			 break;
 		 case 3: 
+			 app.image(pokebola,posX,posY);
 			 break;
-		 case 4: 
+		 case 4:
+			 app.image(hojas,posX,posY);
 			 break;
 		 case 5: 
 			 break;

@@ -6,7 +6,7 @@ import processing.core.PImage;
 
 public class Pikachu extends Pokemons {
 
-	PImage pikachuBarra,pikachuAtaque,pikachuDebil, pikachuFrente, pikachuPerfil,pikachuMapa; 
+	PImage hojas,pokebola,pikachuBarra,pikachuAtaque,pikachuDebil, pikachuFrente, pikachuPerfil,pikachuMapa; 
 	Gif pikachuGif;
 	
 	public Pikachu(int posX, int posY, String nombre, int poder, int vida, String tipo, PApplet app) {
@@ -20,7 +20,9 @@ public class Pikachu extends Pokemons {
 		pikachuMapa=app.loadImage("img/pikachuMapa.png");
 		pikachuGif= new Gif(app,"gif/Pikachu.gif");
 		pikachuBarra=app.loadImage("img/pikachuBarra.png");
-
+		pokebola=app.loadImage("img/pokebola.png");
+		hojas=app.loadImage("img/hojas.png");
+		
 	}
 
 	
@@ -34,8 +36,10 @@ public class Pikachu extends Pokemons {
 		 case 2:app.image(pikachuDebil,posX,posY);
 			 break;
 		 case 3: 
+			 app.image(pokebola,posX,posY);
 			 break;
 		 case 4: 
+			 app.image(hojas,posX,posY);
 			 break;
 		
 	 }

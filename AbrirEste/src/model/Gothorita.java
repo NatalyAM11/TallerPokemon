@@ -7,7 +7,7 @@ import processing.core.PImage;
 public class Gothorita extends Pokemons {
 
 
-	PImage gothoritaBarra,gothoritaAtaque,gothoritaDebil, gothoritaFrente, gothoritaPerfil, gothoritaMapa; 
+	PImage pokebola,hojas,gothoritaBarra,gothoritaAtaque,gothoritaDebil, gothoritaFrente, gothoritaPerfil, gothoritaMapa; 
 	Gif gothoritaGif;
 	
 	public Gothorita(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
@@ -21,6 +21,8 @@ public class Gothorita extends Pokemons {
 		gothoritaMapa=app.loadImage("img/gothoritaMapa.png");
 		gothoritaGif= new Gif(app,"gif/Gothorita.gif");
 		gothoritaBarra=app.loadImage("img/gothoritaBarra.png");
+		pokebola=app.loadImage("img/pokebola.png");
+		hojas=app.loadImage("img/hojas.png");
 
 	}
 
@@ -36,9 +38,11 @@ public class Gothorita extends Pokemons {
 			 break;
 		//Pokebola 
 		 case 3: 
+			 app.image(pokebola,posX,posY);
 			 break;
 		//Hoja
 		 case 4:
+			 app.image(hojas,posX,posY);
 			 break;
 		
 		

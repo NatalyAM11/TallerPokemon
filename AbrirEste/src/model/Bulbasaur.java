@@ -7,7 +7,7 @@ import processing.core.PImage;
 public class Bulbasaur extends Pokemons{
 	
 	
-	PImage bulbasaurBarra,bulbasaurAtaque, bulbasaurDebil, bulbasaurFrente, bulbasaurPerfil, bulbasaurMapa;
+	PImage pokebola,hojas,bulbasaurBarra,bulbasaurAtaque, bulbasaurDebil, bulbasaurFrente, bulbasaurPerfil, bulbasaurMapa;
 	Gif bulbasaurGif;
 
 	public Bulbasaur(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
@@ -22,6 +22,8 @@ public class Bulbasaur extends Pokemons{
 		bulbasaurMapa=app.loadImage("img/bulbasaurMapa.png");
 		bulbasaurGif= new Gif(app,"gif/Bulbasaur.gif");
 		bulbasaurBarra=app.loadImage("img/bulbasaurBarra.png");
+		pokebola=app.loadImage("img/pokebola.png");
+		hojas=app.loadImage("img/hojas.png");
 
 	}
 
@@ -40,9 +42,11 @@ public class Bulbasaur extends Pokemons{
 		 break;
 		//Pokebola 
 	 case 3: 
+		 app.image(pokebola, posX, posY);
 	     break; 
 	   //Hoja 
 	 case 4:
+		 app.image(hojas, posX, posY);
 		 break;
 	 
 		

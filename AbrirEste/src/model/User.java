@@ -1,16 +1,25 @@
 package model;
 
+import processing.core.PApplet;
+import processing.core.PImage;
+
 public class User {
 	
 	private String nickname, email, password;
 	private boolean login;
+	PImage usuarioVinterx,usuarioZimzaladdude,usuarioAlexis,usuarioMariajose,usuarioMysterious;
 
 
-public User ( String nickename, String email, String password ) {
+public User ( String nickename, String email, String password, PApplet app) {
 	
 	this.nickname = nickename;
 	this.email = email;
 	this.password = password;
+	usuarioVinterx = app.loadImage("img/usuarioVinterx.png");
+	usuarioZimzaladdude = app.loadImage("img/usuarioZimzaladdude.png");
+	usuarioAlexis = app.loadImage("img/usuarioAlexis.png");
+	usuarioMariajose = app.loadImage("img/usuarioMariajose.png");
+	usuarioMysterious = app.loadImage("img/usuarioMysterious.png");
 }
 
 public String getNickname() {
@@ -49,3 +58,4 @@ public void setLogin(boolean login) {
 
 
 }
+

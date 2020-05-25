@@ -7,7 +7,7 @@ import processing.core.PImage;
 public class MegaGardevoir extends Pokemons {
 
 	
-	PImage megaGardevoirAtaque,megaGardevoirBarra,megaGardevoirDebil, megaGardevoirFrente, megaGardevoirPerfil, megaGardevoirMapa; 
+	PImage pokebola,hojas,megaGardevoirAtaque,megaGardevoirBarra,megaGardevoirDebil, megaGardevoirFrente, megaGardevoirPerfil, megaGardevoirMapa; 
 	Gif megagardevoirGif;
 	
 	public MegaGardevoir(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
@@ -22,7 +22,9 @@ public class MegaGardevoir extends Pokemons {
 		megaGardevoirMapa=app.loadImage("img/megagardevoirMapa.png");
 		megagardevoirGif= new Gif(app,"gif/MegaGardevoir.gif");	
 		megaGardevoirBarra=app.loadImage("img/megaGardevoirBarra.png");
-
+		pokebola=app.loadImage("img/pokebola.png");
+		hojas=app.loadImage("img/hojas.png");
+		
 	}
 
 	public void pintar(int imgMegaGardevoir) {
@@ -36,8 +38,10 @@ public class MegaGardevoir extends Pokemons {
 		 case 2:app.image(megaGardevoirDebil,posX,posY,200,200);
 			 break;
 		 case 3: 
+			 app.image(pokebola,posX,posY,200,200);
 			 break;
-		 case 4: 
+		 case 4:
+			 app.image(hojas,posX,posY,200,200);
 			 break;
 		
 	 }

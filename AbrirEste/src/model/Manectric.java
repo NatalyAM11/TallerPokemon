@@ -7,7 +7,7 @@ import processing.core.PImage;
 public class Manectric extends Pokemons {
 	
 	
-	PImage manectricBarra,manectricAtaque,manectricDebil, manectricFrente, manectricPerfil, manectricMapa; 
+	PImage pokebola,hojas,manectricBarra,manectricAtaque,manectricDebil, manectricFrente, manectricPerfil, manectricMapa; 
 	Gif manectricGif;
 
 	public Manectric(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
@@ -22,6 +22,9 @@ public class Manectric extends Pokemons {
 		manectricMapa=app.loadImage("img/manectricMapa.png");
 		manectricGif= new Gif(app,"gif/Manectric.gif");
 		manectricBarra=app.loadImage("img/manectricBarra.png");
+		pokebola=app.loadImage("img/pokebola.png");
+		hojas=app.loadImage("img/hojas.png");
+
 
 	}
 
@@ -37,8 +40,10 @@ public class Manectric extends Pokemons {
 		 case 2:app.image(manectricDebil,posX,posY);
 			 break;
 		 case 3: 
+			 app.image(pokebola,posX,posY);
 			 break;
 		 case 4: 
+			 app.image(hojas,posX,posY);
 			 break;
 		 
 		

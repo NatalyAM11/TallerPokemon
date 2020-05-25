@@ -7,7 +7,7 @@ import processing.core.PImage;
 public class Bayleef extends Pokemons {
 	
 	
-	PImage bayleefBarra,bayleefAtaque,bayleefDebil, bayleefEspalda, bayleefPerfil, bayleefFrente;
+	PImage pokebola,hojas,bayleefBarra,bayleefAtaque,bayleefDebil, bayleefEspalda, bayleefPerfil, bayleefFrente;
 	Gif bayleefGif;
 	
 	public Bayleef(int posX, int posY, String nombre, int poder, int vida, String tipo,PApplet app) {
@@ -22,7 +22,8 @@ public class Bayleef extends Pokemons {
 		bayleefGif= new Gif(app,"gif/Bayleef.gif");
 		bayleefBarra=app.loadImage("img/bayleefBarra.png");
 		bayleefFrente=app.loadImage("img/bayleefFrente.png");
-		
+		pokebola=app.loadImage("img/pokebola.png");
+		hojas=app.loadImage("img/hojas.png");
 	} 
 	
 	
