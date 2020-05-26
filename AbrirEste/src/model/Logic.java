@@ -367,7 +367,7 @@ public class Logic {
 					app.image(fondoRosado,0,0);
 					app.image(inventarioVolver,0,0);
 					
-                    batalla.pintarSeleccionado();
+                    batalla.pintarInvertario();
                     
 
 					break;

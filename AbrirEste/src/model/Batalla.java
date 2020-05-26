@@ -109,8 +109,8 @@ public void pintarVidas () {
 			
 			if((emolga.get(i).getVida()) <= 0) {
 	        	 
-			       turnos =3;
-			
+			       app.text("moriste",200,300);
+
 		            }
 
 			
@@ -132,8 +132,8 @@ public void pintarVidas () {
         	
         	if((giraf.get(i).getVida()) <= 0) {
 	        	 
-			       turnos =3;
-			
+			       app.text("moriste",200,300);
+
 		            }
 
 			
@@ -159,7 +159,7 @@ public void pintarVidas () {
 
     	   if((bayleef.get(i).getVida()) <= 0) {
 	        	 
-		       turnos =3;
+		       app.text("moriste",200,300);
 		
 	            }
 
@@ -193,13 +193,14 @@ public void pintarVidas () {
 			       turnos =3;
 			
 		            }
-			
+			if(mal == true) {
+		    	   poke.remove(i);
+		       }
 		}
        
        
        if(mal == true) {
     	   app.image(pantallaEscapo,274,127,175,100);
-    	   
        }
        
        if(suerte == true) {
@@ -564,8 +565,27 @@ public void atrapar() {
 			break;
 		}
 		}
-	}	
+	}
+	
+	public void pintarInvertario() {
+		for(int i=0; i < emolga.size(); i++ ) {
+			emolga.get(i).pintar(5);
 		
+	}
+		
+		for(int i=0; i < giraf.size(); i++ ) {
+			giraf.get(i).pintar(5);
+		
+	}
+		for(int i=0; i < bayleef.size(); i++ ) {
+			bayleef.get(i).pintar(5);
+		
+	}
+		
+           for(int i=0; i < poke.size(); i++ ) {
 			
+			poke.get(i).pintar(0);
+      }	
+	}		
 				
 }
