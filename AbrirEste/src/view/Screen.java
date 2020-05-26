@@ -6,7 +6,6 @@ public class Screen {
 	
 	public PApplet app;
 	private int numPantalla;
-	ScreenLogica scr1;
 	ScreenPokedex scr2;
 	
 	
@@ -18,7 +17,6 @@ public class Screen {
 	}
 	public void inciar() {
 		
-		scr1 = new ScreenLogica(app);
 		scr2 = new ScreenPokedex(app);
 		scr2.iniciar();
 	}
@@ -29,7 +27,7 @@ public class Screen {
 		switch(numPantalla) {
 		
 		case 0:
-			//scr1.pintarUser();
+			
 			scr2.pintar();
 			
 			break;
@@ -58,7 +56,6 @@ public class Screen {
 		switch(numPantalla) {
 		
 		case 0:
-			//scr1.mouse();
 			scr2.mouse();
 			break;
 			
@@ -84,7 +81,7 @@ public class Screen {
 switch(numPantalla) {
 		
 		case 0:
-			scr1.teclado();
+			
 			scr2.flechas();
 			break;
 			

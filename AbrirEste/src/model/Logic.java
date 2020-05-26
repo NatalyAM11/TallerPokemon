@@ -91,7 +91,7 @@ public class Logic {
 	public Logic(PApplet app) {
 		
 		this.app=app;
-		pantalla=0;
+		pantalla=1;
 		mover=true;
 		pokemones = app.loadStrings("lib/info_pokemones.txt");
 		usuarios = app.loadStrings("lib/infoUsuarios.txt");
@@ -196,36 +196,6 @@ public class Logic {
 
 		
 		switch(pantalla) {
-		
-
-
-			case 0:
-				//Imagenes
-				app.image(fondoInicio,0,0);
-				app.image(registrarseBoton,253,227);
-				app.image(continuarBoton,253,285);
-				app.image(usuarioBoton,253,344);
-		
-				//usar la funcion image para cargar el gif
-				//app.image(prueba,0,0);
-				
-				
-				//botones 
-				
-				if( (app.mouseX>253 && app.mouseX<466)&& (app.mouseY>227 && app.mouseY<272)){
-				app.image(registrarseBotonN,253,227);
-				} 
-				if( (app.mouseX>253 && app.mouseX<466)&& (app.mouseY>285 && app.mouseY<331)){
-					app.image(continuarBotonN,253,285);
-				} 
-				if( (app.mouseX>253 && app.mouseX<466)&& (app.mouseY>344 && app.mouseY<389)){
-					app.image(usuarioBotonN,253,344);
-				} 
-				
-
-				
-				app.fill(0);
-				break;
 		
 				case 1:
 					//pantalla
@@ -459,16 +429,8 @@ public class Logic {
 		
 		switch(pantalla) {
 
-		case 0: 
 		
-		if( (app.mouseX>253 && app.mouseX<466)&& (app.mouseY>344 && app.mouseY<389)){
-			pantalla=1;
-		}
-		
-		break;
-		
-		
-		case 1:
+			case 1:
 						
 			//Escoge la jirafa
 			if( (app.mouseX>120 && app.mouseX<250)&& (app.mouseY>298 && app.mouseY<328)){
@@ -984,10 +946,8 @@ public void stopTodo() throws FirstException {
 		continuarBoton2=app.loadImage("img/continuarBotonN.png");
 		continuarBoton2N=app.loadImage("img/continuarBoton.png");
 		continuarBotonN=app.loadImage("img/continuarBotonN.png");
-		registrarseBoton=app.loadImage("img/registrarseBoton.png");
-		registrarseBotonN=app.loadImage("img/registrarseBotonN.png");
-		usuarioBoton=app.loadImage("img/usuario.png");
-		usuarioBotonN=app.loadImage("img/usuarioN.png");
+		
+		
 		pokemonEleccion=app.loadImage("img/PokemonEleccion.png");
 		selec1=app.loadImage("img/seleccionarBotonN.png");
 		selec2=app.loadImage("img/seleccionarBotonN.png");
