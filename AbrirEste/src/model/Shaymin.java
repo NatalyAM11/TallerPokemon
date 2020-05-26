@@ -98,7 +98,7 @@ public class Shaymin extends Pokemons{
 		this.posX += this.dirX*3;
 		this.posY += this.dirY*3;
 		
-		if(this.posX>0) {
+		if(this.posX>0 ) {
 			
 			this.dirX=this.dirX*-1;
 			

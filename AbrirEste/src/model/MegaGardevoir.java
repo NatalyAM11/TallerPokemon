@@ -86,9 +86,10 @@ public void mover2() {
 	this.posY += this.dirY*3;
 	
 	
-	if(this.posX>0) {
+	if(this.posX<700) {
 		
 	this.dirX=this.dirX*-1;
+	this.dirY=this.dirY*-1;
 	
 	//asi tiembla
 	if (this.posX > posXmas) {

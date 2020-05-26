@@ -138,7 +138,7 @@ public void pintarVidas () {
     	   
     	   if(mover==true) {
     		   bayleef.get(i).mover();
-    		   new Thread (bayleef.get(i)).start();
+    		  
 			}
     	   
     	   if(mover2==true) {
