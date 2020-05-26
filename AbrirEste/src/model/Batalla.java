@@ -16,7 +16,10 @@ public class Batalla {
 
 
 	PImage hpJugador, hpOponente, pantallaAtrapado, botonContinuar, botonContinuar2,botonBatalla,pantallaEncontrado,pantallaEscapo;
-	int cambioImagen = 0;
+	int cambioPersonaje = 0;
+	int cambioEnemigo = 0;
+	int turnos=0;
+	boolean suerte,mal;
 	
 	public Batalla (PApplet app) {
 		
@@ -32,6 +35,8 @@ public class Batalla {
 		pantallaEscapo= app.loadImage("img/escapoPantalla.png");
 		botonContinuar= app.loadImage("img/continuarBotonN.png");
 		botonBatalla= app.loadImage("img/botonesBatalla.png");
+		this.suerte = false;
+		this.mal = false;
 		
 
 	}
@@ -78,24 +83,30 @@ public void pintarVidas () {
 	public void pintarSeleccionado() {
 		
 		for(int i=0; i < emolga.size(); i++ ) {
-			emolga.get(i).pintar(cambioImagen);
+			emolga.get(i).pintar(cambioPersonaje);
 			emolga.get(i).vida();
+			emolga.get(i).mover(cambioPersonaje);
+
 
 
 			
 		}
         for(int i=0; i < giraf.size(); i++ ) {
         	
-        	giraf.get(i).pintar(cambioImagen);
+        	giraf.get(i).pintar(cambioPersonaje);
         	giraf.get(i).vida();
+        	giraf.get(i).mover(cambioPersonaje);
+
 
 
 			
 		}
        for(int i=0; i < bayleef.size(); i++ ) {
     	   
-    	   bayleef.get(i).pintar(cambioImagen);
+    	   bayleef.get(i).pintar(cambioPersonaje);
     	   bayleef.get(i).vida();
+    	   bayleef.get(i).mover(cambioPersonaje);
+
 
 
 			
@@ -105,11 +116,26 @@ public void pintarVidas () {
 		
        for(int i=0; i < poke.size(); i++ ) {
 			
-			poke.get(i).pintar(cambioImagen);
-			poke.get(i).mover(cambioImagen);
+			poke.get(i).pintar(cambioEnemigo);
+			poke.get(i).mover(cambioEnemigo);
+			poke.get(i).vida();
+
 
 			
 		}
+       
+       
+       if(mal == true) {
+    	   
+    	app.fill(255,0,0);
+       	app.rect(300,300,100,200);
+       }
+       
+       if(suerte == true) {
+    	   
+       	app.fill(0,255,0);
+          	app.rect(300,200,100,200);
+          }
 		
 		
 		
@@ -259,14 +285,16 @@ public void atrapar() {
 		if(aleotoridad== 3) {
 			
 			System.out.print("Lo atrapaste");
-			cambioImagen=1;
+			cambioEnemigo=3;
 			app.image(pantallaAtrapado,0,0);
+			suerte= true;
 		}
         if(aleotoridad== 1 || aleotoridad== 2 || aleotoridad== 0) {
 			
 			System.out.print("Mala Suerte");
-			cambioImagen=2;
+			cambioEnemigo=4;
 			app.image(pantallaEscapo,0,0);
+			mal = true;
 		}
 		
 		
@@ -274,25 +302,28 @@ public void atrapar() {
 	
 	public void atacar() {
 		
-		int turnos=0;
 		
 		for(int i=0; i<poke.size(); i++) {
-			for(int j=0; j<poke.size(); j++) {
+			
 		
 		
 		switch(turnos) {
 		
 		//Pokemon Seleccionado
 		case 0:
-			//cambioImagen=2;
-			poke.get(i).setVida(-20);
 			
-			//turnos =1;
+			cambioPersonaje=1;
+			poke.get(i).setVida(90);
+			
+			
+		     turnos =1;
 			break;
 		//Pokemon Encontrado
 
 		case 1:
-			
+			cambioEnemigo=2;
+			System.out.print("templor enemigo");
+
 			//turnos =3;
 			break;
 		//Lo atraspaste o no. 
@@ -308,5 +339,5 @@ public void atrapar() {
 	}
 	
 
-}
+
 
