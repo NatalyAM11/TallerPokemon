@@ -42,11 +42,11 @@ public class Bulbasaur extends Pokemons{
 		 break;
 		//Pokebola 
 	 case 3: 
-		 app.image(pokebola, posX, posY);
+		 app.image(pokebola,495,200);
 	     break; 
 	   //Hoja 
 	 case 4:
-		 app.image(hojas, posX, posY);
+		 app.image(hojas,411,160,220,97);
 		 break;
 	 
 		

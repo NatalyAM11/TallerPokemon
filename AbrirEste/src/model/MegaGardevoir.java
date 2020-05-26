@@ -38,10 +38,10 @@ public class MegaGardevoir extends Pokemons {
 		 case 2:app.image(megaGardevoirDebil,posX,posY,200,200);
 			 break;
 		 case 3: 
-			 app.image(pokebola,posX,posY,200,200);
+			 app.image(pokebola,495,200);
 			 break;
 		 case 4:
-			 app.image(hojas,posX,posY,200,200);
+			 app.image(hojas,411,160,220,97);
 			 break;
 		
 	 }
