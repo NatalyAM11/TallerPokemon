@@ -80,14 +80,12 @@ public void mover() {
 			//Se mueva a la izquierda
 			this.posX -= this.dirX*3;
 			
+			if(this.posX<700) {
+				this.dirX=this.dirX*-1;
+				
 			if (this.posX < posXmenos) {
 	            this.dirX=0;
-	      
-			
-	
-		
-		
-		
+			}
 		}
 	}
 	

@@ -71,15 +71,16 @@ public void mover() {
 			//Se mueva a la izquierda
 			this.posX -= this.dirX*3;
 			
+			if(this.posX<700) {
+				this.dirX=this.dirX*-1;
+				
 			if (this.posX < posXmenos) {
 	            this.dirX=0;
 	        }
-			
-			
-		
-		
-		
+			}
 		}
+
+
 public void mover2() {
 	
 	this.posX += this.dirX*3;
@@ -89,7 +90,7 @@ public void mover2() {
 	if(this.posX<700) {
 		
 	this.dirX=this.dirX*-1;
-	this.dirY=this.dirY*-1;
+	
 	
 	//asi tiembla
 	if (this.posX > posXmas) {

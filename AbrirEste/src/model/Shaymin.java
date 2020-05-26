@@ -82,17 +82,18 @@ public class Shaymin extends Pokemons{
      public void mover() {
 		
     	 this.posX -= this.dirX*3;
+    	 
+		
+ 		if(this.posX<700) {
+			this.dirX=this.dirX*-1;
 			
 			if (this.posX < posXmenos) {
 	            this.dirX=0;
 	        }
-	
-			
-
-		
-		
-		
+ 		}
 		}
+     
+     
 	public void mover2() {
 		
 		this.posX += this.dirX*3;
