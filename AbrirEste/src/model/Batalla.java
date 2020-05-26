@@ -87,7 +87,11 @@ public void pintarVidas () {
 			emolga.get(i).vida();
 			emolga.get(i).mover(cambioPersonaje);
 
-
+			if((emolga.get(i).getVida()) <= 0) {
+	        	 
+			       turnos =3;
+			
+		            }
 
 			
 		}
@@ -97,7 +101,11 @@ public void pintarVidas () {
         	giraf.get(i).vida();
         	giraf.get(i).mover(cambioPersonaje);
 
-
+        	if((giraf.get(i).getVida()) <= 0) {
+	        	 
+			       turnos =3;
+			
+		            }
 
 			
 		}
@@ -107,7 +115,11 @@ public void pintarVidas () {
     	   bayleef.get(i).vida();
     	   bayleef.get(i).mover(cambioPersonaje);
 
-
+    	   if((bayleef.get(i).getVida()) <= 0) {
+	        	 
+		       turnos =3;
+		
+	            }
 
 			
 		}
@@ -120,7 +132,11 @@ public void pintarVidas () {
 			poke.get(i).mover(cambioEnemigo);
 			poke.get(i).vida();
 
-
+			if((poke.get(i).getVida()) <= 20) {
+	        	 
+			       turnos =3;
+			
+		            }
 			
 		}
        
@@ -152,19 +168,19 @@ public void pintarVidas () {
        switch(a) {
 		
 		case 1:
-			poke.add(new Shaymin (430,100,"holi",0,100,"salvaje", app));
+			poke.add(new Shaymin (300,-100,"holi",0,100,"salvaje", app));
 			break;
 			
 		case 2:
 			
-			poke.add(new Bulbasaur (430,100,"holi",0,100,"salvaje", app));
+			poke.add(new Bulbasaur (0,0,"holi",0,100,"salvaje", app));
 			
 			
 			break;
 			
 		case 3:
 			
-			poke.add(new Luxray (430,100,"holi",0,100,"salvaje", app));
+			poke.add(new Luxray (0,0,"holi",0,100,"salvaje", app));
 
 
 			
@@ -172,7 +188,7 @@ public void pintarVidas () {
 			
           case 4:
 			
-			poke.add(new Pikachu (430,100,"holi",0,100,"salvaje", app));
+			poke.add(new Pikachu (0,0,"holi",0,100,"salvaje", app));
 
 
 			
@@ -180,14 +196,14 @@ public void pintarVidas () {
 			
 			
           case 5:
-  			poke.add(new Gothorita (430,100,"holi",0,100,"salvaje", app));
+  			poke.add(new Gothorita (300,100,"holi",0,100,"salvaje", app));
 
   			
   			break;
   			
   		case 6:
   			
-  			poke.add(new Luxray (430,100,"holi",0,100,"salvaje", app));
+  			poke.add(new Luxray (0,0,"holi",0,100,"salvaje", app));
 
 
   			
@@ -196,7 +212,7 @@ public void pintarVidas () {
   			
   		case 7:
   			
-  			poke.add(new Manectric (430,100,"holi",0,100,"salvaje", app));
+  			poke.add(new Manectric (0,0,"holi",0,100,"salvaje", app));
 
 
   			
@@ -204,21 +220,21 @@ public void pintarVidas () {
   			
             case 8:
   			
-  			poke.add(new MegaGardevoir (430,100,"holi",0,100,"salvaje", app));
+  			poke.add(new MegaGardevoir (0,0,"holi",0,100,"salvaje", app));
 
 
   			
   			break;
   			
             case 9:
-      			poke.add(new MegaGardevoir (430,100,"holi",0,100,"salvaje", app));
+      			poke.add(new MegaGardevoir (434,150,"holi",0,100,"salvaje", app));
 
       			
       			break;
       			
       		case 10:
       			
-      			poke.add(new Pikachu (430,100,"holi",0,100,"salvaje", app));
+      			poke.add(new Pikachu (0,0,"holi",0,100,"salvaje", app));
 
 
       			
@@ -227,7 +243,7 @@ public void pintarVidas () {
       			
       		case 11:
       			
-      			poke.add(new Gothorita (430,100,"holi",0,100,"salvaje", app));
+      			poke.add(new Gothorita (0,0,"holi",0,100,"salvaje", app));
 
 
       			
@@ -235,7 +251,7 @@ public void pintarVidas () {
       			
                 case 12:
       			
-      			poke.add(new Bulbasaur (430,100,"holi",0,100,"salvaje", app));
+      			poke.add(new Bulbasaur (0,0,"holi",0,100,"salvaje", app));
 
 
       			
@@ -300,59 +316,167 @@ public void atrapar() {
 		
 	}
 	
-public void atacar() {
-	
-	
-	for(int i=0; i<poke.size(); i++) {
-		for(int j=0; j<giraf.size(); j++) {
-	
-	int variable = poke.get(i).getVida();
-	switch(turnos) {
-	
-	//Pokemon Seleccionado
-	case 0:
+	public void atacar(int a) {
 		
-		cambioPersonaje=1;
-		cambioEnemigo=1;
+		int quitarVida = (int) app.random(5,15);
+		int quitarVida2 = (int) app.random(5,15);
+		for(int i=0; i<poke.size(); i++) {
+		switch(a) {
 		
-		
-		if(poke.get(i).getVida() <= 60) {
-			turnos =3;
+		case 0:
+			for(int j=0; j<giraf.size(); j++) {
+				
+				switch(turnos) {
+				
+				//Pokemon Seleccionado
+				case 0:
+					
+					cambioPersonaje=1;
+					cambioEnemigo=1;	
+					poke.get(i).setVida(poke.get(i).getVida()-quitarVida);
+					
+				    turnos =1;
+					break;
+				//Pokemon Encontrado
+
+				case 1:
+					cambioEnemigo=2;
+					cambioPersonaje=2; 
+		            giraf.get(j).setVida(giraf.get(j).getVida()- quitarVida2);
+		            
+		         
+		            turnos = 0;
+					break;
+
+				case 3:
+					
+					// Si lo atrapa o se escapa. 
+					
+					int aleotoridad = (int)app.random(0,4);
+					
+					if(aleotoridad== 3) {
+						
+						System.out.print("Lo atrapaste");
+						cambioEnemigo=3;
+						app.image(pantallaAtrapado,0,0);
+						suerte= true;
+					}
+			        if(aleotoridad== 1 || aleotoridad== 2 || aleotoridad== 0) {
+						
+						System.out.print("Mala Suerte");
+						cambioEnemigo=4;
+						app.image(pantallaEscapo,0,0);
+						mal = true;
+					}
+				}
+			}
+			
+			break;
+			
+			
+		case 1:
+                  for(int e=0; e<emolga.size(); e++) {
+				
+				switch(turnos) {
+				
+				//Pokemon Seleccionado
+				case 0:
+					
+					cambioPersonaje=1;
+					cambioEnemigo=1;	
+					poke.get(i).setVida(poke.get(i).getVida()-quitarVida);
+					
+				    turnos =1;
+					break;
+				//Pokemon Encontrado
+
+				case 1:
+					cambioEnemigo=2;
+					cambioPersonaje=2; 
+					emolga.get(e).setVida(emolga.get(e).getVida()- quitarVida2);
+		            
+		         
+		            turnos = 0;
+					break;
+
+				case 3:
+					
+					// Si lo atrapa o se escapa. 
+					
+					int aleotoridad = (int)app.random(0,4);
+					
+					if(aleotoridad== 3) {
+						
+						System.out.print("Lo atrapaste");
+						cambioEnemigo=3;
+						app.image(pantallaAtrapado,0,0);
+						suerte= true;
+					}
+			        if(aleotoridad== 1 || aleotoridad== 2 || aleotoridad== 0) {
+						
+						System.out.print("Mala Suerte");
+						cambioEnemigo=4;
+						app.image(pantallaEscapo,0,0);
+						mal = true;
+					}
+				}
+			}
+			
+			break;
+			
+		case 2:
+                  for(int e=0; e<bayleef.size(); e++) {
+				
+				switch(turnos) {
+				
+				//Pokemon Seleccionado
+				case 0:
+					
+					cambioPersonaje=1;
+					cambioEnemigo=1;	
+					poke.get(i).setVida(poke.get(i).getVida()-quitarVida);
+					
+				    turnos =1;
+					break;
+				//Pokemon Encontrado
+
+				case 1:
+					cambioEnemigo=2;
+					cambioPersonaje=2; 
+					bayleef.get(e).setVida(bayleef.get(e).getVida()- quitarVida2);
+		            
+		         
+		            turnos = 0;
+					break;
+
+				case 3:
+					
+					// Si lo atrapa o se escapa. 
+					
+					int aleotoridad = (int)app.random(0,4);
+					
+					if(aleotoridad== 3) {
+						
+						System.out.print("Lo atrapaste");
+						cambioEnemigo=3;
+						app.image(pantallaAtrapado,0,0);
+						suerte= true;
+					}
+			        if(aleotoridad== 1 || aleotoridad== 2 || aleotoridad== 0) {
+						
+						System.out.print("Mala Suerte");
+						cambioEnemigo=4;
+						app.image(pantallaEscapo,0,0);
+						mal = true;
+					}
+				}
+			}
+			
+			break;
 		}
-		
-		poke.get(i).setVida(poke.get(i).getVida()-40);
-	     turnos =1;
-		break;
-	//Pokemon Encontrado
-
-	case 1:
-		cambioEnemigo=2;
-		
-		
-		cambioPersonaje=2;
-		
-		System.out.print(poke.get(i).getVida() );
-     if((poke.get(i).getVida()) <= 60) {
-    	 
-       turnos =3;
-
-        }
-     
-     giraf.get(j).setVida(giraf.get(i).getVida()-40);
-     
-     turnos = 0;
-		
-		break;
-	//Lo atraspaste o no. 
-
-	case 3:
-		mal = true;
-		System.out.print("MALAAAAA");
-		break;
-	}
-	
-	}
-	
+		}
 	}	
-}
+		
+			
+				
 }

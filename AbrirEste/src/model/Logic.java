@@ -602,7 +602,7 @@ public class Logic {
 			
 			case 2:
 				
-				batalla.atacar();
+				batalla.atacar(seleccion);
 				
 				
 				break;
