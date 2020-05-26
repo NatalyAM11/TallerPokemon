@@ -57,7 +57,23 @@ public class Bulbasaur extends Pokemons{
 		
 	}
 
-	@Override
+
+	public void run() {
+		
+		try {
+			
+			mover2(); 
+			
+			
+		}catch(IndexOutOfBoundsException  e) {
+			
+		}catch (Exception e) {
+			
+		}
+		
+	}
+	
+	
 public void mover() {
 		
 		
@@ -80,6 +96,10 @@ public void mover() {
 		this.posX += this.dirX*3;
 		this.posY += this.dirY*3;
 		
+		if(this.posX>0) {
+			
+			this.dirX=this.dirX*-1;
+			
 		//asi tiembla
 		if (this.posX > posXmas) {
             this.dirX=-1;
@@ -100,7 +120,7 @@ public void mover() {
             this.dirY=1;
             this.dirX=-1;
         }
-		
+		}
 	}
 	
 	public void pintarGif() {

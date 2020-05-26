@@ -52,6 +52,23 @@ public class Shaymin extends Pokemons{
 		
 	}
 	
+	
+	public void run() {
+		
+		try {
+			
+			mover2(); 
+			
+			
+		}catch(IndexOutOfBoundsException  e) {
+			
+		}catch (Exception e) {
+			
+		}
+		
+	}
+	
+	
     public void info(int posY) {
 		
     	app.text(nombre,posX, posY);
@@ -81,6 +98,10 @@ public class Shaymin extends Pokemons{
 		this.posX += this.dirX*3;
 		this.posY += this.dirY*3;
 		
+		if(this.posX>0) {
+			
+			this.dirX=this.dirX*-1;
+			
 		//asi tiembla
 		if (this.posX > posXmas) {
             this.dirX=-1;
@@ -101,6 +122,7 @@ public class Shaymin extends Pokemons{
             this.dirY=1;
             this.dirX=-1;
         }
+		}
 	}
 
 	

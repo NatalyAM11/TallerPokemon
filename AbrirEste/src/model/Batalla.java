@@ -95,8 +95,8 @@ public void pintarVidas () {
 			}
 			
 			if(mover2==true) {
-				emolga.get(i).mover2();
-				
+				//emolga.get(i).mover2();
+				new Thread (emolga.get(i)).start();
 			}
 			
 			
@@ -115,12 +115,11 @@ public void pintarVidas () {
         	
         	if(mover==true) {
         		giraf.get(i).mover();
-				
+        	
 			}
         	
         	if(mover2==true) {
-        		giraf.get(i).mover2();
-				
+        		 new Thread (giraf.get(i)).start();
 			}
         	
         	
@@ -139,12 +138,12 @@ public void pintarVidas () {
     	   
     	   if(mover==true) {
     		   bayleef.get(i).mover();
-				
+    		   new Thread (bayleef.get(i)).start();
 			}
     	   
     	   if(mover2==true) {
-    		   bayleef.get(i).mover2();
-				
+    		
+    		   new Thread (bayleef.get(i)).start();
 			}
     	   
     	   
@@ -167,12 +166,12 @@ public void pintarVidas () {
 			
 			if(mover==true) {
 				poke.get(i).mover();
-					
+				
 				}
 			
 			if(mover2==true) {
-				poke.get(i).mover2();
-					
+				
+				 new Thread (poke.get(i)).start();	
 				}
 			
 			

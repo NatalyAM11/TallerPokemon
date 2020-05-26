@@ -2,7 +2,7 @@ package model;
 
 import processing.core.PApplet;
 
-public abstract class Pokemons implements Comparable<Pokemons> {
+public abstract class Pokemons implements Comparable<Pokemons>, Runnable {
 	
 	public PApplet app;
 	public int posX, posY, vida, poder;

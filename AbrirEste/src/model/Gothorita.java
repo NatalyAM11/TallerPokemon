@@ -52,9 +52,21 @@ public class Gothorita extends Pokemons {
 
 	
 		
+	public void run() {
+		
+		try {
+			
+			mover2(); 
+			
+			
+		}catch(IndexOutOfBoundsException  e) {
+			
+		}catch (Exception e) {
+			
+		}
+		
+	}
 	
-
-	@Override
 public void mover() {
 		
 		
@@ -77,6 +89,11 @@ public void mover2() {
 	this.posX += this.dirX*3;
 	this.posY += this.dirY*3;
 	
+	
+	if(this.posX>0) {
+		
+	this.dirX=this.dirX*-1;
+	
 	//asi tiembla
 	if (this.posX > posXmas) {
         this.dirX=-1;
@@ -97,6 +114,7 @@ public void mover2() {
         this.dirY=1;
         this.dirX=-1;
     }
+	}
 }
 
 	
