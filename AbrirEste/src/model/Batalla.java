@@ -168,19 +168,19 @@ public void pintarVidas () {
        switch(a) {
 		
 		case 1:
-			poke.add(new Shaymin (300,-100,"holi",0,100,"salvaje", app));
+			poke.add(new Shaymin (434,100,"holi",0,100,"salvaje", app));
 			break;
 			
 		case 2:
 			
-			poke.add(new Bulbasaur (0,0,"holi",0,100,"salvaje", app));
+			poke.add(new Bulbasaur (434,100,"holi",0,100,"salvaje", app));
 			
 			
 			break;
 			
 		case 3:
 			
-			poke.add(new Luxray (0,0,"holi",0,100,"salvaje", app));
+			poke.add(new Luxray (434,100,"holi",0,100,"salvaje", app));
 
 
 			
@@ -188,7 +188,7 @@ public void pintarVidas () {
 			
           case 4:
 			
-			poke.add(new Pikachu (0,0,"holi",0,100,"salvaje", app));
+			poke.add(new Pikachu (434,100,"holi",0,100,"salvaje", app));
 
 
 			
@@ -196,14 +196,14 @@ public void pintarVidas () {
 			
 			
           case 5:
-  			poke.add(new Gothorita (300,100,"holi",0,100,"salvaje", app));
+  			poke.add(new Gothorita (434,100,"holi",0,100,"salvaje", app));
 
   			
   			break;
   			
   		case 6:
   			
-  			poke.add(new Luxray (0,0,"holi",0,100,"salvaje", app));
+  			poke.add(new Luxray (434,100,"holi",0,100,"salvaje", app));
 
 
   			
@@ -212,7 +212,7 @@ public void pintarVidas () {
   			
   		case 7:
   			
-  			poke.add(new Manectric (0,0,"holi",0,100,"salvaje", app));
+  			poke.add(new Manectric (434,100,"holi",0,100,"salvaje", app));
 
 
   			
@@ -220,21 +220,21 @@ public void pintarVidas () {
   			
             case 8:
   			
-  			poke.add(new MegaGardevoir (0,0,"holi",0,100,"salvaje", app));
+  			poke.add(new MegaGardevoir (434,100,"holi",0,100,"salvaje", app));
 
 
   			
   			break;
   			
             case 9:
-      			poke.add(new MegaGardevoir (434,150,"holi",0,100,"salvaje", app));
+      			poke.add(new MegaGardevoir (434,100,"holi",0,100,"salvaje", app));
 
       			
       			break;
       			
       		case 10:
       			
-      			poke.add(new Pikachu (0,0,"holi",0,100,"salvaje", app));
+      			poke.add(new Pikachu (434,100,"holi",0,100,"salvaje", app));
 
 
       			
@@ -243,7 +243,7 @@ public void pintarVidas () {
       			
       		case 11:
       			
-      			poke.add(new Gothorita (0,0,"holi",0,100,"salvaje", app));
+      			poke.add(new Gothorita (434,100,"holi",0,100,"salvaje", app));
 
 
       			
@@ -251,7 +251,7 @@ public void pintarVidas () {
       			
                 case 12:
       			
-      			poke.add(new Bulbasaur (0,0,"holi",0,100,"salvaje", app));
+      			poke.add(new Bulbasaur (434,100,"holi",0,100,"salvaje", app));
 
 
       			
