@@ -3,6 +3,7 @@ package model;
 import java.util.Collections;
 import java.util.LinkedList;
 
+import Exceptions.FirstException;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -44,6 +45,8 @@ public class Logic {
 	int modo =0;
 	Batalla batalla;
 	
+	//Variable para controlar las veces que puede usar el boton de continuar cuando atrapa el pokemon
+	int veces;
 	
 	//Varaible que me ayuda a controlar la invisibilidad de los pokemones 
 	boolean invisibles;
@@ -76,7 +79,7 @@ public class Logic {
 	int pantalla,mapaX,mapaY;
 	
 	//imagenes fondo y botones
-	PImage bOrdenarF,bOrdenarFN,fondo, arbol,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBoton2, continuarBoton2N, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa,pantallaTecla,bOrdenarN,bOrdenarT,bOrdenarNN,bOrdenarTN,usuarioIcono,usuarioIconoN,barraUsuario;
+	PImage bOrdenarF,bOrdenarFN,fondo, arbol,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBoton2, continuarBoton2N, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa,pantallaTecla,bOrdenarN,bOrdenarT,bOrdenarNN,bOrdenarTN,usuarioIcono,usuarioIconoN,barraUsuario,bVolverMapa;
 	PImage selec1,selec2,selec3;
 	
 	//Inicializamos la clase que carga las barras de los perfiles
@@ -306,8 +309,6 @@ public class Logic {
 					
 					//Perfiles pokemons con gifs 
 				case 3:
-					
-					
 					switch(pPokedex) {
 					case 0:
 						app.image(pantallaTecla,0,0);
@@ -383,20 +384,32 @@ public class Logic {
                         batalla.comienza(boton1);
 
                     }
+       
                     
 					 switch(modo) {
 					 
 					 case 0:
-						 
-					
-                    
-                    
+			
                    break;
                     
                     case 1:
                     	app.fill(255);
-                    	app.text("Deja todo a la suerte, presiona el boton para atrapar",200,300);
-                    	app.image(continuarBoton,274,335);
+                    	app.textSize(20);
+                    	app.text("Deja todo a la suerte, presiona el boton para atrapar",68,300);
+                    	app.image(continuarBoton,92,335);
+                    	app.image(bVolverMapa,378,335);
+                        
+                		 //Excepcion
+        				 
+            				 try {
+            					 
+            					 stopTodo();
+            				 }	catch(FirstException e) {
+            					 app.fill(255);
+            					 app.textSize(20);
+            			         app.text (e.getMessage(),248,64);
+            			       
+            					}
                     	
                     	break;
                     	
@@ -405,6 +418,7 @@ public class Logic {
                     	break;
                     	
                     case 3:
+            
                     	
                     	break;
                     }
@@ -557,7 +571,7 @@ public class Logic {
 				batalla.Capturaste(capturado);
 				System.out.print("AgregoOtro");
 				boton1 = 1;
-
+				
 			}
 			
 			switch(modo) {
@@ -580,24 +594,32 @@ public class Logic {
 
 					
 				}
+	            
+	            
 	            //Atrapar
-	            if( (app.mouseX>320 && app.mouseX<426)&& (app.mouseY>369 && app.mouseY<394)){
+	            if( (app.mouseX>92 && app.mouseX<303)&& (app.mouseY>369 && app.mouseY<382)){
 					System.out.print("Atrapar");
 					botonInvisible = true;
 					modo =1;
 					
-					
-
-				}
+				
+	            }
 				
 				break;
 				
 			case 1:
 				
 				//Elimine el continuar y salgan botones de salida y ir al mapa 
-					
+				if(veces<1) {
 					batalla.atrapar();
+				}
 				
+			
+					veces+=1;
+				
+					if( (app.mouseX>377 && app.mouseX<591)&& (app.mouseY>336 && app.mouseY<382)){
+						pantalla=2;
+					}
 				
 				break;
 				
@@ -941,6 +963,14 @@ public void PokemonCapturado() {
 	
 }
 
+public void stopTodo() throws FirstException {
+	 
+	 if(veces>=2) {
+		 throw new FirstException("Debes volver al mapa");
+	 }
+	 
+}
+
 
 	public void cargarImagenes() {
 		jI = app.loadImage("img/personaje lado2.png");
@@ -982,7 +1012,7 @@ public void PokemonCapturado() {
 		usuarioIcono = app.loadImage("img/botonUsuario.png");
 		usuarioIconoN = app.loadImage("img/botonUsuarioN.png");
 		barraUsuario= app.loadImage("img/barraUsuario.png");
-
+		bVolverMapa= app.loadImage("img/volverAlMapa.png");
 	}
 
 }

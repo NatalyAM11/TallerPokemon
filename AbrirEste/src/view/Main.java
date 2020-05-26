@@ -1,5 +1,7 @@
 package view;
 
+import Exceptions.FirstException;
+import controller.Controller;
 import processing.core.PApplet;
 import processing.core.PImage;
 
