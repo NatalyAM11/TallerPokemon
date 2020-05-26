@@ -44,9 +44,10 @@ public class Logic {
 	int coco;
 	int modo =0;
 	Batalla batalla;
+	boolean quitarAnuncio;
 	
 	//Variable para controlar las veces que puede usar el boton de continuar cuando atrapa el pokemon
-	int veces;
+	int veces,vecesO,vecesO2;
 	
 	//Varaible que me ayuda a controlar la invisibilidad de los pokemones 
 	boolean invisibles;
@@ -79,7 +80,7 @@ public class Logic {
 	int pantalla,mapaX,mapaY;
 	
 	//imagenes fondo y botones
-	PImage bOrdenarF,bOrdenarFN,fondo, arbol,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBoton2, continuarBoton2N, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa,pantallaTecla,bOrdenarN,bOrdenarT,bOrdenarNN,bOrdenarTN,usuarioIcono,usuarioIconoN,barraUsuario,bVolverMapa;
+	PImage bOrdenarF,bOrdenarFN,fondo, arbol,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBoton2, continuarBoton2N, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa,pantallaTecla,bOrdenarN,bOrdenarT,bOrdenarNN,bOrdenarTN,usuarioIcono,usuarioIconoN,barraUsuario,bVolverMapa,atrapar;
 	PImage selec1,selec2,selec3;
 	
 	//Inicializamos la clase que carga las barras de los perfiles
@@ -103,7 +104,7 @@ public class Logic {
 		fechaComparator= new FechaComparator();
 		cargarImagenes();
         cargarPokemones();
-        
+        quitarAnuncio=true;
 
 
 		
@@ -264,7 +265,9 @@ public class Logic {
                    //aviso encontro un pokemon
                    if(invisibles==false) {
 						
-						batalla.anuncio();
+                	   if(quitarAnuncio==true) {
+                    	   batalla.anuncio();
+                       }
 						 
 		                   if( (app.mouseX>253 && app.mouseX<466)&& (app.mouseY>285 && app.mouseY<331)){
 		                	   app.image(continuarBoton,253,285);
@@ -310,6 +313,8 @@ public class Logic {
 						
 						if( (app.mouseX>81 && app.mouseX<295)&& (app.mouseY>353 && app.mouseY<397)){
 							app.image(bOrdenarNN,81,353);
+							
+							
 						}
 							
 						if( (app.mouseX>460 && app.mouseX<673)&& (app.mouseY>353 && app.mouseY<397)){
@@ -317,6 +322,32 @@ public class Logic {
 							}
 						
 						}
+						
+			    		 //Excepcion2 
+       				 
+       				 try {
+       					 
+       					 yaNoMas();
+       				 }	catch(FirstException e) {
+       					 app.fill(255);
+       					 app.textSize(20);
+       			         app.text (e.getMessage(),213,64);
+       			       
+       					}
+       				 
+			    		 //Excepcion2 
+       				 
+       				 try {
+       					 
+       					 yaNoMas2();
+       				 }	catch(FirstException e) {
+       					 app.fill(255);
+       					 app.textSize(20);
+       			         app.text (e.getMessage(),213,64);
+       			       
+       					}
+						
+						
 						break;
 					}
 				
@@ -366,10 +397,10 @@ public class Logic {
                     	app.fill(255);
                     	app.textSize(20);
                     	app.text("Deja todo a la suerte, presiona el boton para atrapar",68,300);
-                    	app.image(continuarBoton,92,335);
+                    	app.image(atrapar,92,335);
                     	app.image(bVolverMapa,378,335);
                         
-                		 //Excepcion
+                		 //Excepcion 
         				 
             				 try {
             					 
@@ -419,7 +450,7 @@ public class Logic {
 					break;
 		
 	 }
-		app.fill(0);
+		app.fill(255);
 		app.text("X:" + app.mouseX + "Y:" + app.mouseY, app.mouseX, app.mouseY);
 
 	}
@@ -502,10 +533,12 @@ public class Logic {
 				//ordenamiento natural-nombres
 				if( (app.mouseX>81 && app.mouseX<295)&& (app.mouseY>353 && app.mouseY<397)){
 					ordena=1;
+					vecesO+=1;
 				}
 				//ordenamiento parcial-tipo
 				if( (app.mouseX>460 && app.mouseX<673)&& (app.mouseY>353 && app.mouseY<397)){
 					ordena=2;
+					vecesO2=+1;
 				}
 				
 				
@@ -559,7 +592,7 @@ public class Logic {
 	            
 	            
 	            //Atrapar
-	            if( (app.mouseX>92 && app.mouseX<303)&& (app.mouseY>369 && app.mouseY<382)){
+	            if( (app.mouseX>330 && app.mouseX<415)&& (app.mouseY>369 && app.mouseY<382)){
 					System.out.print("Atrapar");
 					botonInvisible = true;
 					modo =1;
@@ -576,11 +609,13 @@ public class Logic {
 					batalla.atrapar();
 				}
 				
-			
+				if( (app.mouseX>90 && app.mouseX<304)&& (app.mouseY>338 && app.mouseY<380)){
 					veces+=1;
+				}
 				
 					if( (app.mouseX>377 && app.mouseX<591)&& (app.mouseY>336 && app.mouseY<382)){
 						pantalla=2;
+						quitarAnuncio=false;
 					}
 				
 				break;
@@ -925,6 +960,8 @@ public void PokemonCapturado() {
 	
 }
 
+
+//Excepciones
 public void stopTodo() throws FirstException {
 	 
 	 if(veces>=2) {
@@ -932,6 +969,24 @@ public void stopTodo() throws FirstException {
 	 }
 	 
 }
+
+public void yaNoMas () throws FirstException {
+	 
+	 if(vecesO>=2) {
+		 throw new FirstException("Ya estan ordenados por nombre");
+	 }
+	 
+}
+
+public void yaNoMas2 () throws FirstException {
+	 
+	 if(vecesO2>=2) {
+		 throw new FirstException("Ya estan ordenados por Tipo");
+	 }
+	 
+}
+
+
 
 
 	public void cargarImagenes() {
@@ -973,6 +1028,7 @@ public void stopTodo() throws FirstException {
 		usuarioIconoN = app.loadImage("img/botonUsuarioN.png");
 		barraUsuario= app.loadImage("img/barraUsuario.png");
 		bVolverMapa= app.loadImage("img/volverAlMapa.png");
+	    atrapar= app.loadImage("img/atacar.png");
 	}
 
 }

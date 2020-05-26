@@ -41,7 +41,7 @@ public class Main extends PApplet {
 		usuarioBoton=loadImage("img/usuario.png");
 		usuarioBotonN=loadImage("img/usuarioN.png");
 		
-		pantalla = 0;
+		pantalla = 3;
 		
 	}
 	

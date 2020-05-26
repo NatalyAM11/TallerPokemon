@@ -364,7 +364,7 @@ public void atrapar() {
 	
 	//Hacer contador de solo un click 
 	
-	if( (app.mouseX>274 && app.mouseX<484)&& (app.mouseY>338 && app.mouseY<380)){
+	if( (app.mouseX>90 && app.mouseX<304)&& (app.mouseY>338 && app.mouseY<380)){
 		int aleotoridad = (int)app.random(0,4);
 		
 		if(aleotoridad== 3) {
