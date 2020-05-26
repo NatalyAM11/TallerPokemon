@@ -51,58 +51,42 @@ public class Bayleef extends Pokemons {
 	 }
 	}
 
-	public void mover(int r) {
+	public void mover() {
 		
+		this.posX += this.dirX*3;
 		
-		switch(r) {
-		case 0:
-			break;
-		case 1:
+		if (this.posX > posXmas) {
+            this.dirX=0;
+        }
 			
-			//se mueve a la derecha
-			this.posX += this.dirX*3;
-			
-			if (this.posX > posXmas) {
-	            this.dirX=0;
-	        }
-			
-			break;
-			
-		case 2:
-			
-			this.posX += this.dirX*3;
-			this.posY += this.dirY*3;
-			
-			//asi tiembla
-			if (this.posX > posXmas) {
-	            this.dirX=-1;
-	            this.dirY=1;
-	        }
-			
-			if (this.posX < posXmenos) {
-	            this.dirX=1;
-	            this.dirY=-1;
-	        }
-			
-			if (this.posY > posYmas) {
-	            this.dirY=-1;
-	            this.dirX=1;
-	        }
-			
-			if (this.posY < posYmenos) {
-	            this.dirY=1;
-	            this.dirX=-1;
-	        }
-			
-			break;
-		case 3:
-			break;
-		case 4:
-			break;
+	}
+	
+	public void mover2() {
 		
+
+		this.posX += this.dirX*3;
+		this.posY += this.dirY*3;
 		
-		}
+		//asi tiembla
+		if (this.posX > posXmas) {
+            this.dirX=-1;
+            this.dirY=1;
+        }
 		
+		if (this.posX < posXmenos) {
+            this.dirX=1;
+            this.dirY=-1;
+        }
+		
+		if (this.posY > posYmas) {
+            this.dirY=-1;
+            this.dirX=1;
+        }
+		
+		if (this.posY < posYmenos) {
+            this.dirY=1;
+            this.dirX=-1;
+        }
 	}
 
 

@@ -56,13 +56,8 @@ public class Emolga extends Pokemons{
 	}
 
 	@Override
-public void mover(int r) {
-		
-		
-		switch(r) {
-		case 0:
-			break;
-		case 1:
+public void mover() {
+	
 			
 			//se mueve a la derecha
 			this.posX += this.dirX*3;
@@ -71,43 +66,38 @@ public void mover(int r) {
 	            this.dirX=0;
 	        }
 			
-			break;
 			
-		case 2:
-			
-			this.posX += this.dirX*3;
-			this.posY += this.dirY*3;
-			
-			//asi tiembla
-			if (this.posX > posXmas) {
-	            this.dirX=-1;
-	            this.dirY=1;
-	        }
-			
-			if (this.posX < posXmenos) {
-	            this.dirX=1;
-	            this.dirY=-1;
-	        }
-			
-			if (this.posY > posYmas) {
-	            this.dirY=-1;
-	            this.dirX=1;
-	        }
-			
-			if (this.posY < posYmenos) {
-	            this.dirY=1;
-	            this.dirX=-1;
-	        }
-			
-			break;
-		case 3:
-			break;
-		case 4:
-			break;
 		
 		
 		
 		}
+	
+	
+	public void mover2() {
+		this.posX += this.dirX*3;
+		this.posY += this.dirY*3;
+		
+		//asi tiembla
+		if (this.posX > posXmas) {
+            this.dirX=-1;
+            this.dirY=1;
+        }
+		
+		if (this.posX < posXmenos) {
+            this.dirX=1;
+            this.dirY=-1;
+        }
+		
+		if (this.posY > posYmas) {
+            this.dirY=-1;
+            this.dirX=1;
+        }
+		
+		if (this.posY < posYmenos) {
+            this.dirY=1;
+            this.dirX=-1;
+        }
+		
 	}
 
 	
