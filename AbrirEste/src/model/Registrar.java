@@ -55,7 +55,7 @@ public class Registrar {
 
     public void crearUsuario(String nickname, String email, String password) {
 
-	User.add(new User(nickname, email, password, this.app));
+	User.add(new User(nickname, email, password,"jiji",0, this.app));
 
 	System.out.println(User.size());
 

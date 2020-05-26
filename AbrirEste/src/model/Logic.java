@@ -82,6 +82,8 @@ public class Logic {
 	//Inicializamos la clase que carga las barras de los perfiles
 	OrdenarPokemones ordenarPokemones;
 	
+	//Iniciliazamos las clase que compara las fechas
+	FechaComparator fechaComparator;
 	
 	public Logic(PApplet app) {
 		
@@ -91,9 +93,11 @@ public class Logic {
 		pokemones = app.loadStrings("lib/info_pokemones.txt");
 		usuarios = app.loadStrings("lib/infoUsuarios.txt");
 		listPokemons = new LinkedList <Pokemons>();
+		listUsuarios = new LinkedList <User>();
 		poke = new Pokedex(app);
 		batalla = new Batalla (app);
 		ordenarPokemones= new OrdenarPokemones(app);
+		fechaComparator= new FechaComparator();
 		cargarImagenes();
         cargarPokemones();
         
@@ -151,6 +155,25 @@ public class Logic {
 			email=usuarios2[1];
 			//poder en numero
 			fecha=usuarios2[2];
+			
+			
+			
+			//Buscamos cada usuario del txt
+			if(nickname.equals("Vinterx")) {
+				listUsuarios.add(new User (nickname,email,"jiji",fecha,0,app));
+			}
+			if(nickname.equals("Alexis")) {
+				listUsuarios.add(new User (nickname,email,"jiji",fecha,2,app));
+			}
+			if(nickname.equals("Mysteriousguy")) {
+				listUsuarios.add(new User (nickname,email,"jiji",fecha,4,app));
+			}
+			if(nickname.equals("Mariajose")) {
+				listUsuarios.add(new User (nickname,email,"jiji",fecha,3,app));
+			}
+			if(nickname.equals("Zimzaladdude")) {
+				listUsuarios.add(new User (nickname,email,"jiji",fecha,1,app));
+			}
 		}
 		
 	}
@@ -229,7 +252,7 @@ public class Logic {
 					
 					dibujarBebe();
 		
-					//Los arboles si aparecen paula :( holi 
+					//Los arboles si aparecen 
 					for (int matY = 0; matY < 5; matY++) {
 				        for (int matX = 0; matX < 11; matX++) {
 				    
@@ -393,6 +416,11 @@ public class Logic {
 				   case 7:
 					   app.image(fondoRosado,0,0);
 					   app.image(barraUsuario,0,0);
+					   
+					 //pintamos las barras con la info de los usuarios
+					   for(int i=0; i<listUsuarios.size(); i++) {
+							listUsuarios.get(i).pintarUser((24 * i)+ 100);
+						}
 					   
 					break;
 		
@@ -574,11 +602,18 @@ public class Logic {
 		
 			}
 			break;
+			
 			//Pantalla usuario 
 			case 7: 
 				if( (app.mouseX>0 && app.mouseX<56) && (app.mouseY>0 && app.mouseY<64)){
 				pantalla = 2;
 			}
+				
+				//Ordenamiento natural por los nombres de los usuarios
+				Collections.sort(listUsuarios);
+				//Ordenamiento parcial por la fecha
+				//Collections.sort(listUsuarios,fechaComparator);
+			
 				break;
 			
 		}
