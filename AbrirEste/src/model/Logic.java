@@ -603,7 +603,7 @@ public class Logic {
 			}
 			break;
 			
-			//Pantalla usuario 
+			//Pantalla con la lista de usuarios
 			case 7: 
 				if( (app.mouseX>0 && app.mouseX<56) && (app.mouseY>0 && app.mouseY<64)){
 				pantalla = 2;
@@ -611,6 +611,7 @@ public class Logic {
 				
 				//Ordenamiento natural por los nombres de los usuarios
 				Collections.sort(listUsuarios);
+				
 				//Ordenamiento parcial por la fecha
 				//Collections.sort(listUsuarios,fechaComparator);
 			
