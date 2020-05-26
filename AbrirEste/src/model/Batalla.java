@@ -300,44 +300,59 @@ public void atrapar() {
 		
 	}
 	
-	public void atacar() {
+public void atacar() {
+	
+	
+	for(int i=0; i<poke.size(); i++) {
+		for(int j=0; j<giraf.size(); j++) {
+	
+	int variable = poke.get(i).getVida();
+	switch(turnos) {
+	
+	//Pokemon Seleccionado
+	case 0:
+		
+		cambioPersonaje=1;
+		cambioEnemigo=1;
 		
 		
-		for(int i=0; i<poke.size(); i++) {
-			
-		
-		
-		switch(turnos) {
-		
-		//Pokemon Seleccionado
-		case 0:
-			
-			cambioPersonaje=1;
-			poke.get(i).setVida(90);
-			
-			
-		     turnos =1;
-			break;
-		//Pokemon Encontrado
-
-		case 1:
-			cambioEnemigo=2;
-			System.out.print("templor enemigo");
-
-			//turnos =3;
-			break;
-		//Lo atraspaste o no. 
-
-		case 3:
-			
-			break;
+		if(poke.get(i).getVida() <= 60) {
+			turnos =3;
 		}
 		
-		}
+		poke.get(i).setVida(poke.get(i).getVida()-40);
+	     turnos =1;
+		break;
+	//Pokemon Encontrado
+
+	case 1:
+		cambioEnemigo=2;
 		
-		}	
+		
+		cambioPersonaje=2;
+		
+		System.out.print(poke.get(i).getVida() );
+     if((poke.get(i).getVida()) <= 60) {
+    	 
+       turnos =3;
+
+        }
+     
+     giraf.get(j).setVida(giraf.get(i).getVida()-40);
+     
+     turnos = 0;
+		
+		break;
+	//Lo atraspaste o no. 
+
+	case 3:
+		mal = true;
+		System.out.print("MALAAAAA");
+		break;
 	}
 	
-
-
-
+	}
+	
+	}	
+}
+}
