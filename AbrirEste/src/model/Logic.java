@@ -394,8 +394,9 @@ public class Logic {
                    break;
                     
                     case 1:
-                    	app.fill(0,255,0);
-                    	app.rect(300,200,40,40);
+                    	app.fill(255);
+                    	app.text("Deja todo a la suerte, presiona el boton para atrapar",200,300);
+                    	app.image(continuarBoton,274,335);
                     	
                     	break;
                     	
@@ -568,6 +569,7 @@ public class Logic {
 				if( (app.mouseX>320 && app.mouseX<406)&& (app.mouseY>337 && app.mouseY<359)){
 					System.out.print("Atacar");
 					modo =2;
+					botonInvisible = true;
 				}
 				
 				//Huir
@@ -592,7 +594,7 @@ public class Logic {
 				
 			case 1:
 				
-				
+				//Elimine el continuar y salgan botones de salida y ir al mapa 
 					
 					batalla.atrapar();
 				

@@ -15,12 +15,12 @@ public class Batalla {
 	//comentario
 
 
-	PImage hpJugador, hpOponente, pantallaAtrapado, botonContinuar, botonContinuar2,botonBatalla,pantallaEncontrado,pantallaEscapo;
+	PImage hpJugador, hpOponente, pantallaAtrapado, botonContinuar, botonContinuar2,botonBatalla,pantallaEncontrado,pantallaEscapo,atacar,turnoJu,turnoOpo;
 	int cambioPersonaje = 0;
 	int cambioEnemigo = 0;
-	int turnos=0;
+	int turnos;
 	boolean suerte,mal;
-	boolean mover,mover2;
+	boolean mover,mover2,tuTurno,mostrar;
 	
 	public Batalla (PApplet app) {
 		
@@ -36,11 +36,17 @@ public class Batalla {
 		pantallaEscapo= app.loadImage("img/escapoPantalla.png");
 		botonContinuar= app.loadImage("img/continuarBotonN.png");
 		botonBatalla= app.loadImage("img/botonesBatalla.png");
+		turnoJu = app.loadImage("img/turnoJugador.png");
+	    turnoOpo = app.loadImage("img/turnoOponente.png");
+	    atacar= app.loadImage("img/atacar.png");
+	    
+
 		this.suerte = false;
 		this.mal = false;
 		this.mover=false;
 		this.mover2=false;
-		
+		this.tuTurno = false;
+		this.mostrar=false;
 
 	}
 	
@@ -97,6 +103,7 @@ public void pintarVidas () {
 			if(mover2==true) {
 				//emolga.get(i).mover2();
 				new Thread (emolga.get(i)).start();
+				
 			}
 			
 			
@@ -144,6 +151,7 @@ public void pintarVidas () {
     	   if(mover2==true) {
     		
     		   new Thread (bayleef.get(i)).start();
+    		   
 			}
     	   
     	   
@@ -157,6 +165,8 @@ public void pintarVidas () {
 
 			
 		}
+       
+       
 		
 	
 		
@@ -196,6 +206,18 @@ public void pintarVidas () {
     	   
     	   app.image(pantallaAtrapado,274,127,175,100);
           }
+       
+       if(turnos==0 && mostrar== true) {
+    	   
+    	   app.image(atacar,66,300);
+    	   app.image(turnoJu,0,83);
+       }
+       
+       if(turnos==1 && mostrar== true) {
+    	   
+    	   app.image(atacar,66,300);
+    	   app.image(turnoOpo,519,83);
+       }
 		
 		
 		
@@ -339,31 +361,35 @@ public void pintarVidas () {
 
 
 public void atrapar() {
-		
+	
+	//Hacer contador de solo un click 
+	
+	if( (app.mouseX>274 && app.mouseX<484)&& (app.mouseY>338 && app.mouseY<380)){
 		int aleotoridad = (int)app.random(0,4);
 		
 		if(aleotoridad== 3) {
 			
 			System.out.print("Lo atrapaste");
 			cambioEnemigo=3;
-			app.image(pantallaAtrapado,0,0);
 			suerte= true;
 		}
         if(aleotoridad== 1 || aleotoridad== 2 || aleotoridad== 0) {
 			
 			System.out.print("Mala Suerte");
 			cambioEnemigo=4;
-			app.image(pantallaEscapo,0,0);
 			mal = true;
 		}
 		
 		
 	}
 	
+}
+	
 	public void atacar(int a) {
 		
 		int quitarVida = (int) app.random(5,15);
 		int quitarVida2 = (int) app.random(5,15);
+		mostrar=true;
 		for(int i=0; i<poke.size(); i++) {
 		switch(a) {
 		
@@ -376,21 +402,29 @@ public void atrapar() {
 				case 0:
 					
 					cambioPersonaje=1;
-					cambioEnemigo=1;	
-					poke.get(i).setVida(poke.get(i).getVida()-quitarVida);
-					mover=true;
-					mover2=false;
-				    turnos =1;
+					cambioEnemigo=2;	
+					
+					
+					 if( (app.mouseX>66 && app.mouseX<300) && (app.mouseY>304 && app.mouseY<349)){
+						 mover=true;
+						mover2=false;
+						 poke.get(i).setVida(poke.get(i).getVida()-quitarVida);
+						 turnos =1;
+					 }    
 					break;
 				//Pokemon Encontrado
 
 				case 1:
 					cambioEnemigo=2;
-					cambioPersonaje=2; 
-		            giraf.get(j).setVida(giraf.get(j).getVida()- quitarVida2);
-		            mover=false;
-		            mover2=true;
-		            turnos = 0;
+					cambioPersonaje=1; 
+		            
+		          
+					if( (app.mouseX>66 && app.mouseX<300) && (app.mouseY>304 && app.mouseY<349)){  
+		            	  mover=false;
+				          mover2=true;
+		            	giraf.get(j).setVida(giraf.get(j).getVida()- quitarVida2);
+		            	turnos = 0;
+		            }
 					break;
 
 				case 3:
@@ -428,22 +462,28 @@ public void atrapar() {
 				case 0:
 					
 					cambioPersonaje=1;
-					cambioEnemigo=1;	
+					cambioEnemigo=1;
+					if( (app.mouseX>66 && app.mouseX<300) && (app.mouseY>304 && app.mouseY<349)){
 					poke.get(i).setVida(poke.get(i).getVida()-quitarVida);
 					mover=true;
 					mover2=false;
 				    turnos =1;
+				    
+					}
 					break;
+				
 				//Pokemon Encontrado
 
 				case 1:
 					cambioEnemigo=2;
 					cambioPersonaje=2; 
+					if( (app.mouseX>66 && app.mouseX<300) && (app.mouseY>304 && app.mouseY<349)){
 					emolga.get(e).setVida(emolga.get(e).getVida()- quitarVida2);
 					mover=false;
 		            mover2=true;
 		         
 		            turnos = 0;
+					}
 					break;
 
 				case 3:
@@ -479,21 +519,25 @@ public void atrapar() {
 					
 					cambioPersonaje=1;
 					cambioEnemigo=1;	
+					if( (app.mouseX>66 && app.mouseX<300) && (app.mouseY>304 && app.mouseY<349)){
 					poke.get(i).setVida(poke.get(i).getVida()-quitarVida);
 					mover=true;
 					mover2=false;
 				    turnos =1;
+					}
 					break;
 				//Pokemon Encontrado
 
 				case 1:
 					cambioEnemigo=2;
 					cambioPersonaje=2; 
+					if( (app.mouseX>66 && app.mouseX<300) && (app.mouseY>304 && app.mouseY<349)){
 					bayleef.get(e).setVida(bayleef.get(e).getVida()- quitarVida2);
 					mover=false;
 		            mover2=true;
 		         
 		            turnos = 0;
+					}
 					break;
 
 				case 3:
@@ -506,14 +550,12 @@ public void atrapar() {
 						
 						System.out.print("Lo atrapaste");
 						cambioEnemigo=3;
-						app.image(pantallaAtrapado,0,0);
 						suerte= true;
 					}
 			        if(aleotoridad== 1 || aleotoridad== 2 || aleotoridad== 0) {
 						
 						System.out.print("Mala Suerte");
 						cambioEnemigo=4;
-						app.image(pantallaEscapo,0,0);
 						mal = true;
 					}
 				}
