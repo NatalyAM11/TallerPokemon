@@ -76,7 +76,7 @@ public class Logic {
 	int pantalla,mapaX,mapaY;
 	
 	//imagenes fondo y botones
-	PImage fondo, arbol,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBoton2, continuarBoton2N, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa,pantallaTecla,bOrdenarN,bOrdenarT,bOrdenarNN,bOrdenarTN,usuarioIcono,usuarioIconoN,barraUsuario;
+	PImage bOrdenarF,bOrdenarFN,fondo, arbol,inventarioIcono,fondoRosado,pokedexVolver,inventarioVolver,usuariosVolver,ordenarPor,ordenNombre,ordenFecha,ordenTipo,pokedexIcono,fondoInicio, fondoNada, continuarBoton, continuarBoton2, continuarBoton2N, continuarBotonN,registrarseBoton,registrarseBotonN, usuarioBoton,usuarioBotonN,pokemonEleccion,mapa,pantallaTecla,bOrdenarN,bOrdenarT,bOrdenarNN,bOrdenarTN,usuarioIcono,usuarioIconoN,barraUsuario;
 	PImage selec1,selec2,selec3;
 	
 	//Inicializamos la clase que carga las barras de los perfiles
@@ -416,6 +416,15 @@ public class Logic {
 				   case 7:
 					   app.image(fondoRosado,0,0);
 					   app.image(barraUsuario,0,0);
+					   app.image(bOrdenarN,81,353);
+					   app.image(bOrdenarF,460,353);
+					   if( (app.mouseX>81 && app.mouseX<295)&& (app.mouseY>353 && app.mouseY<397)){
+							app.image(bOrdenarNN,81,353);
+						}
+							
+						if( (app.mouseX>460 && app.mouseX<673)&& (app.mouseY>353 && app.mouseY<397)){
+							app.image(bOrdenarFN,460,353);
+							}
 					   
 					 //pintamos las barras con la info de los usuarios
 					   for(int i=0; i<listUsuarios.size(); i++) {
@@ -603,18 +612,20 @@ public class Logic {
 			}
 			break;
 			
-			//Pantalla con la lista de usuarios
+			//Pantalla usuario 
 			case 7: 
 				if( (app.mouseX>0 && app.mouseX<56) && (app.mouseY>0 && app.mouseY<64)){
 				pantalla = 2;
 			}
 				
 				//Ordenamiento natural por los nombres de los usuarios
+				if( (app.mouseX>81 && app.mouseX<295)&& (app.mouseY>353 && app.mouseY<397)){
 				Collections.sort(listUsuarios);
-				
+				}
 				//Ordenamiento parcial por la fecha
-				//Collections.sort(listUsuarios,fechaComparator);
-			
+				if( (app.mouseX>460 && app.mouseX<673)&& (app.mouseY>353 && app.mouseY<397)){
+				Collections.sort(listUsuarios,fechaComparator);
+				}
 				break;
 			
 		}
@@ -963,6 +974,8 @@ public void PokemonCapturado() {
 		bOrdenarT=app.loadImage("img/ordenarPorTipoN.png");
 		bOrdenarNN=app.loadImage("img/ordenarPorNombre.png");
 		bOrdenarTN=app.loadImage("img/ordenarPorTipo.png");
+		bOrdenarF=app.loadImage("img/ordenarFechaN.png");
+		bOrdenarFN=app.loadImage("img/ordenarFecha.png");
 		fondo = app.loadImage("img/fondoBatalla.png");
 		usuarioIcono = app.loadImage("img/botonUsuario.png");
 		usuarioIconoN = app.loadImage("img/botonUsuarioN.png");
