@@ -44,7 +44,7 @@ public class Logic {
 	int modo = 0;
 	Batalla batalla;
 	boolean quitarAnuncio;
-	boolean huyo,volver;
+	boolean huyo,volver,start;
 	
 
 	// Variable para controlar las veces que puede usar el boton de continuar cuando
@@ -75,6 +75,7 @@ public class Logic {
 	int ordena;
 	boolean botones = true;
 	boolean botonInvisible = false;
+
 	int boton1;
 
 	// pantallas y mapas
@@ -85,7 +86,7 @@ public class Logic {
 			usuariosVolver, ordenarPor, ordenNombre, ordenFecha, ordenTipo, pokedexIcono, fondoInicio, fondoNada,
 			continuarBoton, continuarBoton2, continuarBoton2N, continuarBotonN, registrarseBoton, registrarseBotonN,
 			usuarioBoton, usuarioBotonN, pokemonEleccion, mapa, pantallaTecla, bOrdenarN, bOrdenarT, bOrdenarNN,
-			bOrdenarTN, usuarioIcono, usuarioIconoN, barraUsuario, bVolverMapa, atrapar;
+			bOrdenarTN, usuarioIcono, usuarioIconoN, barraUsuario, bVolverMapa, atrapar,atraparN;
 
 	PImage selec1, selec2, selec3;
 
@@ -102,6 +103,7 @@ public class Logic {
 		mover = true;
 		huyo = true;
 		volver = false;
+		start=false;
 		pokemones = app.loadStrings("lib/info_pokemones.txt");
 		usuarios = app.loadStrings("lib/infoUsuarios.txt");
 		listPokemons = new LinkedList<Pokemons>();
@@ -373,20 +375,13 @@ public class Logic {
 				app.fill(255);
 				app.textSize(20);
 				app.text("Deja todo a la suerte, presiona el boton para atrapar", 68, 300);
-				app.image(atrapar, 92, 335);
-				app.image(bVolverMapa, 378, 335);
+				app.image(atrapar, 378, 335);
+				app.image(atraparN, 378, 335);
+				app.image(bVolverMapa, 92, 335);
 				quitarAnuncio = false;
+				
 				// Excepcion
 
-				try {
-
-					stopTodo();
-				} catch (FirstException e) {
-					app.fill(255);
-					app.textSize(20);
-					app.text(e.getMessage(), 248, 64);
-
-				}
 
 				try {
 
@@ -401,6 +396,9 @@ public class Logic {
 				break;
 
 			case 2:
+				if(start == false) {
+					app.image(continuarBoton, 294, 300);
+					}
 
 				break;
 
@@ -585,23 +583,25 @@ public class Logic {
 				//}
 
 				if ((app.mouseX > 90 && app.mouseX < 304) && (app.mouseY > 338 && app.mouseY < 380)) {
-					veces += 1;
-					mover = true;
-					quitarAnuncio = false;
-					volver = true;
-				}
-
-				if ((app.mouseX > 377 && app.mouseX < 591) && (app.mouseY > 336 && app.mouseY < 382)) {
 					pantalla = 2;
 					quitarAnuncio = false;
 					mover = true;
 					invisibles = true;
-					volver = true;
+					volver = true;	
+					
 				}
+
+				/*if ((app.mouseX > 377 && app.mouseX < 591) && (app.mouseY > 336 && app.mouseY < 382)) {
+					mover = true;
+					quitarAnuncio = false;
+					volver = true;
+				}*/
 
 				break;
 
 			case 2:
+				
+				start =true;
 
 				batalla.atacar(seleccion);
 				/*if ((app.mouseX > 66 && app.mouseX < 279) && (app.mouseY > 335 && app.mouseY < 382)) {
@@ -1009,7 +1009,10 @@ public class Logic {
 		usuarioIconoN = app.loadImage("img/botonUsuarioN.png");
 		barraUsuario = app.loadImage("img/barraUsuario.png");
 		bVolverMapa = app.loadImage("img/volverAlMapa.png");
-	    atrapar= app.loadImage("img/atacar.png");
+	    atrapar= app.loadImage("img/atrapar.png");
+	    atraparN= app.loadImage("img/atraparN.png");
+
+	    
 	}
 
 }

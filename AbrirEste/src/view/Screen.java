@@ -20,7 +20,7 @@ public class Screen {
 		logic = new Verificar(app);
 		register = new Register(app);
 		login = new Login(app);
-		pantalla = 3;
+		pantalla = 0;
 		cargarImagenes();
 
 	}

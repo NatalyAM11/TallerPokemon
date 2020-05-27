@@ -21,6 +21,7 @@ public class Batalla {
 	int turnos;
 	boolean suerte, mal;
 	boolean mover, mover2, tuTurno, mostrar;
+	boolean una;
 
 	public Batalla(PApplet app) {
 
@@ -36,6 +37,7 @@ public class Batalla {
 		this.mover2 = false;
 		this.tuTurno = false;
 		this.mostrar = false;
+		this.una = false;
 
 	}
 
@@ -161,8 +163,12 @@ public class Batalla {
 				turnos = 3;
 
 			}
+			
+			//SI LE QUITO EL REMOVER ME FUNCIONA EL SALIR
 			if (mal == true) {
+				turnos = 4;
 				poke.remove(i);
+				
 			}
 		}
 
@@ -196,6 +202,8 @@ public class Batalla {
 			app.image(atacar, 66, 300);
 			app.image(turnoOpo, 519, 83);
 		}
+		
+		
 
 	}
 
@@ -298,10 +306,10 @@ public class Batalla {
 	}
 
 	public void atrapar() {
-
+        
 		// Hacer contador de solo un click
-
-		if ((app.mouseX > 90 && app.mouseX < 304) && (app.mouseY > 338 && app.mouseY < 380)) {
+       if( una == false) {
+		if ((app.mouseX > 377 && app.mouseX < 591) && (app.mouseY > 336 && app.mouseY < 382)) {
 			int aleotoridad = (int) app.random(0, 4);
 
 			if (aleotoridad == 3) {
@@ -309,16 +317,18 @@ public class Batalla {
 				System.out.print("Lo atrapaste");
 				cambioEnemigo = 3;
 				suerte = true;
+				una = true;
 			}
 			if (aleotoridad == 1 || aleotoridad == 2 || aleotoridad == 0) {
 
 				System.out.print("Mala Suerte");
 				cambioEnemigo = 4;
 				mal = true;
+				una = true;
 			}
 
 		}
-
+       }
 	}
 
 	public void atacar(int a) {
@@ -582,6 +592,14 @@ public class Batalla {
 		bVolverMapa = app.loadImage("img/volverAlMapa.png");
 		salir = app.loadImage("img/salir.png");
 		atrapar = app.loadImage("img/atraparN.png");
+	}
+
+	public int getTurnos() {
+		return turnos;
+	}
+
+	public void setTurnos(int turnos) {
+		this.turnos = turnos;
 	}
 
 }
