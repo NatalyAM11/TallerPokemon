@@ -160,10 +160,21 @@ public void mover() {
 	}
 
 
+
+
 	@Override
-	public void atacar() {
+	public void moverInventario() {
 		// TODO Auto-generated method stub
+		this.posY -= this.dirY*3;
+   	 
 		
+ 		if(this.posY<700) {
+			this.dirY=this.dirY*-1;
+			
+			if (this.posY < posXmenos) {
+	            this.dirX=0;
+	        }
+ 		}
 	}
 
 }

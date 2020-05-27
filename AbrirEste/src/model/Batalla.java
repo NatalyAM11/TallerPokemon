@@ -15,7 +15,7 @@ public class Batalla {
 	//comentario
 
 
-	PImage hpJugador, hpOponente, pantallaAtrapado, botonContinuar, botonContinuar2,botonBatalla,pantallaEncontrado,pantallaEscapo,atacar,turnoJu,turnoOpo;
+	PImage atrapar, salir,bVolverMapa,hpJugador, hpOponente, pantallaAtrapado, botonContinuar, botonContinuar2,botonBatalla,pantallaEncontrado,pantallaEscapo,atacar,turnoJu,turnoOpo;
 	int cambioPersonaje = 0;
 	int cambioEnemigo = 0;
 	int turnos;
@@ -39,7 +39,9 @@ public class Batalla {
 		turnoJu = app.loadImage("img/turnoJugador.png");
 	    turnoOpo = app.loadImage("img/turnoOponente.png");
 	    atacar= app.loadImage("img/atacar.png");
-	    
+	    bVolverMapa= app.loadImage("img/volverAlMapa.png");
+	    salir = app.loadImage("img/salir.png");
+	    atrapar=app.loadImage("img/atraparN.png");
 
 		this.suerte = false;
 		this.mal = false;
@@ -198,14 +200,23 @@ public void pintarVidas () {
 		       }
 		}
        
-       
+       if(turnos == 3 && mal == false && suerte == false) {
+       app.image(atrapar,300,344);
+       }
        if(mal == true) {
+			turnos=4;
+
     	   app.image(pantallaEscapo,274,127,175,100);
+    	   app.image(bVolverMapa,66,335);
+    	   app.image(salir,378,335);
        }
        
        if(suerte == true) {
-    	   
+			turnos=4;
+
     	   app.image(pantallaAtrapado,274,127,175,100);
+    	   app.image(bVolverMapa,66,335);
+    	   app.image(salir,378,335);
           }
        
        if(turnos==0 && mostrar== true) {
@@ -255,7 +266,7 @@ public void pintarVidas () {
 			
           case 4:
 			
-			poke.add(new Pikachu (434,100,"holi",0,100,"salvaje", app));
+			poke.add(new Pikachu (339,0,"holi",0,100,"salvaje", app));
 
 
 			
@@ -301,7 +312,7 @@ public void pintarVidas () {
       			
       		case 10:
       			
-      			poke.add(new Pikachu (434,100,"holi",0,100,"salvaje", app));
+      			poke.add(new Pikachu (400,0,"holi",0,100,"salvaje", app));
 
 
       			
@@ -403,7 +414,7 @@ public void atrapar() {
 				case 0:
 					
 					cambioPersonaje=1;
-					cambioEnemigo=2;	
+					cambioEnemigo=1;	
 					
 					
 					 if( (app.mouseX>66 && app.mouseX<300) && (app.mouseY>304 && app.mouseY<349)){
@@ -417,7 +428,7 @@ public void atrapar() {
 
 				case 1:
 					cambioEnemigo=2;
-					cambioPersonaje=1; 
+					cambioPersonaje=2; 
 		            
 		          
 					if( (app.mouseX>66 && app.mouseX<300) && (app.mouseY>304 && app.mouseY<349)){  
@@ -431,7 +442,7 @@ public void atrapar() {
 				case 3:
 					
 					// Si lo atrapa o se escapa. 
-					
+					if( (app.mouseX>302 && app.mouseX<503)&& (app.mouseY>351 && app.mouseY<391)){
 					int aleotoridad = (int)app.random(0,4);
 					
 					if(aleotoridad== 3) {
@@ -445,9 +456,23 @@ public void atrapar() {
 						
 						System.out.print("Mala Suerte");
 						cambioEnemigo=4;
-						app.image(pantallaEscapo,0,0);
 						mal = true;
 					}
+			        
+			        
+			        
+				}
+					break;
+					
+                  case 4:
+					
+					System.out.print("entre");
+					 if( (app.mouseX>378 && app.mouseX<586)&& (app.mouseY>335 && app.mouseY<381)){
+						 app.exit();
+						
+					 }
+					 
+					 break;
 				}
 			}
 			
@@ -490,7 +515,7 @@ public void atrapar() {
 				case 3:
 					
 					// Si lo atrapa o se escapa. 
-					
+					if( (app.mouseX>302 && app.mouseX<503)&& (app.mouseY>351 && app.mouseY<391)){
 					int aleotoridad = (int)app.random(0,4);
 					
 					if(aleotoridad== 3) {
@@ -505,6 +530,19 @@ public void atrapar() {
 						cambioEnemigo=4;
 						mal = true;
 					}
+					}
+					
+					break;
+					
+                  case 4:
+					
+					System.out.print("entre");
+					 if( (app.mouseX>378 && app.mouseX<586)&& (app.mouseY>335 && app.mouseY<381)){
+						 app.exit();
+						
+					 }
+					 
+					 break;
 				}
 			}
 			
@@ -543,26 +581,46 @@ public void atrapar() {
 
 				case 3:
 					
-					// Si lo atrapa o se escapa. 
 					
+					// Si lo atrapa o se escapa. 
+					if( (app.mouseX>302 && app.mouseX<503)&& (app.mouseY>351 && app.mouseY<391)){
 					int aleotoridad = (int)app.random(0,4);
 					
 					if(aleotoridad== 3) {
 						
-						System.out.print("Lo atrapaste");
 						cambioEnemigo=3;
 						suerte= true;
+						
 					}
 			        if(aleotoridad== 1 || aleotoridad== 2 || aleotoridad== 0) {
 						
-						System.out.print("Mala Suerte");
+						
 						cambioEnemigo=4;
 						mal = true;
+						
+						System.out.print("lol");
 					}
+					}
+					
+					
+					System.out.print(turnos);
+
+			        break;
+			        
+				case 4:
+					
+					System.out.print("entre");
+					 if( (app.mouseX>378 && app.mouseX<586)&& (app.mouseY>335 && app.mouseY<381)){
+						 app.exit();
+						
+					 }
+					 
+					 break;
 				}
 			}
+                  
+         break;
 			
-			break;
 		}
 		}
 	}
@@ -570,21 +628,26 @@ public void atrapar() {
 	public void pintarInvertario() {
 		for(int i=0; i < emolga.size(); i++ ) {
 			emolga.get(i).pintar(5);
+			emolga.get(i).moverInventario();
 		
 	}
 		
 		for(int i=0; i < giraf.size(); i++ ) {
 			giraf.get(i).pintar(5);
+			giraf.get(i).moverInventario();
 		
 	}
 		for(int i=0; i < bayleef.size(); i++ ) {
 			bayleef.get(i).pintar(5);
+			bayleef.get(i).moverInventario();
 		
 	}
 		
            for(int i=0; i < poke.size(); i++ ) {
 			
 			poke.get(i).pintar(0);
+			poke.get(i).moverInventario();
+
       }	
 	}		
 				
