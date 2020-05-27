@@ -7,7 +7,7 @@ public class Screen {
 
 	public PApplet app;
 	ScreenPokedex scr2;
-	Verificar logic;
+	Verificar verificar;
 	Register register;
 	Login login;
 	PImage fondo, vacio, registrarseBoton, 
@@ -17,7 +17,7 @@ public class Screen {
 	public Screen(PApplet app) {
 
 		this.app = app;
-		logic = new Verificar(app);
+		verificar = new Verificar(app);
 		register = new Register(app);
 		login = new Login(app);
 		pantalla = 0;

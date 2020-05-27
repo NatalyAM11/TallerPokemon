@@ -12,13 +12,13 @@ public class Login {
 	private String email, contrasenna;
 	private ControlP5 cp5;
 	private PImage fondo, boton,continuarBoton,continuarBotonN;
-	private Verificar logica;
+	private Verificar verificar;
 	
 
 	public Login(PApplet app) {
 
 		this.app = app;
-		logica = new Verificar(app);
+		verificar = new Verificar(app);
 		fondo=app.loadImage("img/fondoInicio.png");
 		boton=app.loadImage("img/continuarBoton.png");
 		continuarBoton=app.loadImage("img/continuarBoton.png");
@@ -33,7 +33,7 @@ public class Login {
 		.setColorCaptionLabel(255)
 		.setColorBackground(0);
 		
-		cp5.addTextfield("contrasenna")
+		cp5.addTextfield("password")
 		.setPosition(210,283)
 		.setSize(300,41)
 		.setAutoClear(true)
@@ -60,16 +60,16 @@ public class Login {
 		if (app.mouseX > 257 && app.mouseX < 465 && app.mouseY > 348 && app.mouseY < 391) {
 
 			email = cp5.get(Textfield.class, "Email").getText();
-			contrasenna = cp5.get(Textfield.class, "contrasenna").getText();
+			contrasenna = cp5.get(Textfield.class, "password").getText();
 
 			if (contrasenna.isEmpty() == false && email.isEmpty() == false) {
 
-				logica.verificarLogin(email, contrasenna);
+				verificar.verificarLogin(email, contrasenna);
 
-				if (logica.verificarLogin(email, contrasenna)) {
+				if (verificar.verificarLogin(email, contrasenna)) {
 
 					Ocultar();
-					cp5.get(Textfield.class, "contrasenna").clear();
+					cp5.get(Textfield.class, "password").clear();
 					cp5.get(Textfield.class, "Email").clear();
 				}
 

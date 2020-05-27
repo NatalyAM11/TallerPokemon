@@ -18,13 +18,13 @@ public class Register {
 	private ControlP5 cp5;
 	private PImage fondo, boton, continuarBoton, continuarBotonN;
 
-	private Verificar logica;
+	private Verificar verificar;
 	boolean registro;
 
 	public Register(PApplet app) {
 
 		this.app = app;
-		logica = new Verificar(app);
+		verificar = new Verificar(app);
 		cp5 = new ControlP5(app);
 
 		inputs = new String[4];
@@ -106,7 +106,7 @@ public class Register {
 
 				System.out.println("Valido");
 
-				logica.CreateUser(name, email, password);
+				verificar.CreateUser(name, email, password);
 
 				cp5.hide();
 
