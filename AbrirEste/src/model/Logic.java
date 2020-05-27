@@ -45,6 +45,7 @@ public class Logic {
 	int modo =0;
 	Batalla batalla;
 	boolean quitarAnuncio;
+	boolean huyo;
 	
 	//Variable para controlar las veces que puede usar el boton de continuar cuando atrapa el pokemon
 	int veces,vecesO,vecesO2;
@@ -268,10 +269,8 @@ public class Logic {
                 	   if(quitarAnuncio==true) {
                     	   batalla.anuncio();
                        }
+			
 						 
-		                   if( (app.mouseX>253 && app.mouseX<466)&& (app.mouseY>285 && app.mouseY<331)){
-		                	   app.image(continuarBoton,253,285);
-		   					} 
 					}
                    
                    
@@ -389,7 +388,16 @@ public class Logic {
                     
 					 switch(modo) {
 					 
-					 case 0:
+					 case 0:	 try {
+    					 
+    					 yaNoMasPelea();
+    				 }	catch(FirstException e) {
+    					 app.fill(255);
+    					 app.textSize(20);
+    			         app.text (e.getMessage(),248,64);
+    			       
+    					}
+            	
 			
                    break;
                     
@@ -399,7 +407,7 @@ public class Logic {
                     	app.text("Deja todo a la suerte, presiona el boton para atrapar",68,300);
                     	app.image(atrapar,92,335);
                     	app.image(bVolverMapa,378,335);
-                        
+                    	quitarAnuncio=false;
                 		 //Excepcion 
         				 
             				 try {
@@ -615,7 +623,8 @@ public class Logic {
 				
 					if( (app.mouseX>377 && app.mouseX<591)&& (app.mouseY>336 && app.mouseY<382)){
 						pantalla=2;
-						quitarAnuncio=false;
+						
+						mover=true;
 					}
 				
 				break;
@@ -624,6 +633,13 @@ public class Logic {
 			case 2:
 				
 				batalla.atacar(seleccion);
+				if( (app.mouseX>66 && app.mouseX<279)&& (app.mouseY>335 && app.mouseY<382)){
+					pantalla=2;
+				}
+				if( (app.mouseX>378 && app.mouseX<591)&& (app.mouseY>335 && app.mouseY<382)){
+					pantalla=2;
+				}
+				
 				
 				
 				break;
@@ -983,6 +999,14 @@ public void yaNoMas2 () throws FirstException {
 	 if(vecesO2>=2) {
 		 throw new FirstException("Ya estan ordenados por Tipo");
 	 }
+	 
+}
+
+public void yaNoMasPelea() throws FirstException {
+	 
+	
+		 throw new FirstException("Ya estan ordenados por Tipo");
+	 
 	 
 }
 
