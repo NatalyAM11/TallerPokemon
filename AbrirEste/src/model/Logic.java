@@ -328,6 +328,8 @@ public class Logic {
 					app.text(e.getMessage(), 213, 64);
 
 				}
+				
+				
 
 				break;
 			}
@@ -381,8 +383,6 @@ public class Logic {
 				quitarAnuncio = false;
 				
 				// Excepcion
-
-
 				try {
 
 					yaNoMasPelea();
@@ -392,6 +392,8 @@ public class Logic {
 					app.text(e.getMessage(), 248, 64);
 
 				}
+
+				
 
 				break;
 
@@ -965,7 +967,7 @@ public class Logic {
 
 	public void yaNoMasPelea() throws FirstException {
 
-		if (huyo == false) {
+		if (quitarAnuncio == false) {
 			throw new FirstException("Ya no puedes atrapar más");
 		}
 

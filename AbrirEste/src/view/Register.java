@@ -2,6 +2,7 @@ package view;
 
 import java.util.ArrayList;
 
+import Exceptions.FirstException;
 import controlP5.ControlP5;
 import controlP5.Textfield;
 import processing.core.PApplet;
@@ -52,7 +53,7 @@ public class Register {
 			app.image(continuarBotonN, 257, 322);
 		}
 		cp5.show();
-
+		
 	}
 
 	public void botonPresionado() {
@@ -149,5 +150,7 @@ public class Register {
 		continuarBoton = app.loadImage("img/continuarBoton.png");
 		continuarBotonN = app.loadImage("img/continuarBotonN.png");
 	}
+	
+	
 
 }
