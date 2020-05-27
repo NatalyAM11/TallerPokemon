@@ -47,10 +47,10 @@ public class Login {
 	public void Pintar() {
 
 		app.image(fondo, 0, 0);
-		cp5.show(); 
-		app.image(continuarBoton,257,348);
+		cp5.show();
+		app.image(continuarBoton, 257, 348);
 		if (app.mouseX > 257 && app.mouseX < 465 && app.mouseY > 348 && app.mouseY < 391) {
-			app.image(continuarBotonN,257,348);
+			app.image(continuarBotonN, 257, 348);
 		}
 
 	}
@@ -62,7 +62,7 @@ public class Login {
 			email = cp5.get(Textfield.class, "Email").getText();
 			contrasenna = cp5.get(Textfield.class, "contrasenna").getText();
 
-			if ( contrasenna.isEmpty() == false && email.isEmpty() == false ) {
+			if (contrasenna.isEmpty() == false && email.isEmpty() == false) {
 
 				logica.verificarLogin(email, contrasenna);
 

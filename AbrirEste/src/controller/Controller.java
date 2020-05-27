@@ -15,9 +15,7 @@ public class Controller {
 		
 	}
 	
-	public void iniciar() {
-		log.iniciar();
-	}
+	
 	
 	public void pintar() {
 		
